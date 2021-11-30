@@ -17,6 +17,7 @@
 		3D1146C6275695CF00E303FE /* PetFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146C5275695CF00E303FE /* PetFinderTests.swift */; };
 		3D1146D0275695CF00E303FE /* PetFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146CF275695CF00E303FE /* PetFinderUITests.swift */; };
 		3D1146D2275695CF00E303FE /* PetFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */; };
+		3D1146E4275696CD00E303FE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146E3275696CD00E303FE /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3D1146CB275695CF00E303FE /* PetFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1146CF275695CF00E303FE /* PetFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITests.swift; sourceTree = "<group>"; };
 		3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D1146E3275696CD00E303FE /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */,
+				3D1146E3275696CD00E303FE /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D1146B0275695CD00E303FE /* ViewController.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */,
