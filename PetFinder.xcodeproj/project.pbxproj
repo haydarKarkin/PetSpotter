@@ -26,6 +26,10 @@
 		3D11470027569DDF00E303FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146FF27569DDF00E303FE /* Environment.swift */; };
 		3D1147072756A16B00E303FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147062756A16B00E303FE /* ViewController.swift */; };
 		3D11470A2756A18400E303FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147092756A18400E303FE /* ViewModel.swift */; };
+		3D11470D2756A22D00E303FE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11470C2756A22D00E303FE /* Reusable.swift */; };
+		3D11470F2756A24600E303FE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11470E2756A24600E303FE /* String+Ext.swift */; };
+		3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147102756A26900E303FE /* UITableView+Ext.swift */; };
+		3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147122756A28600E303FE /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		3D11470427569E5F00E303FE /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		3D1147062756A16B00E303FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D1147092756A18400E303FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3D11470C2756A22D00E303FE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		3D11470E2756A24600E303FE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		3D1147102756A26900E303FE /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		3D1147122756A28600E303FE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,7 @@
 		3D1146EF27569AB100E303FE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3D11470B2756A21F00E303FE /* Extensions */,
 				3D1146F527569B8000E303FE /* Config */,
 				3D1146FD27569D6500E303FE /* Coordinator */,
 				3D1146FE27569DD500E303FE /* Environment */,
@@ -271,6 +280,17 @@
 				3D1147092756A18400E303FE /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D11470B2756A21F00E303FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D11470C2756A22D00E303FE /* Reusable.swift */,
+				3D11470E2756A24600E303FE /* String+Ext.swift */,
+				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
+				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,14 +427,18 @@
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
+				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsViewController.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
+				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
+				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
 			);
