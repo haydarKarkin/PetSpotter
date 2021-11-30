@@ -30,6 +30,7 @@
 		3D11470F2756A24600E303FE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11470E2756A24600E303FE /* String+Ext.swift */; };
 		3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147102756A26900E303FE /* UITableView+Ext.swift */; };
 		3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147122756A28600E303FE /* UIImageView+Ext.swift */; };
+		3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147152756A2E700E303FE /* SharedFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3D11470E2756A24600E303FE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		3D1147102756A26900E303FE /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		3D1147122756A28600E303FE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		3D1147152756A2E700E303FE /* SharedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,8 @@
 		3D1146AA275695CD00E303FE /* PetFinder */ = {
 			isa = PBXGroup;
 			children = (
-				3D11470127569E1800E303FE /* Resources */,
 				3D1146DE2756962600E303FE /* App */,
+				3D11470127569E1800E303FE /* Resources */,
 				3D1146E02756963900E303FE /* Scenes */,
 				3D1146EF27569AB100E303FE /* Shared */,
 				3D1146E12756966000E303FE /* SupportingItems */,
@@ -176,8 +178,8 @@
 		3D1146E02756963900E303FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3D1146E22756969A00E303FE /* ViewControllers */,
 				3D1146B1275695CD00E303FE /* Main.storyboard */,
+				3D1146E22756969A00E303FE /* ViewControllers */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,10 +205,11 @@
 		3D1146EF27569AB100E303FE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				3D11470B2756A21F00E303FE /* Extensions */,
 				3D1146F527569B8000E303FE /* Config */,
 				3D1146FD27569D6500E303FE /* Coordinator */,
 				3D1146FE27569DD500E303FE /* Environment */,
+				3D11470B2756A21F00E303FE /* Extensions */,
+				3D1147142756A2D500E303FE /* Factory */,
 				3D1146DF2756962C00E303FE /* Models */,
 				3D1146F027569ACC00E303FE /* Networking */,
 				3D1147052756A15600E303FE /* ViewController */,
@@ -291,6 +294,14 @@
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3D1147142756A2D500E303FE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147152756A2E700E303FE /* SharedFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
+				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
