@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AB275695CD00E303FE /* AppDelegate.swift */; };
 		3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AD275695CD00E303FE /* SceneDelegate.swift */; };
-		3D1146B0275695CD00E303FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AF275695CD00E303FE /* ViewController.swift */; };
+		3D1146B0275695CD00E303FE /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AF275695CD00E303FE /* AnimalsViewController.swift */; };
 		3D1146B3275695CD00E303FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B1275695CD00E303FE /* Main.storyboard */; };
 		3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */; };
 		3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B7275695CF00E303FE /* Assets.xcassets */; };
@@ -24,6 +24,8 @@
 		3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F827569BE300E303FE /* ErrorHandler.swift */; };
 		3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146FA27569D5200E303FE /* Coordinator.swift */; };
 		3D11470027569DDF00E303FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146FF27569DDF00E303FE /* Environment.swift */; };
+		3D1147072756A16B00E303FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147062756A16B00E303FE /* ViewController.swift */; };
+		3D11470A2756A18400E303FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147092756A18400E303FE /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,7 @@
 		3D1146A8275695CD00E303FE /* PetFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1146AB275695CD00E303FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1146AD275695CD00E303FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D1146AF275695CD00E303FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D1146AF275695CD00E303FE /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		3D1146B2275695CD00E303FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D1146B5275695CD00E303FE /* PetFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetFinder.xcdatamodel; sourceTree = "<group>"; };
 		3D1146B7275695CF00E303FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		3D1146FF27569DDF00E303FE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		3D11470327569E4F00E303FE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		3D11470427569E5F00E303FE /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		3D1147062756A16B00E303FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D1147092756A18400E303FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +187,7 @@
 		3D1146E22756969A00E303FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3D1146AF275695CD00E303FE /* ViewController.swift */,
+				3D1146AF275695CD00E303FE /* AnimalsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +200,8 @@
 				3D1146FE27569DD500E303FE /* Environment */,
 				3D1146DF2756962C00E303FE /* Models */,
 				3D1146F027569ACC00E303FE /* Networking */,
+				3D1147052756A15600E303FE /* ViewController */,
+				3D1147082756A17A00E303FE /* ViewModel */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -249,6 +255,22 @@
 				3D11470427569E5F00E303FE /* Release.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3D1147052756A15600E303FE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147062756A16B00E303FE /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3D1147082756A17A00E303FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147092756A18400E303FE /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,8 +408,10 @@
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
-				3D1146B0275695CD00E303FE /* ViewController.swift in Sources */,
+				3D1146B0275695CD00E303FE /* AnimalsViewController.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
+				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AnimalsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
