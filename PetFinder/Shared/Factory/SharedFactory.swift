@@ -9,6 +9,7 @@ import UIKit
 
 protocol SharedFactoryType {
     func makeClientProvider<T: TargetType>(shouldStub: StubType) -> ClientProvider<T>
+    func makeAnimalFactory() -> AnimalFactoryType
 }
 
 extension SharedFactoryType {
@@ -20,5 +21,9 @@ extension SharedFactoryType {
 class SharedFactory: SharedFactoryType {
     func makeClientProvider<T: TargetType>(shouldStub: StubType) -> ClientProvider<T> {
         return ClientProvider<T>(shouldStub: shouldStub)
+    }
+    
+    func makeAnimalFactory() -> AnimalFactoryType {
+        return AnimalFactory(sharedFactory: self)
     }
 }

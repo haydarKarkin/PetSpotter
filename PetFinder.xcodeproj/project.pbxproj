@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AB275695CD00E303FE /* AppDelegate.swift */; };
-		3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AD275695CD00E303FE /* SceneDelegate.swift */; };
-		3D1146B0275695CD00E303FE /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AF275695CD00E303FE /* AnimalsViewController.swift */; };
+		3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AF275695CD00E303FE /* AnimalsVC.swift */; };
 		3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B1275695CD00E303FE /* Animal.storyboard */; };
 		3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */; };
 		3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B7275695CF00E303FE /* Assets.xcassets */; };
@@ -32,6 +31,13 @@
 		3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147122756A28600E303FE /* UIImageView+Ext.swift */; };
 		3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147152756A2E700E303FE /* SharedFactory.swift */; };
 		3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1147192756A3C300E303FE /* Organization.storyboard */; };
+		3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11471B2756A42F00E303FE /* AppCoordinator.swift */; };
+		3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147292756A55600E303FE /* AnimalCoordinator.swift */; };
+		3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472B2756A56100E303FE /* AnimalFactory.swift */; };
+		3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472D2756A56B00E303FE /* AnimalService.swift */; };
+		3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472F2756A57900E303FE /* AnimalsVM.swift */; };
+		3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147312756A76D00E303FE /* AnimalAPI.swift */; };
+		3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147332756AE9900E303FE /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +60,7 @@
 /* Begin PBXFileReference section */
 		3D1146A8275695CD00E303FE /* PetFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1146AB275695CD00E303FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D1146AD275695CD00E303FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D1146AF275695CD00E303FE /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
+		3D1146AF275695CD00E303FE /* AnimalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVC.swift; sourceTree = "<group>"; };
 		3D1146B2275695CD00E303FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Animal.storyboard; sourceTree = "<group>"; };
 		3D1146B5275695CD00E303FE /* PetFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetFinder.xcdatamodel; sourceTree = "<group>"; };
 		3D1146B7275695CF00E303FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +88,13 @@
 		3D1147122756A28600E303FE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		3D1147152756A2E700E303FE /* SharedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFactory.swift; sourceTree = "<group>"; };
 		3D1147192756A3C300E303FE /* Organization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Organization.storyboard; sourceTree = "<group>"; };
+		3D11471B2756A42F00E303FE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3D1147292756A55600E303FE /* AnimalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCoordinator.swift; sourceTree = "<group>"; };
+		3D11472B2756A56100E303FE /* AnimalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFactory.swift; sourceTree = "<group>"; };
+		3D11472D2756A56B00E303FE /* AnimalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalService.swift; sourceTree = "<group>"; };
+		3D11472F2756A57900E303FE /* AnimalsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVM.swift; sourceTree = "<group>"; };
+		3D1147312756A76D00E303FE /* AnimalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAPI.swift; sourceTree = "<group>"; };
+		3D1147332756AE9900E303FE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1146AB275695CD00E303FE /* AppDelegate.swift */,
-				3D1146AD275695CD00E303FE /* SceneDelegate.swift */,
+				3D11471B2756A42F00E303FE /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -199,7 +211,7 @@
 		3D1146E22756969A00E303FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3D1146AF275695CD00E303FE /* AnimalsViewController.swift */,
+				3D1146AF275695CD00E303FE /* AnimalsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -275,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1147062756A16B00E303FE /* ViewController.swift */,
+				3D1147332756AE9900E303FE /* Storyboarded.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -309,7 +322,12 @@
 		3D1147172756A37F00E303FE /* Organization */ = {
 			isa = PBXGroup;
 			children = (
-				3D1147192756A3C300E303FE /* Organization.storyboard */,
+				3D1147222756A50C00E303FE /* Coordinator */,
+				3D1147242756A51700E303FE /* Factory */,
+				3D1147272756A52F00E303FE /* Service */,
+				3D1147252756A51E00E303FE /* ViewControllers */,
+				3D1147282756A53900E303FE /* ViewModels */,
+				3D1147262756A52600E303FE /* Views */,
 			);
 			path = Organization;
 			sourceTree = "<group>";
@@ -317,10 +335,98 @@
 		3D1147182756A38800E303FE /* Animal */ = {
 			isa = PBXGroup;
 			children = (
+				3D1147212756A4EA00E303FE /* Coordinator */,
+				3D11471E2756A4D100E303FE /* Factory */,
+				3D1147202756A4E500E303FE /* Service */,
 				3D1146E22756969A00E303FE /* ViewControllers */,
-				3D1146B1275695CD00E303FE /* Animal.storyboard */,
+				3D11471D2756A4CB00E303FE /* ViewModels */,
+				3D11471F2756A4D600E303FE /* Views */,
 			);
 			path = Animal;
+			sourceTree = "<group>";
+		};
+		3D11471D2756A4CB00E303FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D11472F2756A57900E303FE /* AnimalsVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D11471E2756A4D100E303FE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3D11472B2756A56100E303FE /* AnimalFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3D11471F2756A4D600E303FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146B1275695CD00E303FE /* Animal.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D1147202756A4E500E303FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147312756A76D00E303FE /* AnimalAPI.swift */,
+				3D11472D2756A56B00E303FE /* AnimalService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3D1147212756A4EA00E303FE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147292756A55600E303FE /* AnimalCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3D1147222756A50C00E303FE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3D1147242756A51700E303FE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3D1147252756A51E00E303FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D1147262756A52600E303FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147192756A3C300E303FE /* Organization.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D1147272756A52F00E303FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3D1147282756A53900E303FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,23 +561,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
+				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
+				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
+				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
-				3D1146B0275695CD00E303FE /* AnimalsViewController.swift in Sources */,
+				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
+				3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */,
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
+				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
-				3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
