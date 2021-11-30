@@ -1,0 +1,12 @@
+//
+//  Release.xcconfig
+//  PetFinder
+//
+//  Created by hkarkin on 30.11.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ROOT_URL = https:/$()/api.petfinder.com/v2
+ENV_TYPE = RELEASE
