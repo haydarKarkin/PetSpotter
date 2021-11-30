@@ -18,6 +18,8 @@ public enum Environment {
         enum Plist {
             static let rootURL = "ROOT_URL"
             static let envName = "ENV_TYPE"
+            static let apiKey = "API_KEY"
+            static let secret = "SECRET"
         }
     }
     
@@ -48,5 +50,19 @@ public enum Environment {
             fatalError("Environment type is invalid")
         }
         return envType
+    }()
+    
+    static let apiKey: String = {
+        guard let apiKeyString = Environment.infoDictionary[Keys.Plist.apiKey] as? String else {
+            fatalError("API key not set in plist for this environment")
+        }
+        return apiKeyString
+    }()
+    
+    static let secret: String = {
+        guard let secretString = Environment.infoDictionary[Keys.Plist.secret] as? String else {
+            fatalError("Secret not set in plist for this environment")
+        }
+        return secretString
     }()
 }
