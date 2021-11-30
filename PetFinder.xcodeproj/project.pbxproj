@@ -101,14 +101,10 @@
 		3D1146AA275695CD00E303FE /* PetFinder */ = {
 			isa = PBXGroup;
 			children = (
-				3D1146AB275695CD00E303FE /* AppDelegate.swift */,
-				3D1146AD275695CD00E303FE /* SceneDelegate.swift */,
-				3D1146AF275695CD00E303FE /* ViewController.swift */,
-				3D1146B1275695CD00E303FE /* Main.storyboard */,
-				3D1146B7275695CF00E303FE /* Assets.xcassets */,
-				3D1146B9275695CF00E303FE /* LaunchScreen.storyboard */,
-				3D1146BC275695CF00E303FE /* Info.plist */,
-				3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */,
+				3D1146DE2756962600E303FE /* App */,
+				3D1146DF2756962C00E303FE /* Models */,
+				3D1146E02756963900E303FE /* Scenes */,
+				3D1146E12756966000E303FE /* SupportingItems */,
 			);
 			path = PetFinder;
 			sourceTree = "<group>";
@@ -128,6 +124,50 @@
 				3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */,
 			);
 			path = PetFinderUITests;
+			sourceTree = "<group>";
+		};
+		3D1146DE2756962600E303FE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146AB275695CD00E303FE /* AppDelegate.swift */,
+				3D1146AD275695CD00E303FE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3D1146DF2756962C00E303FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D1146E02756963900E303FE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146E22756969A00E303FE /* ViewControllers */,
+				3D1146B1275695CD00E303FE /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3D1146E12756966000E303FE /* SupportingItems */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146B7275695CF00E303FE /* Assets.xcassets */,
+				3D1146BC275695CF00E303FE /* Info.plist */,
+				3D1146B9275695CF00E303FE /* LaunchScreen.storyboard */,
+			);
+			path = SupportingItems;
+			sourceTree = "<group>";
+		};
+		3D1146E22756969A00E303FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146AF275695CD00E303FE /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UD7WHFPS9C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetFinder/Info.plist;
+				INFOPLIST_FILE = PetFinder/SupportingItems/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -473,7 +513,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UD7WHFPS9C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetFinder/Info.plist;
+				INFOPLIST_FILE = PetFinder/SupportingItems/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
