@@ -18,6 +18,10 @@
 		3D1146D0275695CF00E303FE /* PetFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146CF275695CF00E303FE /* PetFinderUITests.swift */; };
 		3D1146D2275695CF00E303FE /* PetFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */; };
 		3D1146E4275696CD00E303FE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146E3275696CD00E303FE /* DataController.swift */; };
+		3D1146F227569B0700E303FE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F127569B0700E303FE /* TargetType.swift */; };
+		3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F327569B2F00E303FE /* ClientProvider.swift */; };
+		3D1146F727569B8A00E303FE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F627569B8A00E303FE /* Config.swift */; };
+		3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F827569BE300E303FE /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		3D1146CF275695CF00E303FE /* PetFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITests.swift; sourceTree = "<group>"; };
 		3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D1146E3275696CD00E303FE /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		3D1146F127569B0700E303FE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		3D1146F327569B2F00E303FE /* ClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProvider.swift; sourceTree = "<group>"; };
+		3D1146F627569B8A00E303FE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3D1146F827569BE300E303FE /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				3D1146DE2756962600E303FE /* App */,
-				3D1146DF2756962C00E303FE /* Models */,
 				3D1146E02756963900E303FE /* Scenes */,
+				3D1146EF27569AB100E303FE /* Shared */,
 				3D1146E12756966000E303FE /* SupportingItems */,
 			);
 			path = PetFinder;
@@ -171,6 +179,34 @@
 				3D1146AF275695CD00E303FE /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D1146EF27569AB100E303FE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146F527569B8000E303FE /* Config */,
+				3D1146DF2756962C00E303FE /* Models */,
+				3D1146F027569ACC00E303FE /* Networking */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		3D1146F027569ACC00E303FE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146F127569B0700E303FE /* TargetType.swift */,
+				3D1146F327569B2F00E303FE /* ClientProvider.swift */,
+				3D1146F827569BE300E303FE /* ErrorHandler.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3D1146F527569B8000E303FE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3D1146F627569B8A00E303FE /* Config.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
+				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
 				3D1146B0275695CD00E303FE /* ViewController.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
+				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
 				3D1146AE275695CD00E303FE /* SceneDelegate.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
 			);
