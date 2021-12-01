@@ -22,9 +22,10 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        let animalCoordinator = sharedFactory
-            .makeAnimalFactory()
-            .makeAnimalCoordinator(navigationController: navigationController)
-        coordinate(to: animalCoordinator)
+        let homeCoordinator = sharedFactory
+            .makeHomeFactory()
+            .makeHomeCoordinator(navigationController: navigationController)
+        
+        coordinate(to: homeCoordinator)
     }
 }

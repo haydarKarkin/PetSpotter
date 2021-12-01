@@ -38,6 +38,9 @@
 		3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472F2756A57900E303FE /* AnimalsVM.swift */; };
 		3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147312756A76D00E303FE /* AnimalAPI.swift */; };
 		3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147332756AE9900E303FE /* Storyboarded.swift */; };
+		3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49342758083F00CB27AE /* HomeCoordinator.swift */; };
+		3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49362758084B00CB27AE /* HomeFactory.swift */; };
+		3D9C49392758085600CB27AE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49382758085600CB27AE /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,9 @@
 		3D11472F2756A57900E303FE /* AnimalsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVM.swift; sourceTree = "<group>"; };
 		3D1147312756A76D00E303FE /* AnimalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAPI.swift; sourceTree = "<group>"; };
 		3D1147332756AE9900E303FE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		3D9C49342758083F00CB27AE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		3D9C49362758084B00CB27AE /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		3D9C49382758085600CB27AE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 		3D1146E02756963900E303FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3D9C492F275807E300CB27AE /* Home */,
 				3D1147182756A38800E303FE /* Animal */,
 				3D1147172756A37F00E303FE /* Organization */,
 			);
@@ -429,6 +436,40 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		3D9C492F275807E300CB27AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C4930275807FE00CB27AE /* Coordinator */,
+				3D9C49312758080700CB27AE /* Factory */,
+				3D9C49322758081000CB27AE /* ViewControllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3D9C4930275807FE00CB27AE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49342758083F00CB27AE /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3D9C49312758080700CB27AE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49362758084B00CB27AE /* HomeFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3D9C49322758081000CB27AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49382758085600CB27AE /* HomeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -564,10 +605,12 @@
 				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
+				3D9C49392758085600CB27AE /* HomeVC.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
+				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
@@ -583,6 +626,7 @@
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
+				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
 			);
