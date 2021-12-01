@@ -11,6 +11,7 @@ protocol SharedFactoryType {
     func makeClientProvider<T: TargetType>(shouldStub: StubType) -> ClientProvider<T>
     func makeHomeFactory() -> HomeFactoryType
     func makeAnimalFactory() -> AnimalFactoryType
+    func makeOrganizationFactory() -> OrganizationFactoryType
 }
 
 extension SharedFactoryType {
@@ -30,5 +31,9 @@ class SharedFactory: SharedFactoryType {
     
     func makeAnimalFactory() -> AnimalFactoryType {
         return AnimalFactory(sharedFactory: self)
+    }
+    
+    func makeOrganizationFactory() -> OrganizationFactoryType {
+        return OrganizationFactory(sharedFactory: self)
     }
 }

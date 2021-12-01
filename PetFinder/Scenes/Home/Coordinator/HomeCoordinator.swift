@@ -26,16 +26,23 @@ class HomeCoordinator: HomeCoordinatorType {
         let homeVC = homeFactory.makeHomeVC()
         homeVC.coordinator = self
         
-        let animalNavigationController = UINavigationController()
-        animalNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        let animalNC = UINavigationController()
+        animalNC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         let animalCoordinator = sharedFactory
             .makeAnimalFactory()
-            .makeAnimalCoordinator(navigationController: animalNavigationController)
+            .makeAnimalCoordinator(navigationController: animalNC)
         
-        homeVC.viewControllers = [animalNavigationController]
+        let organizationNC = UINavigationController()
+        organizationNC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        let organizationCoordinator = sharedFactory
+            .makeOrganizationFactory()
+            .makeOrganizationCoordinator(navigationController: organizationNC)
+        
+        homeVC.viewControllers = [animalNC, organizationNC]
         homeVC.modalPresentationStyle = .fullScreen
         navigationController.present(homeVC, animated: true, completion: nil)
         
         coordinate(to: animalCoordinator)
+        coordinate(to: organizationCoordinator)
     }
 }
