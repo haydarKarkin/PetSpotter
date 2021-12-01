@@ -47,6 +47,14 @@
 		3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49402758191900CB27AE /* OrganizationAPI.swift */; };
 		3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49422758192800CB27AE /* OrganizationsVC.swift */; };
 		3D9C49452758193300CB27AE /* OrganizationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49442758193300CB27AE /* OrganizationsVM.swift */; };
+		3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C494727581FD300CB27AE /* Onboarding.storyboard */; };
+		3D9C49502758201600CB27AE /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C494F2758201600CB27AE /* OnboardingCoordinator.swift */; };
+		3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49512758201F00CB27AE /* OnboardingFactory.swift */; };
+		3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49532758202900CB27AE /* OnboardingAPI.swift */; };
+		3D9C49562758203300CB27AE /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49552758203300CB27AE /* OnboardingService.swift */; };
+		3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49572758203C00CB27AE /* OnboardingVC.swift */; };
+		3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49592758204500CB27AE /* OnboardingVM.swift */; };
+		3D9C495D275823EC00CB27AE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C495C275823EC00CB27AE /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +121,14 @@
 		3D9C49402758191900CB27AE /* OrganizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationAPI.swift; sourceTree = "<group>"; };
 		3D9C49422758192800CB27AE /* OrganizationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsVC.swift; sourceTree = "<group>"; };
 		3D9C49442758193300CB27AE /* OrganizationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsVM.swift; sourceTree = "<group>"; };
+		3D9C494727581FD300CB27AE /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		3D9C494F2758201600CB27AE /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		3D9C49512758201F00CB27AE /* OnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactory.swift; sourceTree = "<group>"; };
+		3D9C49532758202900CB27AE /* OnboardingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAPI.swift; sourceTree = "<group>"; };
+		3D9C49552758203300CB27AE /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
+		3D9C49572758203C00CB27AE /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		3D9C49592758204500CB27AE /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
+		3D9C495C275823EC00CB27AE /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +226,7 @@
 		3D1146E02756963900E303FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3D9C494627581FB600CB27AE /* Onboarding */,
 				3D1147182756A38800E303FE /* Animal */,
 				3D9C492F275807E300CB27AE /* Home */,
 				3D1147172756A37F00E303FE /* Organization */,
@@ -488,6 +505,77 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		3D9C494627581FB600CB27AE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C495B275823E200CB27AE /* Models */,
+				3D9C494927581FD900CB27AE /* Coordinator */,
+				3D9C494A27581FE300CB27AE /* Factory */,
+				3D9C494B27581FEA00CB27AE /* Service */,
+				3D9C494C27581FF200CB27AE /* ViewControllers */,
+				3D9C494D27581FFB00CB27AE /* ViewModels */,
+				3D9C494E2758200200CB27AE /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3D9C494927581FD900CB27AE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C494F2758201600CB27AE /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3D9C494A27581FE300CB27AE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49512758201F00CB27AE /* OnboardingFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3D9C494B27581FEA00CB27AE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49532758202900CB27AE /* OnboardingAPI.swift */,
+				3D9C49552758203300CB27AE /* OnboardingService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3D9C494C27581FF200CB27AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49572758203C00CB27AE /* OnboardingVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D9C494D27581FFB00CB27AE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C49592758204500CB27AE /* OnboardingVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D9C494E2758200200CB27AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C494727581FD300CB27AE /* Onboarding.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D9C495B275823E200CB27AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C495C275823EC00CB27AE /* Token.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */,
+				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
@@ -620,12 +709,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9C49562758203300CB27AE /* OnboardingService.swift in Sources */,
 				3D9C493F2758190D00CB27AE /* OrganizationService.swift in Sources */,
 				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
 				3D9C493B275818F300CB27AE /* OrganizationCoordinator.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
 				3D9C49392758085600CB27AE /* HomeVC.swift in Sources */,
+				3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
@@ -633,8 +724,10 @@
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
+				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
+				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
@@ -647,12 +740,15 @@
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
+				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
+				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
+				3D9C49502758201600CB27AE /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
