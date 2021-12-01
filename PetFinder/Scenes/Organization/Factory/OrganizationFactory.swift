@@ -17,7 +17,7 @@ protocol OrganizationFactoryType {
 
 class OrganizationFactory: OrganizationFactoryType {
     
-    let sharedFactory: SharedFactoryType!
+    let sharedFactory: SharedFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory

@@ -9,7 +9,7 @@ import Foundation
 
 class OrganizationsVM: ViewModelType {
     
-    private let organizationService: OrganizationServiceType!
+    private let organizationService: OrganizationServiceType
     
     init(organizationService: OrganizationServiceType) {
         self.organizationService = organizationService

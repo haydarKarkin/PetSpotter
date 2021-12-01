@@ -15,7 +15,7 @@ protocol HomeFactoryType {
 
 class HomeFactory: HomeFactoryType {
     
-    let sharedFactory: SharedFactoryType!
+    let sharedFactory: SharedFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory

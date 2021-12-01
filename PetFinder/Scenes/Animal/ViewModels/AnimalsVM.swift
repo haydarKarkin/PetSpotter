@@ -9,7 +9,7 @@ import Foundation
 
 class AnimalsVM: ViewModelType {
     
-    private let animalService: AnimalServiceType!
+    private let animalService: AnimalServiceType
     
     init(animalService: AnimalServiceType) {
         self.animalService = animalService
