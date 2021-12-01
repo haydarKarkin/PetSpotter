@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 protocol OnboardingFactoryType {
-    func makeOnboardingCoordinator(navigationController: UINavigationController) -> OnboardingCoordinatorType
+    func makeOnboardingCoordinator(navigationController: UINavigationController, delegate: AppCoordinatorType) -> OnboardingCoordinatorType
     func makeOnboardingService() -> OnboardingServiceType
-    func makeOnboardingVM(onboardingService: OnboardingServiceType) -> OnboardingVM
-    func makeOnboardingVC() -> OnboardingVC
+    func makeOnboardingVM(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVM
+    func makeOnboardingVC(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVC
 }
 
 class OnboardingFactory: OnboardingFactoryType {
@@ -23,8 +23,8 @@ class OnboardingFactory: OnboardingFactoryType {
         self.sharedFactory = sharedFactory
     }
     
-    func makeOnboardingCoordinator(navigationController: UINavigationController) -> OnboardingCoordinatorType {
-        OnboardingCoordinator(navigationController: navigationController, onboardingFactory: self)
+    func makeOnboardingCoordinator(navigationController: UINavigationController, delegate: AppCoordinatorType) -> OnboardingCoordinatorType {
+        OnboardingCoordinator(navigationController: navigationController, onboardingFactory: self, delegate: delegate)
     }
     
     func makeOnboardingService() -> OnboardingServiceType {
@@ -32,14 +32,14 @@ class OnboardingFactory: OnboardingFactoryType {
         return OnboardingService(provider: clientProvider)
     }
     
-    func makeOnboardingVM(onboardingService: OnboardingServiceType) -> OnboardingVM {
-        OnboardingVM(onboardingService: onboardingService)
+    func makeOnboardingVM(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVM {
+        let service: OnboardingServiceType = makeOnboardingService()
+        return OnboardingVM(onboardingService: service, onboardingCoordinator: onboardingCoordinator)
     }
     
-    func makeOnboardingVC() -> OnboardingVC {
-        let service: OnboardingServiceType = makeOnboardingService()
+    func makeOnboardingVC(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVC {
         let viewController = OnboardingVC.instantiate()
-        viewController.viewModel = makeOnboardingVM(onboardingService: service)
+        viewController.viewModel = makeOnboardingVM(onboardingCoordinator: onboardingCoordinator)
         return viewController
     }
 }

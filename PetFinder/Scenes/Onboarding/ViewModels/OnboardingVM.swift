@@ -36,14 +36,15 @@ extension OnboardingVM {
     
     func getCredentials() {
         self.onLoadHandling?(true)
-        onboardingService.getCredentials() { result in
-            self.onLoadHandling?(false)
+        onboardingService.getCredentials() { [weak self] result in
+            self?.onLoadHandling?(false)
             switch result {
             case .success(let token):
                 // TODO: save token, trigger coordinator
-                print(token)
+                UserDefaults.standard.set(value: token, forKey: UserDefaults.Keys.token.rawValue)
+                self?.onboardingCoordinator.showHome()
             case .failure(let error):
-                self.onErrorHandling?(error)
+                self?.onErrorHandling?(error)
             }
         }
     }

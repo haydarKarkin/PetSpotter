@@ -7,7 +7,11 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+protocol AppCoordinatorType: Coordinator {
+    func showHome()
+}
+
+class AppCoordinator: AppCoordinatorType {
     
     private let window: UIWindow
     private let sharedFactory: SharedFactoryType
@@ -19,8 +23,20 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let navigationController = UINavigationController()
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        self.window.rootViewController = navigationController
+        self.window.makeKeyAndVisible()
+        
+        let onboardingCoordinator = sharedFactory
+            .makeOnboardingFactory()
+            .makeOnboardingCoordinator(navigationController: navigationController, delegate: self)
+        
+        coordinate(to: onboardingCoordinator)
+    }
+    
+    func showHome() {
+        let navigationController = UINavigationController()
+        self.window.rootViewController = navigationController
+        self.window.makeKeyAndVisible()
         
         let homeCoordinator = sharedFactory
             .makeHomeFactory()

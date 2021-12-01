@@ -55,6 +55,7 @@
 		3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49572758203C00CB27AE /* OnboardingVC.swift */; };
 		3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49592758204500CB27AE /* OnboardingVM.swift */; };
 		3D9C495D275823EC00CB27AE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C495C275823EC00CB27AE /* Token.swift */; };
+		3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		3D9C49572758203C00CB27AE /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		3D9C49592758204500CB27AE /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		3D9C495C275823EC00CB27AE /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
 				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
+				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
+				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
