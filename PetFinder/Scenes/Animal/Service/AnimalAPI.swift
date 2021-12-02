@@ -30,6 +30,10 @@ extension AnimalAPI: TargetType {
         }
     }
     
+    var shouldAuth: Bool {
+        return true
+    }
+    
     var parameters: [String: Any]? {
         
         var params: [String: Any] = [:]

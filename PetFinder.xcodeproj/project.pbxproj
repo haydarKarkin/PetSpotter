@@ -275,9 +275,9 @@
 		3D1146F027569ACC00E303FE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3D1146F127569B0700E303FE /* TargetType.swift */,
 				3D1146F327569B2F00E303FE /* ClientProvider.swift */,
 				3D1146F827569BE300E303FE /* ErrorHandler.swift */,
+				3D1146F127569B0700E303FE /* TargetType.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

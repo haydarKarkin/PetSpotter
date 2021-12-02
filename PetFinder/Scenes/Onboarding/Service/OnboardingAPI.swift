@@ -27,6 +27,10 @@ extension OnboardingAPI: TargetType {
         }
     }
     
+    var shouldAuth: Bool {
+        return false
+    }
+    
     var parameters: [String: Any]? {
         
         var params: [String: Any] = [:]

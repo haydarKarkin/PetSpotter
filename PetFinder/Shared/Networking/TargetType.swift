@@ -23,6 +23,7 @@ protocol TargetType {
     var cacheable: Bool { get }
     var sampleData: Data { get }
     var version: String { get }
+    var shouldAuth: Bool { get }
 }
 
 extension TargetType {
@@ -47,6 +48,16 @@ extension TargetType {
             }
         default:
             return request
+        }
+        
+        if shouldAuth {
+            do {
+                let token = try UserDefaults.standard.getObject(forKey: UserDefaults.Keys.token.rawValue,
+                                                                castTo: Token.self)
+                request.allHTTPHeaderFields = token.authHeader
+            } catch {
+                print("\(#function): \(error.localizedDescription)")
+            }
         }
         
         return request

@@ -57,4 +57,8 @@ extension Token {
         print("\n\(#function) = \(isValid)")
         return isValid
     }
+    
+    var authHeader: [String: String] {
+        return ["Authorization": "\(tokenType) \(token)"]
+    }
 }
