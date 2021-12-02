@@ -41,15 +41,14 @@ extension OnboardingVM: OnboardingVMType {
     
     func getCredentials() {
         self.onLoadHandling?(true)
-        onboardingService.getCredentials() { [weak self] result in
+        onboardingService.getCredentials() { [weak self] error in
             self?.onLoadHandling?(false)
-            switch result {
-            case .success(let token):
-                UserDefaults.standard.set(value: token, forKey: UserDefaults.Keys.token.rawValue)
+            
+            guard let error = error else {
                 self?.onboardingCoordinator.showHome()
-            case .failure(let error):
-                self?.onErrorHandling?(error)
+                return
             }
+            self?.onErrorHandling?(error)
         }
     }
 }

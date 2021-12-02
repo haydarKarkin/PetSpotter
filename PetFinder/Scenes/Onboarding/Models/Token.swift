@@ -21,6 +21,15 @@ struct Token: Codable {
         self.expiresIn = expiresIn
     }
     
+    // MARK: - Encodable
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(token, forKey: .token)
+        try container.encode(tokenType, forKey: .tokenType)
+        try container.encode(expiresIn - Date(), forKey: .expiresIn)
+    }
+    
     // MARK: - Decodable
     
     init(from decoder: Decoder) throws {

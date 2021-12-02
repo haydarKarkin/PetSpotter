@@ -11,4 +11,8 @@ extension Date {
     func adding(seconds: Int) -> Date {
         return Calendar.current.date(byAdding: .second, value: seconds, to: self)!
     }
+    
+    static func -(recent: Date, previous: Date) -> Int {
+        Calendar.current.dateComponents([.second], from: previous, to: recent).second ?? 0
+    }
 }

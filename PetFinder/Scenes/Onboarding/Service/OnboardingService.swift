@@ -8,7 +8,7 @@
 import Foundation
 
 protocol OnboardingServiceType {
-    func getCredentials(completion: @escaping(Result<Token, Error>) -> ())
+    func getCredentials(completion: @escaping(Error?) -> ())
 }
 
 class OnboardingService: OnboardingServiceType {
@@ -22,15 +22,21 @@ class OnboardingService: OnboardingServiceType {
 
 extension OnboardingService {
     
-    func getCredentials(completion: @escaping(Result<Token, Error>) -> ()) {
+    func getCredentials(completion: @escaping(Error?) -> ()) {
         provider.request(target: .token,
                          responseType: Token.self) { result in
             
             switch result {
             case .success(let resp):
-                completion(.success(resp))
+                do {
+                    try UserDefaults.standard.setObject(resp, forKey: UserDefaults.Keys.token.rawValue)
+                    completion(nil)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(ErrorHandler.ErrorType.decodingFailed)
+                }
             case .failure(let error):
-                completion(.failure(error))
+                completion(error)
                 print(error.localizedDescription)
             }
         }
