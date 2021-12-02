@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - LicenseModel
+// MARK: - Token
 struct Token: Codable {
     let token: String
     let tokenType: String

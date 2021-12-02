@@ -22,6 +22,7 @@ protocol TargetType {
     var method: TargetMethod { get }
     var cacheable: Bool { get }
     var sampleData: Data { get }
+    var version: String { get }
 }
 
 extension TargetType {
@@ -32,6 +33,21 @@ extension TargetType {
         }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+
+        switch method {
+        case .post, .put:
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters as Any)
+                if request.value(forHTTPHeaderField: "Content-Type") == nil {
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                }
+                request.httpBody = data
+            } catch {
+                print("\(#function): \(error.localizedDescription)")
+            }
+        default:
+            return request
+        }
         
         return request
     }
@@ -39,7 +55,7 @@ extension TargetType {
     /// create url with parameters
     private var url: URL? {
         var urlComponents = URLComponents(string: baseURL)
-        urlComponents?.path = path
+        urlComponents?.path = version + path
         
         if method == .get {
             guard let parameters = parameters else {

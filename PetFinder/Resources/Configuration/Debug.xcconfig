@@ -8,7 +8,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-ROOT_URL = https:/$()/api.petfinder.com/v2
+ROOT_URL = https:/$()/api.petfinder.com
 ENV_TYPE = DEBUG
 API_KEY = 6T0fOJvGW3PnXXr5fSu1oa5ePtX6hp3PRFMjohvo205Co7ehG2
 SECRET = T7AJElZNRosxn1f5ziQFZhJJkWKuh7vyIhhoAyba

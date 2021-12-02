@@ -17,6 +17,10 @@ extension AnimalAPI: TargetType {
         return Environment.rootURL.absoluteString
     }
     
+    var version: String {
+        return "/v2"
+    }
+    
     var path: String {
         switch self {
         case .animals:
