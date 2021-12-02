@@ -19,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         dataController.load()
-        appCoordinator = AppCoordinator(window: window!, sharedFactory: SharedFactory())
+        
+        let navigationController = UINavigationController()
+        appCoordinator = AppCoordinator(navigationController: navigationController,
+                                        sharedFactory: SharedFactory())
         appCoordinator.start()
+        
+        window!.rootViewController = navigationController
+        window!.makeKeyAndVisible()
         
         return true
     }

@@ -40,8 +40,10 @@ class HomeCoordinator: HomeCoordinatorType {
         
         homeVC.viewControllers = [animalNC, organizationNC]
         homeVC.modalPresentationStyle = .fullScreen
-        navigationController.present(homeVC, animated: true, completion: nil)
         
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController.present(homeVC, animated: true, completion: nil)
+        }
         coordinate(to: animalCoordinator)
         coordinate(to: organizationCoordinator)
     }
