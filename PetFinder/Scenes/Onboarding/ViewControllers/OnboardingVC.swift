@@ -19,6 +19,9 @@ class OnboardingVC: ViewController<OnboardingVM> {
     
     override func bindViewModel() {
         super.bindViewModel()
+        
+        let input = OnboardingVM.Input()
+        viewModel.transform(input: input) { _ in }
     }
 }
 

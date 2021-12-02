@@ -16,6 +16,10 @@ extension OnboardingAPI: TargetType {
         return Environment.rootURL.absoluteString
     }
     
+    var version: String {
+        return "/v2"
+    }
+    
     var path: String {
         switch self {
         case .token:
@@ -26,13 +30,21 @@ extension OnboardingAPI: TargetType {
     var parameters: [String: Any]? {
         
         var params: [String: Any] = [:]
+        
+        switch self {
+        case .token:
+            params["grant_type"] = "client_credentials"
+            params["client_id"] = Environment.apiKey
+            params["client_secret"] = Environment.secret
+        }
+        
         return params
     }
     
     var method: TargetMethod {
         switch self {
         case .token:
-            return .get
+            return .post
         }
     }
 }

@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol OnboardingVMType {
+    func getCredentials()
+}
+
 class OnboardingVM: ViewModelType {
     
     private let onboardingService: OnboardingServiceType
@@ -27,12 +31,13 @@ extension OnboardingVM {
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
+        getCredentials()
         output(Output())
     }
 }
 
 // MARK: - Logics
-extension OnboardingVM {
+extension OnboardingVM: OnboardingVMType {
     
     func getCredentials() {
         self.onLoadHandling?(true)
@@ -40,7 +45,6 @@ extension OnboardingVM {
             self?.onLoadHandling?(false)
             switch result {
             case .success(let token):
-                // TODO: save token, trigger coordinator
                 UserDefaults.standard.set(value: token, forKey: UserDefaults.Keys.token.rawValue)
                 self?.onboardingCoordinator.showHome()
             case .failure(let error):
