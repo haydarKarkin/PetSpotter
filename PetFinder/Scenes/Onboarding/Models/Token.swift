@@ -28,7 +28,7 @@ struct Token: Codable {
         let token = try container.decode(String.self, forKey: .token)
         let tokenType =  try container.decode(String.self, forKey: .tokenType)
         let expiresIn = try container.decode(Int.self, forKey: .expiresIn)
-        let tokenExpirationDate = Date().addingTimeInterval(TimeInterval(expiresIn))
+        let tokenExpirationDate = Date().adding(seconds: expiresIn)
         self.init(token: token, tokenType: tokenType, expiresIn: tokenExpirationDate)
     }
     

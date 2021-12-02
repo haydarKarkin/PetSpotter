@@ -38,6 +38,7 @@
 		3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472F2756A57900E303FE /* AnimalsVM.swift */; };
 		3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147312756A76D00E303FE /* AnimalAPI.swift */; };
 		3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147332756AE9900E303FE /* Storyboarded.swift */; };
+		3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9536E4275974F800730A67 /* Date+Ext.swift */; };
 		3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49342758083F00CB27AE /* HomeCoordinator.swift */; };
 		3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49362758084B00CB27AE /* HomeFactory.swift */; };
 		3D9C49392758085600CB27AE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49382758085600CB27AE /* HomeVC.swift */; };
@@ -113,6 +114,7 @@
 		3D11472F2756A57900E303FE /* AnimalsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVM.swift; sourceTree = "<group>"; };
 		3D1147312756A76D00E303FE /* AnimalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAPI.swift; sourceTree = "<group>"; };
 		3D1147332756AE9900E303FE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		3D9536E4275974F800730A67 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3D9C49342758083F00CB27AE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		3D9C49362758084B00CB27AE /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		3D9C49382758085600CB27AE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -341,10 +343,11 @@
 		3D11470B2756A21F00E303FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3D9536E4275974F800730A67 /* Date+Ext.swift */,
 				3D11470C2756A22D00E303FE /* Reusable.swift */,
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
-				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
+				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
 				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
@@ -745,6 +748,7 @@
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
+				3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
