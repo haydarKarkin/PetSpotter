@@ -16,20 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnimalsVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krx-Ha-4QO">
-                                <rect key="frame" x="166" y="442.5" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-vp-HP4">
+                                <rect key="frame" x="8" y="52" width="398" height="802"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="krx-Ha-4QO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cGG-cl-4W7"/>
-                            <constraint firstItem="krx-Ha-4QO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hlK-EF-ws3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8JD-vp-HP4" secondAttribute="bottom" constant="8" id="6cB-Ks-VsK"/>
+                            <constraint firstItem="8JD-vp-HP4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="q5e-Yy-sKS"/>
+                            <constraint firstItem="8JD-vp-HP4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tDB-a6-AQ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8JD-vp-HP4" secondAttribute="trailing" constant="8" id="yyf-TW-AML"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8JD-vp-HP4" id="6HW-4B-szQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

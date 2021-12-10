@@ -27,7 +27,7 @@ class HomeCoordinator: HomeCoordinatorType {
         homeVC.coordinator = self
         
         let animalNC = UINavigationController()
-        animalNC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        animalNC.tabBarItem = UITabBarItem(title: "Animals", image: .actions, tag: 0)
         let animalCoordinator = sharedFactory
             .makeAnimalFactory()
             .makeAnimalCoordinator(navigationController: animalNC)
