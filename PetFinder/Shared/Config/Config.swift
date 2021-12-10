@@ -23,4 +23,8 @@ struct Configs {
         }()
         static let minCharForSearch: Int = 3
     }
+    
+    struct UI {
+        static let estimatedRowHeight: CGFloat = 50.0
+    }
 }
