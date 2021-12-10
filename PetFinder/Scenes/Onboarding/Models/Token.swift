@@ -52,8 +52,7 @@ struct Token: Codable {
 
 extension Token {
     func isTokenValid() -> Bool {
-        let tokenDate = expiresIn
-        let isValid = Date() < tokenDate && !token.isEmpty
+        let isValid = Date() < expiresIn && !token.isEmpty
         print("\n\(#function) = \(isValid)")
         return isValid
     }
