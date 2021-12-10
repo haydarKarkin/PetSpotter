@@ -47,7 +47,7 @@ extension TargetType {
                 print("\(#function): \(error.localizedDescription)")
             }
         default:
-            return request
+            break
         }
         
         if shouldAuth {
