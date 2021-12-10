@@ -57,6 +57,12 @@
 		3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49592758204500CB27AE /* OnboardingVM.swift */; };
 		3D9C495D275823EC00CB27AE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C495C275823EC00CB27AE /* Token.swift */; };
 		3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */; };
+		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
+		3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057B2763D2DA001A943C /* AnimalCell.swift */; };
+		3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4057C2763D2DA001A943C /* AnimalCell.xib */; };
+		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
+		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
+		3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +139,12 @@
 		3D9C49592758204500CB27AE /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		3D9C495C275823EC00CB27AE /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		3DF4057B2763D2DA001A943C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		3DF4057C2763D2DA001A943C /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
+		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
+		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +287,7 @@
 		3D1146F027569ACC00E303FE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3DF405812763E9BF001A943C /* Model */,
 				3D1146F327569B2F00E303FE /* ClientProvider.swift */,
 				3D1146F827569BE300E303FE /* ErrorHandler.swift */,
 				3D1146F127569B0700E303FE /* TargetType.swift */,
@@ -344,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9536E4275974F800730A67 /* Date+Ext.swift */,
+				3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */,
 				3D11470C2756A22D00E303FE /* Reusable.swift */,
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
@@ -406,6 +420,7 @@
 		3D11471F2756A4D600E303FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DF4057A2763D24D001A943C /* AnimalCell */,
 				3D1146B1275695CD00E303FE /* Animal.storyboard */,
 			);
 			path = Views;
@@ -414,6 +429,7 @@
 		3D1147202756A4E500E303FE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3DF405772763D1F0001A943C /* Model */,
 				3D1147312756A76D00E303FE /* AnimalAPI.swift */,
 				3D11472D2756A56B00E303FE /* AnimalService.swift */,
 			);
@@ -582,6 +598,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3DF405772763D1F0001A943C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DF405782763D1FD001A943C /* Animal.swift */,
+				3DF4057F2763E817001A943C /* Animals.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DF4057A2763D24D001A943C /* AnimalCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DF4057B2763D2DA001A943C /* AnimalCell.swift */,
+				3DF4057C2763D2DA001A943C /* AnimalCell.xib */,
+			);
+			path = AnimalCell;
+			sourceTree = "<group>";
+		};
+		3DF405812763E9BF001A943C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DF405822763E9CD001A943C /* Pagination.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -689,6 +731,7 @@
 				3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
+				3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
 			);
@@ -725,10 +768,13 @@
 				3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
+				3DF405802763E817001A943C /* Animals.swift in Sources */,
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
+				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,
+				3DF405832763E9CD001A943C /* Pagination.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
@@ -736,6 +782,7 @@
 				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
+				3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
 				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
@@ -753,6 +800,7 @@
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
+				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
