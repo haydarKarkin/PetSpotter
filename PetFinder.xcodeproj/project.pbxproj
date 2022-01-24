@@ -64,6 +64,8 @@
 		3DB80C70279F25B5003BE349 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C6F279F25B5003BE349 /* Hours.swift */; };
 		3DB80C72279F2617003BE349 /* Adoption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C71279F2617003BE349 /* Adoption.swift */; };
 		3DB80C74279F2688003BE349 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C73279F2688003BE349 /* Photo.swift */; };
+		3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C75279F3163003BE349 /* OrganizationCell.swift */; };
+		3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB80C76279F3163003BE349 /* OrganizationCell.xib */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057B2763D2DA001A943C /* AnimalCell.swift */; };
 		3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4057C2763D2DA001A943C /* AnimalCell.xib */; };
@@ -153,6 +155,8 @@
 		3DB80C6F279F25B5003BE349 /* Hours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
 		3DB80C71279F2617003BE349 /* Adoption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adoption.swift; sourceTree = "<group>"; };
 		3DB80C73279F2688003BE349 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		3DB80C75279F3163003BE349 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
+		3DB80C76279F3163003BE349 /* OrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057B2763D2DA001A943C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		3DF4057C2763D2DA001A943C /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
@@ -485,6 +489,7 @@
 		3D1147262756A52600E303FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DB80C79279F316E003BE349 /* OrganizationCell */,
 				3D1147192756A3C300E303FE /* Organization.storyboard */,
 			);
 			path = Views;
@@ -627,6 +632,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3DB80C79279F316E003BE349 /* OrganizationCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DB80C76279F3163003BE349 /* OrganizationCell.xib */,
+				3DB80C75279F3163003BE349 /* OrganizationCell.swift */,
+			);
+			path = OrganizationCell;
+			sourceTree = "<group>";
+		};
 		3DF405772763D1F0001A943C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */,
+				3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
 				3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */,
@@ -822,6 +837,7 @@
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
+				3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */,
 				3D9C49452758193300CB27AE /* OrganizationsVM.swift in Sources */,
 				3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */,
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
