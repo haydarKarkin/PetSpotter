@@ -8,7 +8,7 @@
 import Foundation
 
 enum OrganizationAPI {
-    case organizations
+    case organizations(perPage: Int, page: Int)
     case organization(id: String)
 }
 
@@ -37,6 +37,15 @@ extension OrganizationAPI: TargetType {
     var parameters: [String: Any]? {
         
         var params: [String: Any] = [:]
+        
+        switch self {
+        case .organizations(let perPage, let page):
+            params["limit"] = perPage
+            params["page"] = page
+        default:
+            break
+        }
+        
         return params
     }
     

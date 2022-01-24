@@ -17,4 +17,19 @@ class OrganizationService: OrganizationServiceType {
     init(provider: ClientProvider<OrganizationAPI>) {
         self.provider = provider
     }
+    
+    func getOrganizaions(page: Int, completion: @escaping(Result<Organizations, Error>) -> ()) {
+        provider.request(target: .organizations(perPage: Configs.Network.paginationNumber,
+                                          page: page),
+                         responseType: Organizations.self) { result in
+            
+            switch result {
+            case .success(let resp):
+                completion(.success(resp))
+            case .failure(let error):
+                completion(.failure(error))
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
