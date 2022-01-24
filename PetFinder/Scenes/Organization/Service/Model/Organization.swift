@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Animal
 struct Organization: Codable {
     
-    let id: Int
+    let id: String
     let name: String?
     let email: String?
     let phone: String?
@@ -40,7 +40,7 @@ struct Organization: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
+        self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decodeIfPresent(String.self, forKey: .name)
         self.email = try container.decodeIfPresent(String.self, forKey: .email)
         self.phone = try container.decodeIfPresent(String.self, forKey: .phone)

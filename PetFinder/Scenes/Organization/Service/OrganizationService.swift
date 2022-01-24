@@ -8,6 +8,7 @@
 import Foundation
 
 protocol OrganizationServiceType {
+    func getOrganizations(page: Int, completion: @escaping(Result<Organizations, Error>) -> ())
 }
 
 class OrganizationService: OrganizationServiceType {
@@ -18,7 +19,7 @@ class OrganizationService: OrganizationServiceType {
         self.provider = provider
     }
     
-    func getOrganizaions(page: Int, completion: @escaping(Result<Organizations, Error>) -> ()) {
+    func getOrganizations(page: Int, completion: @escaping(Result<Organizations, Error>) -> ()) {
         provider.request(target: .organizations(perPage: Configs.Network.paginationNumber,
                                           page: page),
                          responseType: Organizations.self) { result in
