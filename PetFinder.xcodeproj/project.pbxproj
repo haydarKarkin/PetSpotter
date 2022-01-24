@@ -57,6 +57,13 @@
 		3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49592758204500CB27AE /* OnboardingVM.swift */; };
 		3D9C495D275823EC00CB27AE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C495C275823EC00CB27AE /* Token.swift */; };
 		3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */; };
+		3DB80C68279F230F003BE349 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C67279F230F003BE349 /* Organization.swift */; };
+		3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C69279F2534003BE349 /* Organizations.swift */; };
+		3DB80C6C279F257A003BE349 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C6B279F257A003BE349 /* Address.swift */; };
+		3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C6D279F25AB003BE349 /* SocialMedia.swift */; };
+		3DB80C70279F25B5003BE349 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C6F279F25B5003BE349 /* Hours.swift */; };
+		3DB80C72279F2617003BE349 /* Adoption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C71279F2617003BE349 /* Adoption.swift */; };
+		3DB80C74279F2688003BE349 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C73279F2688003BE349 /* Photo.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057B2763D2DA001A943C /* AnimalCell.swift */; };
 		3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4057C2763D2DA001A943C /* AnimalCell.xib */; };
@@ -139,6 +146,13 @@
 		3D9C49592758204500CB27AE /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		3D9C495C275823EC00CB27AE /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		3DB80C67279F230F003BE349 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		3DB80C69279F2534003BE349 /* Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizations.swift; sourceTree = "<group>"; };
+		3DB80C6B279F257A003BE349 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		3DB80C6D279F25AB003BE349 /* SocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		3DB80C6F279F25B5003BE349 /* Hours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
+		3DB80C71279F2617003BE349 /* Adoption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adoption.swift; sourceTree = "<group>"; };
+		3DB80C73279F2688003BE349 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057B2763D2DA001A943C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		3DF4057C2763D2DA001A943C /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
@@ -479,6 +493,7 @@
 		3D1147272756A52F00E303FE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3DB80C66279F22F7003BE349 /* Model */,
 				3D9C493E2758190D00CB27AE /* OrganizationService.swift */,
 				3D9C49402758191900CB27AE /* OrganizationAPI.swift */,
 			);
@@ -596,6 +611,20 @@
 				3D9C495C275823EC00CB27AE /* Token.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3DB80C66279F22F7003BE349 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DB80C6B279F257A003BE349 /* Address.swift */,
+				3DB80C71279F2617003BE349 /* Adoption.swift */,
+				3DB80C6F279F25B5003BE349 /* Hours.swift */,
+				3DB80C67279F230F003BE349 /* Organization.swift */,
+				3DB80C69279F2534003BE349 /* Organizations.swift */,
+				3DB80C73279F2688003BE349 /* Photo.swift */,
+				3DB80C6D279F25AB003BE349 /* SocialMedia.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3DF405772763D1F0001A943C /* Model */ = {
@@ -762,6 +791,7 @@
 				3D9C493F2758190D00CB27AE /* OrganizationService.swift in Sources */,
 				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
 				3D9C493B275818F300CB27AE /* OrganizationCoordinator.swift in Sources */,
+				3DB80C72279F2617003BE349 /* Adoption.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
 				3D9C49392758085600CB27AE /* HomeVC.swift in Sources */,
@@ -770,6 +800,7 @@
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
 				3DF405802763E817001A943C /* Animals.swift in Sources */,
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
+				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
@@ -784,7 +815,9 @@
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
+				3DB80C74279F2688003BE349 /* Photo.swift in Sources */,
 				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
@@ -792,6 +825,8 @@
 				3D9C49452758193300CB27AE /* OrganizationsVM.swift in Sources */,
 				3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */,
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
+				3DB80C6C279F257A003BE349 /* Address.swift in Sources */,
+				3DB80C68279F230F003BE349 /* Organization.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
@@ -801,6 +836,7 @@
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
+				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
