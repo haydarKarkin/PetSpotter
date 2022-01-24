@@ -27,13 +27,13 @@ class HomeCoordinator: HomeCoordinatorType {
         homeVC.coordinator = self
         
         let animalNC = UINavigationController()
-        animalNC.tabBarItem = UITabBarItem(title: "Animals", image: .actions, tag: 0)
+        animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(named: "Animals"), tag: 0)
         let animalCoordinator = sharedFactory
             .makeAnimalFactory()
             .makeAnimalCoordinator(navigationController: animalNC)
         
         let organizationNC = UINavigationController()
-        organizationNC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        organizationNC.tabBarItem = UITabBarItem(title: "Organizations", image: UIImage(named: "Organizations"), tag: 1)
         let organizationCoordinator = sharedFactory
             .makeOrganizationFactory()
             .makeOrganizationCoordinator(navigationController: organizationNC)
