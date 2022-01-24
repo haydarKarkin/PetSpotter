@@ -10,6 +10,7 @@ import Foundation
 enum AnimalAPI {
     case animals(perPage: Int, page: Int)
     case animal(id: String)
+    case types
 }
 
 extension AnimalAPI: TargetType {
@@ -27,6 +28,8 @@ extension AnimalAPI: TargetType {
             return "/animals"
         case .animal(let id):
             return "/animals/\(id)"
+        case .types:
+            return "/types"
         }
     }
     
@@ -51,7 +54,7 @@ extension AnimalAPI: TargetType {
     
     var method: TargetMethod {
         switch self {
-        case .animals, .animal:
+        case .animals, .animal, .types:
             return .get
         }
     }
@@ -63,6 +66,7 @@ extension AnimalAPI {
         switch self {
         case .animals: return "Animals".data(using: .utf8)!
         case .animal: return "Animal".data(using: .utf8)!
+        case .types : return "Types".data(using: .utf8)!
         }
     }
 }

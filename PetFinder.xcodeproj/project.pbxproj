@@ -66,6 +66,8 @@
 		3DB80C74279F2688003BE349 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C73279F2688003BE349 /* Photo.swift */; };
 		3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C75279F3163003BE349 /* OrganizationCell.swift */; };
 		3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB80C76279F3163003BE349 /* OrganizationCell.xib */; };
+		3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */; };
+		3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7C279F3CF4003BE349 /* AnimalType.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057B2763D2DA001A943C /* AnimalCell.swift */; };
 		3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4057C2763D2DA001A943C /* AnimalCell.xib */; };
@@ -157,6 +159,8 @@
 		3DB80C73279F2688003BE349 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3DB80C75279F3163003BE349 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 		3DB80C76279F3163003BE349 /* OrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
+		3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypes.swift; sourceTree = "<group>"; };
+		3DB80C7C279F3CF4003BE349 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057B2763D2DA001A943C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		3DF4057C2763D2DA001A943C /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
@@ -646,6 +650,8 @@
 			children = (
 				3DF405782763D1FD001A943C /* Animal.swift */,
 				3DF4057F2763E817001A943C /* Animals.swift */,
+				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
+				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -829,6 +835,7 @@
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */,
+				3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
@@ -836,6 +843,7 @@
 				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
+				3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
 				3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */,
 				3D9C49452758193300CB27AE /* OrganizationsVM.swift in Sources */,
