@@ -9,6 +9,7 @@ import Foundation
 
 protocol OrganizationServiceType {
     func getOrganizations(page: Int, completion: @escaping(Result<Organizations, Error>) -> ())
+    func getOrganization(id: String, completion: @escaping(Result<Organization, Error>) -> ())
 }
 
 class OrganizationService: OrganizationServiceType {
@@ -23,6 +24,20 @@ class OrganizationService: OrganizationServiceType {
         provider.request(target: .organizations(perPage: Configs.Network.paginationNumber,
                                           page: page),
                          responseType: Organizations.self) { result in
+            
+            switch result {
+            case .success(let resp):
+                completion(.success(resp))
+            case .failure(let error):
+                completion(.failure(error))
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getOrganization(id: String, completion: @escaping(Result<Organization, Error>) -> ()) {
+        provider.request(target: .organization(id: id),
+                         responseType: Organization.self) { result in
             
             switch result {
             case .success(let resp):
