@@ -13,9 +13,6 @@
 		3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */; };
 		3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B7275695CF00E303FE /* Assets.xcassets */; };
 		3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B9275695CF00E303FE /* LaunchScreen.storyboard */; };
-		3D1146C6275695CF00E303FE /* PetFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146C5275695CF00E303FE /* PetFinderTests.swift */; };
-		3D1146D0275695CF00E303FE /* PetFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146CF275695CF00E303FE /* PetFinderUITests.swift */; };
-		3D1146D2275695CF00E303FE /* PetFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */; };
 		3D1146E4275696CD00E303FE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146E3275696CD00E303FE /* DataController.swift */; };
 		3D1146F227569B0700E303FE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F127569B0700E303FE /* TargetType.swift */; };
 		3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146F327569B2F00E303FE /* ClientProvider.swift */; };
@@ -85,23 +82,6 @@
 		3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */; };
 		3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1F027A599E3008226F3 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3D1146C2275695CF00E303FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D1146A0275695CD00E303FE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D1146A7275695CD00E303FE;
-			remoteInfo = PetFinder;
-		};
-		3D1146CC275695CF00E303FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D1146A0275695CD00E303FE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D1146A7275695CD00E303FE;
-			remoteInfo = PetFinder;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D1146A8275695CD00E303FE /* PetFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,20 +177,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D1146BE275695CF00E303FE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D1146C8275695CF00E303FE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -218,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				3D1146AA275695CD00E303FE /* PetFinder */,
-				3D1146C4275695CF00E303FE /* PetFinderTests */,
-				3D1146CE275695CF00E303FE /* PetFinderUITests */,
 				3D1146A9275695CD00E303FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				3D1146A8275695CD00E303FE /* PetFinder.app */,
-				3D1146C1275695CF00E303FE /* PetFinderTests.xctest */,
-				3D1146CB275695CF00E303FE /* PetFinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,23 +206,6 @@
 				3D1146E12756966000E303FE /* SupportingItems */,
 			);
 			path = PetFinder;
-			sourceTree = "<group>";
-		};
-		3D1146C4275695CF00E303FE /* PetFinderTests */ = {
-			isa = PBXGroup;
-			children = (
-				3D1146C5275695CF00E303FE /* PetFinderTests.swift */,
-			);
-			path = PetFinderTests;
-			sourceTree = "<group>";
-		};
-		3D1146CE275695CF00E303FE /* PetFinderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3D1146CF275695CF00E303FE /* PetFinderUITests.swift */,
-				3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */,
-			);
-			path = PetFinderUITests;
 			sourceTree = "<group>";
 		};
 		3D1146DE2756962600E303FE /* App */ = {
@@ -795,42 +740,6 @@
 			productReference = 3D1146A8275695CD00E303FE /* PetFinder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D1146C0275695CF00E303FE /* PetFinderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D1146D8275695CF00E303FE /* Build configuration list for PBXNativeTarget "PetFinderTests" */;
-			buildPhases = (
-				3D1146BD275695CF00E303FE /* Sources */,
-				3D1146BE275695CF00E303FE /* Frameworks */,
-				3D1146BF275695CF00E303FE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3D1146C3275695CF00E303FE /* PBXTargetDependency */,
-			);
-			name = PetFinderTests;
-			productName = PetFinderTests;
-			productReference = 3D1146C1275695CF00E303FE /* PetFinderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3D1146CA275695CF00E303FE /* PetFinderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D1146DB275695CF00E303FE /* Build configuration list for PBXNativeTarget "PetFinderUITests" */;
-			buildPhases = (
-				3D1146C7275695CF00E303FE /* Sources */,
-				3D1146C8275695CF00E303FE /* Frameworks */,
-				3D1146C9275695CF00E303FE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3D1146CD275695CF00E303FE /* PBXTargetDependency */,
-			);
-			name = PetFinderUITests;
-			productName = PetFinderUITests;
-			productReference = 3D1146CB275695CF00E303FE /* PetFinderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -843,14 +752,6 @@
 				TargetAttributes = {
 					3D1146A7275695CD00E303FE = {
 						CreatedOnToolsVersion = 13.1;
-					};
-					3D1146C0275695CF00E303FE = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 3D1146A7275695CD00E303FE;
-					};
-					3D1146CA275695CF00E303FE = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 3D1146A7275695CD00E303FE;
 					};
 				};
 			};
@@ -868,8 +769,6 @@
 			projectRoot = "";
 			targets = (
 				3D1146A7275695CD00E303FE /* PetFinder */,
-				3D1146C0275695CF00E303FE /* PetFinderTests */,
-				3D1146CA275695CF00E303FE /* PetFinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -889,20 +788,7 @@
 				3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D1146BF275695CF00E303FE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D1146C9275695CF00E303FE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				3DF8C1FB27A5C234008226F3 /* AnimalMap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,37 +866,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D1146BD275695CF00E303FE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D1146C6275695CF00E303FE /* PetFinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D1146C7275695CF00E303FE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D1146D2275695CF00E303FE /* PetFinderUITestsLaunchTests.swift in Sources */,
-				3D1146D0275695CF00E303FE /* PetFinderUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3D1146C3275695CF00E303FE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D1146A7275695CD00E303FE /* PetFinder */;
-			targetProxy = 3D1146C2275695CF00E303FE /* PBXContainerItemProxy */;
-		};
-		3D1146CD275695CF00E303FE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D1146A7275695CD00E303FE /* PetFinder */;
-			targetProxy = 3D1146CC275695CF00E303FE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3D1146B1275695CD00E303FE /* Animal.storyboard */ = {
@@ -1206,102 +1062,6 @@
 			};
 			name = Release;
 		};
-		3D1146D9275695CF00E303FE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UD7WHFPS9C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haydar.PetFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetFinder.app/PetFinder";
-			};
-			name = Debug;
-		};
-		3D1146DA275695CF00E303FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UD7WHFPS9C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haydar.PetFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetFinder.app/PetFinder";
-			};
-			name = Release;
-		};
-		3D1146DC275695CF00E303FE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UD7WHFPS9C;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haydar.PetFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PetFinder;
-			};
-			name = Debug;
-		};
-		3D1146DD275695CF00E303FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UD7WHFPS9C;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haydar.PetFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PetFinder;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1319,24 +1079,6 @@
 			buildConfigurations = (
 				3D1146D6275695CF00E303FE /* Debug */,
 				3D1146D7275695CF00E303FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3D1146D8275695CF00E303FE /* Build configuration list for PBXNativeTarget "PetFinderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D1146D9275695CF00E303FE /* Debug */,
-				3D1146DA275695CF00E303FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3D1146DB275695CF00E303FE /* Build configuration list for PBXNativeTarget "PetFinderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D1146DC275695CF00E303FE /* Debug */,
-				3D1146DD275695CF00E303FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
