@@ -13,6 +13,7 @@ protocol SharedFactoryType {
     func makeAnimalFactory() -> AnimalFactoryType
     func makeOrganizationFactory() -> OrganizationFactoryType
     func makeOnboardingFactory() -> OnboardingFactoryType
+    func makeFavoriteFactory() -> FavoriteFactoryType
 }
 
 extension SharedFactoryType {
@@ -40,5 +41,9 @@ class SharedFactory: SharedFactoryType {
     
     func makeOnboardingFactory() -> OnboardingFactoryType {
         return OnboardingFactory(sharedFactory: self)
+    }
+    
+    func makeFavoriteFactory() -> FavoriteFactoryType {
+        return FavoriteFactory(sharedFactory: self)
     }
 }

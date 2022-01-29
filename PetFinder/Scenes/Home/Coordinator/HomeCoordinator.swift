@@ -26,19 +26,27 @@ class HomeCoordinator: HomeCoordinatorType {
         let homeVC = homeFactory.makeHomeVC()
         homeVC.coordinator = self
         
+        UITabBar.appearance().tintColor = UIColor(named: "PrimaryRed")
+        
         let animalNC = UINavigationController()
-        animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(named: "Animals"), tag: 0)
+        animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(systemName: "pawprint"), tag: 0)
         let animalCoordinator = sharedFactory
             .makeAnimalFactory()
             .makeAnimalCoordinator(navigationController: animalNC)
         
+        let favoriteNC = UINavigationController()
+        favoriteNC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
+        let favoriteCoordinator = sharedFactory
+            .makeFavoriteFactory()
+            .makeFavoriteCoordinator(navigationController: favoriteNC)
+        
         let organizationNC = UINavigationController()
-        organizationNC.tabBarItem = UITabBarItem(title: "Organizations", image: UIImage(named: "Organizations"), tag: 1)
+        organizationNC.tabBarItem = UITabBarItem(title: "Organizations", image: UIImage(systemName: "house"), tag: 2)
         let organizationCoordinator = sharedFactory
             .makeOrganizationFactory()
             .makeOrganizationCoordinator(navigationController: organizationNC)
         
-        homeVC.viewControllers = [animalNC, organizationNC]
+        homeVC.viewControllers = [animalNC, favoriteNC, organizationNC]
         homeVC.modalPresentationStyle = .fullScreen
         
         DispatchQueue.main.async { [weak self] in
@@ -46,5 +54,6 @@ class HomeCoordinator: HomeCoordinatorType {
         }
         coordinate(to: animalCoordinator)
         coordinate(to: organizationCoordinator)
+        coordinate(to: favoriteCoordinator)
     }
 }
