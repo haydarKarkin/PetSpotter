@@ -83,6 +83,7 @@
 		3DF8C1EA27A58BC1008226F3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1E927A58BC1008226F3 /* Favorite.swift */; };
 		3DF8C1EE27A58E15008226F3 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */; };
 		3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */; };
+		3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1F027A599E3008226F3 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		3DF8C1E927A58BC1008226F3 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		3DF8C1F027A599E3008226F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 				3D1146B7275695CF00E303FE /* Assets.xcassets */,
 				3D1146BC275695CF00E303FE /* Info.plist */,
 				3D1146B9275695CF00E303FE /* LaunchScreen.storyboard */,
+				3DF8C1F027A599E3008226F3 /* Colors.xcassets */,
 			);
 			path = SupportingItems;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 				3DF8C1DD27A585D8008226F3 /* Favorite.storyboard in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
+				3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */,
 				3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */,
 				3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
