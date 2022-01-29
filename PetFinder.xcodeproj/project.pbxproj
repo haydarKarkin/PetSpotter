@@ -81,6 +81,11 @@
 		3DF8C1EE27A58E15008226F3 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */; };
 		3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */; };
 		3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1F027A599E3008226F3 /* Colors.xcassets */; };
+		3DF8C1FB27A5C234008226F3 /* AnimalMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1FA27A5C234008226F3 /* AnimalMap.storyboard */; };
+		3DF8C1FD27A5C248008226F3 /* AnimalMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1FC27A5C248008226F3 /* AnimalMapCoordinator.swift */; };
+		3DF8C1FF27A5C255008226F3 /* AnimalMapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1FE27A5C255008226F3 /* AnimalMapFactory.swift */; };
+		3DF8C20127A5C26C008226F3 /* AnimalMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C20027A5C26C008226F3 /* AnimalMapVC.swift */; };
+		3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C20227A5C276008226F3 /* AnimalMapVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,12 +96,7 @@
 		3D1146B5275695CD00E303FE /* PetFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetFinder.xcdatamodel; sourceTree = "<group>"; };
 		3D1146B7275695CF00E303FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1146BA275695CF00E303FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3D1146BC275695CF00E303FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D1146C1275695CF00E303FE /* PetFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D1146C5275695CF00E303FE /* PetFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderTests.swift; sourceTree = "<group>"; };
-		3D1146CB275695CF00E303FE /* PetFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D1146CF275695CF00E303FE /* PetFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITests.swift; sourceTree = "<group>"; };
-		3D1146D1275695CF00E303FE /* PetFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D1146BC275695CF00E303FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PetFinder/SupportingItems/Info.plist; sourceTree = SOURCE_ROOT; };
 		3D1146E3275696CD00E303FE /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3D1146F127569B0700E303FE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		3D1146F327569B2F00E303FE /* ClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProvider.swift; sourceTree = "<group>"; };
@@ -167,6 +167,11 @@
 		3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		3DF8C1F027A599E3008226F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3DF8C1FA27A5C234008226F3 /* AnimalMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalMap.storyboard; sourceTree = "<group>"; };
+		3DF8C1FC27A5C248008226F3 /* AnimalMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMapCoordinator.swift; sourceTree = "<group>"; };
+		3DF8C1FE27A5C255008226F3 /* AnimalMapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMapFactory.swift; sourceTree = "<group>"; };
+		3DF8C20027A5C26C008226F3 /* AnimalMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMapVC.swift; sourceTree = "<group>"; };
+		3DF8C20227A5C276008226F3 /* AnimalMapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMapVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +234,7 @@
 		3D1146E02756963900E303FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3DF8C1F227A5C179008226F3 /* AnimalMap */,
 				3DF8C1D527A58566008226F3 /* Favorite */,
 				3D9C494627581FB600CB27AE /* Onboarding */,
 				3D1147182756A38800E303FE /* Animal */,
@@ -720,6 +726,58 @@
 			path = FavoriteCell;
 			sourceTree = "<group>";
 		};
+		3DF8C1F227A5C179008226F3 /* AnimalMap */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C1F327A5C1D3008226F3 /* Coordinator */,
+				3DF8C1F427A5C1DC008226F3 /* Factory */,
+				3DF8C1F627A5C200008226F3 /* ViewControllers */,
+				3DF8C1F727A5C207008226F3 /* ViewModels */,
+				3DF8C1F827A5C20E008226F3 /* Views */,
+			);
+			path = AnimalMap;
+			sourceTree = "<group>";
+		};
+		3DF8C1F327A5C1D3008226F3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C1FC27A5C248008226F3 /* AnimalMapCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3DF8C1F427A5C1DC008226F3 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C1FE27A5C255008226F3 /* AnimalMapFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3DF8C1F627A5C200008226F3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C20027A5C26C008226F3 /* AnimalMapVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3DF8C1F727A5C207008226F3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C20227A5C276008226F3 /* AnimalMapVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3DF8C1F827A5C20E008226F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DF8C1FA27A5C234008226F3 /* AnimalMap.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -822,6 +880,7 @@
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
+				3DF8C1FF27A5C255008226F3 /* AnimalMapFactory.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
 				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
@@ -852,13 +911,16 @@
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
 				3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */,
+				3DF8C1FD27A5C248008226F3 /* AnimalMapCoordinator.swift in Sources */,
 				3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
+				3DF8C20127A5C26C008226F3 /* AnimalMapVC.swift in Sources */,
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
 				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
+				3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
@@ -939,7 +1001,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -994,7 +1056,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1015,6 +1077,7 @@
 				DEVELOPMENT_TEAM = UD7WHFPS9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinder/SupportingItems/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1044,6 +1107,7 @@
 				DEVELOPMENT_TEAM = UD7WHFPS9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetFinder/SupportingItems/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

@@ -9,6 +9,7 @@ import Foundation
 
 enum AnimalAPI {
     case animals(perPage: Int, page: Int)
+    case animalsByLocation(location: String)
     case animal(id: String)
     case types
 }
@@ -24,7 +25,7 @@ extension AnimalAPI: TargetType {
     
     var path: String {
         switch self {
-        case .animals:
+        case .animals, .animalsByLocation:
             return "/animals"
         case .animal(let id):
             return "/animals/\(id)"
@@ -45,6 +46,8 @@ extension AnimalAPI: TargetType {
         case .animals(let perPage, let page):
             params["limit"] = perPage
             params["page"] = page
+        case .animalsByLocation(let location):
+            params["location"] = location
         default:
             break
         }
@@ -54,7 +57,7 @@ extension AnimalAPI: TargetType {
     
     var method: TargetMethod {
         switch self {
-        case .animals, .animal, .types:
+        case .animals, .animalsByLocation, .animal, .types:
             return .get
         }
     }
@@ -65,6 +68,7 @@ extension AnimalAPI {
     var sampleData: Data {
         switch self {
         case .animals: return "Animals".data(using: .utf8)!
+        case .animalsByLocation: return "AnimalsByLocation".data(using: .utf8)!
         case .animal: return "Animal".data(using: .utf8)!
         case .types : return "Types".data(using: .utf8)!
         }

@@ -13,6 +13,7 @@ enum StoryboardName: String {
     case organization = "Organization"
     case onboarding = "Onboarding"
     case favorite = "Favorite"
+    case animalMap = "AnimalMap"
 }
 
 protocol Storyboarded {

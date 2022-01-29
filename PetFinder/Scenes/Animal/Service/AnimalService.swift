@@ -9,6 +9,7 @@ import Foundation
 
 protocol AnimalServiceType {
     func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ())
+    func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimal(id: String, completion: @escaping(Result<Animal, Error>) -> ())
     func getAnimalTypes(completion: @escaping(Result<AnimalTypes, Error>) -> ())
 }
@@ -24,6 +25,20 @@ class AnimalService: AnimalServiceType {
     func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ()) {
         provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
                                           page: page),
+                         responseType: Animals.self) { result in
+            
+            switch result {
+            case .success(let resp):
+                completion(.success(resp))
+            case .failure(let error):
+                completion(.failure(error))
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ()) {
+        provider.request(target: .animalsByLocation(location: location),
                          responseType: Animals.self) { result in
             
             switch result {
