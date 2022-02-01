@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        UINavigationBar.appearance().barTintColor = UIColor(named: "PrimaryWhite")
+        UINavigationBar.appearance().tintColor = UIColor(named: "PrimaryWhite")
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryRed")!]
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         dataController.load()
         
