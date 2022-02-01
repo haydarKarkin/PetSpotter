@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol FavoriteCoordinatorType: Coordinator {
-    func showAnimalDetail()
+    func showAnimalDetail(animal: Animal)
 }
 
 class FavoriteCoordinator: FavoriteCoordinatorType {
@@ -28,7 +28,11 @@ class FavoriteCoordinator: FavoriteCoordinatorType {
         navigationController.pushViewController(viewController, animated: false)
     }
     
-    func showAnimalDetail() {
-        
+    func showAnimalDetail(animal: Animal) {
+        let coordinator = favoriteFactory
+            .sharedFactory
+            .makeAnimalDetailFactory()
+            .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+        coordinate(to: coordinator)
     }
 }

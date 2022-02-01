@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol AnimalMapFactoryType {
+    var sharedFactory: SharedFactoryType { get }
     func makeAnimalMapCoordinator(navigationController: UINavigationController) -> AnimalMapCoordinatorType
     func makeAnimalService() -> AnimalServiceType
     func makeAnimalMapVM(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVM

@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 protocol AnimalFactoryType {
+    var sharedFactory: SharedFactoryType { get }
     func makeAnimalCoordinator(navigationController: UINavigationController) -> AnimalCoordinatorType
     func makeAnimalService() -> AnimalServiceType
-    func makeAnimalsVM(animalService: AnimalServiceType) -> AnimalsVM
-    func makeAnimalsVC() -> AnimalsVC
+    func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: AnimalCoordinatorType) -> AnimalsVM
+    func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType) -> AnimalsVC
 }
 
 class AnimalFactory: AnimalFactoryType {
@@ -32,14 +33,14 @@ class AnimalFactory: AnimalFactoryType {
         return AnimalService(provider: clientProvider)
     }
     
-    func makeAnimalsVM(animalService: AnimalServiceType) -> AnimalsVM {
-        AnimalsVM(animalService: animalService)
+    func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: AnimalCoordinatorType) -> AnimalsVM {
+        AnimalsVM(animalService: animalService, animalCoordinator: animalCoordinator)
     }
     
-    func makeAnimalsVC() -> AnimalsVC {
+    func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType) -> AnimalsVC {
         let service: AnimalServiceType = makeAnimalService()
         let viewController = AnimalsVC.instantiate()
-        viewController.viewModel = makeAnimalsVM(animalService: service)
+        viewController.viewModel = makeAnimalsVM(animalService: service, animalCoordinator: animalCoordinator)
         return viewController
     }
 }

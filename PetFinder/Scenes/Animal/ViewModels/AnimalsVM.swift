@@ -14,9 +14,12 @@ class AnimalsVM: ViewModelType {
     private var totalCount: Int = 0
     
     private let animalService: AnimalServiceType
+    private let animalCoordinator: AnimalCoordinatorType
     
-    init(animalService: AnimalServiceType) {
+    init(animalService: AnimalServiceType,
+         animalCoordinator: AnimalCoordinatorType) {
         self.animalService = animalService
+        self.animalCoordinator = animalCoordinator
     }
 }
 
@@ -29,6 +32,7 @@ extension AnimalsVM {
     struct Output {
         var next: (() -> Void)?
         var getAnimals: (() -> Void)?
+        var openDetail:((Animal) -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -40,7 +44,11 @@ extension AnimalsVM {
             self.getAnimals(completion: input.animals)
         }
         
-        output(Output(next: next, getAnimals: getAnimals))
+        let openDetail: ((Animal) -> Void)? = { animal in
+            self.showAnimalDetail(with: animal)
+        }
+        
+        output(Output(next: next, getAnimals: getAnimals, openDetail: openDetail))
     }
 }
 
@@ -70,5 +78,9 @@ extension AnimalsVM {
             let nextPage = currentPage + 1
             getAnimals(page: nextPage, completion: completion)
         }
+    }
+    
+    func showAnimalDetail(with animal: Animal) {
+        animalCoordinator.showAnimalDetail(animal: animal)
     }
 }

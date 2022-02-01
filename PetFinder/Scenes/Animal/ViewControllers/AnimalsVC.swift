@@ -24,6 +24,7 @@ class AnimalsVC: ViewController<AnimalsVM> {
     // MARK: - VM Binders
     var nextClosure: (() -> Void)?
     var getAnimalsClosure: (() -> Void)?
+    var openDetailClosure: ((Animal) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,7 @@ class AnimalsVC: ViewController<AnimalsVM> {
         viewModel.transform(input: input){ (output) in
             self.nextClosure = output.next
             self.getAnimalsClosure = output.getAnimals
+            self.openDetailClosure = output.openDetail
         }
         getAnimalsClosure?()
     }
@@ -95,6 +97,7 @@ extension AnimalsVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
+        openDetailClosure?(animals[indexPath.row])
     }
 }
 

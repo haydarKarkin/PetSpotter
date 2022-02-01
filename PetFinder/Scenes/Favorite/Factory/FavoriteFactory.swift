@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol FavoriteFactoryType {
+    var sharedFactory: SharedFactoryType { get }
     func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType
     func makeFavoriteService() -> FavoriteServiceType
     func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM
