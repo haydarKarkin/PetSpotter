@@ -31,18 +31,7 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     func start() {
-        do {
-            let token = try UserDefaults.standard.getObject(forKey: UserDefaults.Keys.token.rawValue,
-                                                                     castTo: Token.self)
-            if token.isTokenValid() {
-                showHome()
-            } else {
-                showOnboarding()
-            }
-        } catch {
-            print(error.localizedDescription)
-            showOnboarding()
-        }
+        showOnboarding()
     }
     
     func showOnboarding() {

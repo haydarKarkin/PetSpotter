@@ -17,18 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // add styling for navigation bars
         UINavigationBar.appearance().barTintColor = UIColor(named: "PrimaryWhite")
         UINavigationBar.appearance().tintColor = UIColor(named: "PrimaryWhite")
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryRed")!]
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        // load database to get persistent data
         dataController.load()
         
+        // send that into our coordinator so that it can display view controllers
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navigationController,
                                         sharedFactory: SharedFactory())
+        // tell the coordinator to take over control
         appCoordinator.start()
         
+        // create a basic UIWindow and activate it
+        window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         
