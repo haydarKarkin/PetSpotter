@@ -30,6 +30,8 @@ class OrganizationsVC: ViewController<OrganizationsVM> {
     override func makeUI() {
         super.makeUI()
         
+        title = "Organizations"
+        
         // setup tableviewe
         tableView.dataSource = self
         tableView.delegate = self

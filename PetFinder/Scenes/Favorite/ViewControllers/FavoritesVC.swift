@@ -15,6 +15,7 @@ class FavoritesVC: ViewController<FavoritesVM> {
     
     override func makeUI() {
         super.makeUI()
+        title = "Favorites"
     }
     
     override func bindViewModel() {
