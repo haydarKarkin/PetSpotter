@@ -2,12 +2,12 @@
 //  AnimalCell.swift
 //  PetFinder
 //
-//  Created by hkarkin on 10.12.2021.
+//  Created by hkarkin on 2.02.2022.
 //
 
 import UIKit
 
-class AnimalCell: UITableViewCell, Reusable {
+class AnimalCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -16,12 +16,6 @@ class AnimalCell: UITableViewCell, Reusable {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configure(with model: Animal) {
         nameLabel.text = model.name
     }

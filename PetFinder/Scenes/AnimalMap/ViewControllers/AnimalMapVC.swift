@@ -25,6 +25,7 @@ class AnimalMapVC: ViewController<AnimalMapVM> {
     
     override func makeUI() {
         super.makeUI()
+        title = "Map"
         configureMap()
     }
     
@@ -51,7 +52,6 @@ extension AnimalMapVC {
     
     func configureMap() {
         let locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
@@ -91,6 +91,16 @@ extension AnimalMapVC: CLLocationManagerDelegate {
         guard let coor: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         mapView.setCenter(coor, animated: true)
         getAnimalsByLocationClosure?(coor)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.startUpdatingLocation()
+            break
+        default:
+            break
+        }
     }
 }
 

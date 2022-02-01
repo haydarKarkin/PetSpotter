@@ -12,12 +12,12 @@ import UIKit
 class AnimalsVC: ViewController<AnimalsVM> {
 
     // MARK: - UI Elements
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     var animals: [Animal] = [Animal]() {
         didSet {
-            tableView.reloadData()
+            collectionView.reloadData()
         }
     }
     
@@ -32,12 +32,17 @@ class AnimalsVC: ViewController<AnimalsVM> {
     override func makeUI() {
         super.makeUI()
         
-        // setup tableviewe
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = Configs.UI.estimatedRowHeight
-        tableView.registerCellNib(AnimalCell.self)
+        title = "Animals"
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.registerCellNib(AnimalCell.self)
     }
     
     override func bindViewModel() {
@@ -64,31 +69,41 @@ extension AnimalsVC: Storyboarded {
     static var storyboardName = StoryboardName.animal
 }
 
-// MARK: - UITableViewDataSource
-extension AnimalsVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+// MARK: - UICollectionViewDataSource
+extension AnimalsVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return animals.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: AnimalCell = tableView.dequeueReusableCell(indexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: AnimalCell = collectionView.dequeueReusableCell(indexPath: indexPath)
         cell.configure(with: animals[indexPath.row])
         return cell
     }
 }
 
-// MARK: - UITableViewDelegate
-extension AnimalsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+// MARK: - UICollectionViewDelegate
+extension AnimalsVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        let isReachedBottom = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
+        let isReachedBottom = indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1
         
         if isReachedBottom {
             nextClosure?()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension AnimalsVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
     }
 }

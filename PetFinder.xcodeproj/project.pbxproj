@@ -35,6 +35,9 @@
 		3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11472F2756A57900E303FE /* AnimalsVM.swift */; };
 		3D1147322756A76D00E303FE /* AnimalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147312756A76D00E303FE /* AnimalAPI.swift */; };
 		3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1147332756AE9900E303FE /* Storyboarded.swift */; };
+		3D92611C27A9D91D00870F33 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */; };
+		3D92611F27A9D9D100870F33 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92611D27A9D9D100870F33 /* AnimalCell.swift */; };
+		3D92612027A9D9D100870F33 /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D92611E27A9D9D100870F33 /* AnimalCell.xib */; };
 		3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9536E4275974F800730A67 /* Date+Ext.swift */; };
 		3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49342758083F00CB27AE /* HomeCoordinator.swift */; };
 		3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49362758084B00CB27AE /* HomeFactory.swift */; };
@@ -66,8 +69,6 @@
 		3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */; };
 		3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7C279F3CF4003BE349 /* AnimalType.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
-		3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057B2763D2DA001A943C /* AnimalCell.swift */; };
-		3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4057C2763D2DA001A943C /* AnimalCell.xib */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
 		3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */; };
@@ -121,6 +122,9 @@
 		3D11472F2756A57900E303FE /* AnimalsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVM.swift; sourceTree = "<group>"; };
 		3D1147312756A76D00E303FE /* AnimalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAPI.swift; sourceTree = "<group>"; };
 		3D1147332756AE9900E303FE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		3D92611D27A9D9D100870F33 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		3D92611E27A9D9D100870F33 /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
 		3D9536E4275974F800730A67 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3D9C49342758083F00CB27AE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		3D9C49362758084B00CB27AE /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
@@ -152,8 +156,6 @@
 		3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypes.swift; sourceTree = "<group>"; };
 		3DB80C7C279F3CF4003BE349 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		3DF4057B2763D2DA001A943C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
-		3DF4057C2763D2DA001A943C /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
 				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
+				3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */,
 				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
@@ -632,8 +635,8 @@
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
 			isa = PBXGroup;
 			children = (
-				3DF4057B2763D2DA001A943C /* AnimalCell.swift */,
-				3DF4057C2763D2DA001A943C /* AnimalCell.xib */,
+				3D92611D27A9D9D100870F33 /* AnimalCell.swift */,
+				3D92611E27A9D9D100870F33 /* AnimalCell.xib */,
 			);
 			path = AnimalCell;
 			sourceTree = "<group>";
@@ -840,10 +843,10 @@
 				3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */,
 				3DF8C1DD27A585D8008226F3 /* Favorite.storyboard in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
+				3D92612027A9D9D100870F33 /* AnimalCell.xib in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
 				3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */,
 				3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */,
-				3DF4057E2763D2DA001A943C /* AnimalCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
 				3DF8C1FB27A5C234008226F3 /* AnimalMap.storyboard in Resources */,
@@ -887,7 +890,6 @@
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3DF8C1E527A587C5008226F3 /* FavoritesVC.swift in Sources */,
 				3DF8C1DF27A5879D008226F3 /* FavoriteCoordinator.swift in Sources */,
-				3DF4057D2763D2DA001A943C /* AnimalCell.swift in Sources */,
 				3DF8C1E127A587AA008226F3 /* FavoriteFactory.swift in Sources */,
 				3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
@@ -912,6 +914,7 @@
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
 				3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */,
 				3DF8C1FD27A5C248008226F3 /* AnimalMapCoordinator.swift in Sources */,
+				3D92611C27A9D91D00870F33 /* UICollectionView+Ext.swift in Sources */,
 				3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
@@ -924,6 +927,7 @@
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
+				3D92611F27A9D9D100870F33 /* AnimalCell.swift in Sources */,
 				3D9C49502758201600CB27AE /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1001,7 +1005,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1056,7 +1060,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
