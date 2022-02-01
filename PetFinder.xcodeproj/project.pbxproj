@@ -38,6 +38,11 @@
 		3D92611C27A9D91D00870F33 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */; };
 		3D92611F27A9D9D100870F33 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92611D27A9D9D100870F33 /* AnimalCell.swift */; };
 		3D92612027A9D9D100870F33 /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D92611E27A9D9D100870F33 /* AnimalCell.xib */; };
+		3D92612827A9E76E00870F33 /* AnimalDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D92612727A9E76E00870F33 /* AnimalDetail.storyboard */; };
+		3D92612A27A9E78300870F33 /* AnimalDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92612927A9E78300870F33 /* AnimalDetailCoordinator.swift */; };
+		3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92612B27A9E79500870F33 /* AnimalDetailFactory.swift */; };
+		3D92612E27A9E79F00870F33 /* AnimalDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92612D27A9E79F00870F33 /* AnimalDetailVC.swift */; };
+		3D92613027A9E7A700870F33 /* AnimalDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92612F27A9E7A700870F33 /* AnimalDetailVM.swift */; };
 		3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9536E4275974F800730A67 /* Date+Ext.swift */; };
 		3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49342758083F00CB27AE /* HomeCoordinator.swift */; };
 		3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C49362758084B00CB27AE /* HomeFactory.swift */; };
@@ -125,6 +130,11 @@
 		3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		3D92611D27A9D9D100870F33 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		3D92611E27A9D9D100870F33 /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
+		3D92612727A9E76E00870F33 /* AnimalDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalDetail.storyboard; sourceTree = "<group>"; };
+		3D92612927A9E78300870F33 /* AnimalDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailCoordinator.swift; sourceTree = "<group>"; };
+		3D92612B27A9E79500870F33 /* AnimalDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailFactory.swift; sourceTree = "<group>"; };
+		3D92612D27A9E79F00870F33 /* AnimalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailVC.swift; sourceTree = "<group>"; };
+		3D92612F27A9E7A700870F33 /* AnimalDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailVM.swift; sourceTree = "<group>"; };
 		3D9536E4275974F800730A67 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3D9C49342758083F00CB27AE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		3D9C49362758084B00CB27AE /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
@@ -236,6 +246,7 @@
 		3D1146E02756963900E303FE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3D92612127A9E26800870F33 /* AnimalDetail */,
 				3DF8C1F227A5C179008226F3 /* AnimalMap */,
 				3DF8C1D527A58566008226F3 /* Favorite */,
 				3D9C494627581FB600CB27AE /* Onboarding */,
@@ -491,6 +502,58 @@
 				3D9C49442758193300CB27AE /* OrganizationsVM.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D92612127A9E26800870F33 /* AnimalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612227A9E29900870F33 /* Coordinator */,
+				3D92612327A9E29F00870F33 /* Factory */,
+				3D92612427A9E2A500870F33 /* ViewControllers */,
+				3D92612527A9E2AE00870F33 /* ViewModels */,
+				3D92612627A9E2E100870F33 /* Views */,
+			);
+			path = AnimalDetail;
+			sourceTree = "<group>";
+		};
+		3D92612227A9E29900870F33 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612927A9E78300870F33 /* AnimalDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3D92612327A9E29F00870F33 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612B27A9E79500870F33 /* AnimalDetailFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3D92612427A9E2A500870F33 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612D27A9E79F00870F33 /* AnimalDetailVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D92612527A9E2AE00870F33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612F27A9E7A700870F33 /* AnimalDetailVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D92612627A9E2E100870F33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D92612727A9E76E00870F33 /* AnimalDetail.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3D9C492F275807E300CB27AE /* Home */ = {
@@ -846,6 +909,7 @@
 				3D92612027A9D9D100870F33 /* AnimalCell.xib in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
 				3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */,
+				3D92612827A9E76E00870F33 /* AnimalDetail.storyboard in Resources */,
 				3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
@@ -871,6 +935,7 @@
 				3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
+				3D92612A27A9E78300870F33 /* AnimalDetailCoordinator.swift in Sources */,
 				3DF405802763E817001A943C /* Animals.swift in Sources */,
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
 				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
@@ -888,10 +953,12 @@
 				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
+				3D92612E27A9E79F00870F33 /* AnimalDetailVC.swift in Sources */,
 				3DF8C1E527A587C5008226F3 /* FavoritesVC.swift in Sources */,
 				3DF8C1DF27A5879D008226F3 /* FavoriteCoordinator.swift in Sources */,
 				3DF8C1E127A587AA008226F3 /* FavoriteFactory.swift in Sources */,
 				3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */,
+				3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
@@ -927,6 +994,7 @@
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
+				3D92613027A9E7A700870F33 /* AnimalDetailVM.swift in Sources */,
 				3D92611F27A9D9D100870F33 /* AnimalCell.swift in Sources */,
 				3D9C49502758201600CB27AE /* OnboardingCoordinator.swift in Sources */,
 			);
