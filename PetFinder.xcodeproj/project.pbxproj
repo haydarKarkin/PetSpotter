@@ -286,6 +286,7 @@
 				3D1147142756A2D500E303FE /* Factory */,
 				3D1146DF2756962C00E303FE /* Models */,
 				3D1146F027569ACC00E303FE /* Networking */,
+				3D92613127A9F45C00870F33 /* Services */,
 				3D1147052756A15600E303FE /* ViewController */,
 				3D1147082756A17A00E303FE /* ViewModel */,
 			);
@@ -554,6 +555,13 @@
 				3D92612727A9E76E00870F33 /* AnimalDetail.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3D92613127A9F45C00870F33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3D9C492F275807E300CB27AE /* Home */ = {

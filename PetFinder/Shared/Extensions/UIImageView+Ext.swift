@@ -12,7 +12,7 @@ extension UIImageView {
     func downloadImageFrom(link: String?, contentMode: UIView.ContentMode = .scaleAspectFit) {
         
         guard let link = link,  let imgURL = URL(string: link) else {
-            self.image = UIImage.init(named: "placeholder")
+            self.image = UIImage.init(named: "AnimalPlaceholderImage")
             return
         }
         
@@ -25,7 +25,7 @@ extension UIImageView {
                 }
                 
                 if error != nil {
-                    self.image = UIImage.init(named: "placeholder")
+                    self.image = UIImage.init(named: "AnimalPlaceholderImage")
                 }
             }
         }.resume()

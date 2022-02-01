@@ -10,6 +10,7 @@ import UIKit
 class AnimalCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var animalImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +19,6 @@ class AnimalCell: UICollectionViewCell, Reusable {
 
     func configure(with model: Animal) {
         nameLabel.text = model.name
+        animalImageView.downloadImageFrom(link: "")
     }
 }
