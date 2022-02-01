@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // add styling for navigation bars
         UINavigationBar.appearance().barTintColor = UIColor(named: "PrimaryWhite")
-        UINavigationBar.appearance().tintColor = UIColor(named: "PrimaryWhite")
+        UINavigationBar.appearance().tintColor = UIColor(named: "PrimaryRed")
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryRed")!]
         
         // load database to get persistent data
