@@ -73,6 +73,12 @@
 		3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB80C76279F3163003BE349 /* OrganizationCell.xib */; };
 		3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */; };
 		3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB80C7C279F3CF4003BE349 /* AnimalType.swift */; };
+		3DDF0E3D27AEA8F3005C8E14 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E3C27AEA8F3005C8E14 /* Video.swift */; };
+		3DDF0E3F27AEA96A005C8E14 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E3E27AEA96A005C8E14 /* Breeds.swift */; };
+		3DDF0E4127AEAA59005C8E14 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4027AEAA59005C8E14 /* Attributes.swift */; };
+		3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4227AEAA78005C8E14 /* Contact.swift */; };
+		3DDF0E4527AEAACF005C8E14 /* AnimalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */; };
+		3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4627AEAB3E005C8E14 /* Colors.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -165,6 +171,12 @@
 		3DB80C76279F3163003BE349 /* OrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
 		3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypes.swift; sourceTree = "<group>"; };
 		3DB80C7C279F3CF4003BE349 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
+		3DDF0E3C27AEA8F3005C8E14 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		3DDF0E3E27AEA96A005C8E14 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		3DDF0E4027AEAA59005C8E14 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		3DDF0E4227AEAA78005C8E14 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalEnvironment.swift; sourceTree = "<group>"; };
+		3DDF0E4627AEAB3E005C8E14 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -663,19 +675,25 @@
 		3DB80C66279F22F7003BE349 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3D9C495C275823EC00CB27AE /* Token.swift */,
-				3DF8C1E927A58BC1008226F3 /* Favorite.swift */,
-				3DF405782763D1FD001A943C /* Animal.swift */,
-				3DF4057F2763E817001A943C /* Animals.swift */,
-				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
-				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
 				3DB80C6B279F257A003BE349 /* Address.swift */,
 				3DB80C71279F2617003BE349 /* Adoption.swift */,
+				3DF405782763D1FD001A943C /* Animal.swift */,
+				3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */,
+				3DF4057F2763E817001A943C /* Animals.swift */,
+				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
+				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
+				3DDF0E4027AEAA59005C8E14 /* Attributes.swift */,
+				3DDF0E3E27AEA96A005C8E14 /* Breeds.swift */,
+				3DDF0E4627AEAB3E005C8E14 /* Colors.swift */,
+				3DDF0E4227AEAA78005C8E14 /* Contact.swift */,
+				3DF8C1E927A58BC1008226F3 /* Favorite.swift */,
 				3DB80C6F279F25B5003BE349 /* Hours.swift */,
 				3DB80C67279F230F003BE349 /* Organization.swift */,
 				3DB80C69279F2534003BE349 /* Organizations.swift */,
 				3DB80C73279F2688003BE349 /* Photo.swift */,
 				3DB80C6D279F25AB003BE349 /* SocialMedia.swift */,
+				3D9C495C275823EC00CB27AE /* Token.swift */,
+				3DDF0E3C27AEA8F3005C8E14 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -910,8 +928,11 @@
 			files = (
 				3D9C49562758203300CB27AE /* OnboardingService.swift in Sources */,
 				3D9C493F2758190D00CB27AE /* OrganizationService.swift in Sources */,
+				3DDF0E4127AEAA59005C8E14 /* Attributes.swift in Sources */,
 				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
+				3DDF0E3F27AEA96A005C8E14 /* Breeds.swift in Sources */,
 				3D9C493B275818F300CB27AE /* OrganizationCoordinator.swift in Sources */,
+				3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */,
 				3DB80C72279F2617003BE349 /* Adoption.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
@@ -925,6 +946,7 @@
 				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DF8C1EA27A58BC1008226F3 /* Favorite.swift in Sources */,
+				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,
@@ -947,6 +969,7 @@
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
 				3DB80C74279F2688003BE349 /* Photo.swift in Sources */,
+				3DDF0E3D27AEA8F3005C8E14 /* Video.swift in Sources */,
 				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
@@ -977,6 +1000,7 @@
 				3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
+				3DDF0E4527AEAACF005C8E14 /* AnimalEnvironment.swift in Sources */,
 				3D1146B6275695CD00E303FE /* PetFinder.xcdatamodeld in Sources */,
 				3D92613027A9E7A700870F33 /* AnimalDetailVM.swift in Sources */,
 				3D92611F27A9D9D100870F33 /* AnimalCell.swift in Sources */,

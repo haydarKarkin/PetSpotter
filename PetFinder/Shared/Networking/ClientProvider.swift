@@ -32,7 +32,8 @@ final class ClientProvider<T: TargetType> {
                     let resp = try decoder.decode(responseType, from: data)
                     completion(.success(resp))
                 }
-                catch {
+                catch(let error) {
+                    print(error)
                     completion(.failure(ErrorHandler.ErrorType.decodingFailed))
                 }
             case .failure(let error):

@@ -19,6 +19,7 @@ class AnimalCell: UICollectionViewCell, Reusable {
 
     func configure(with model: Animal) {
         nameLabel.text = model.name
-        animalImageView.downloadImageFrom(link: "")
+        let imageURL = model.photos.first?.medium
+        animalImageView.downloadImageFrom(link: imageURL)
     }
 }
