@@ -9,6 +9,7 @@ import Foundation
 
 protocol AnimalServiceType {
     func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ())
+    func getAnimalsByFilter(page: Int, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimal(id: String, completion: @escaping(Result<Animal, Error>) -> ())
     func getAnimalTypes(completion: @escaping(Result<AnimalTypes, Error>) -> ())
@@ -23,8 +24,33 @@ class AnimalService: AnimalServiceType {
     }
     
     func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ()) {
+        
         provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
-                                          page: page),
+                                          page: page,
+                                          type: nil,
+                                          breed: nil,
+                                          size: nil,
+                                          gender: nil),
+                         responseType: Animals.self) { result in
+            
+            switch result {
+            case .success(let resp):
+                completion(.success(resp))
+            case .failure(let error):
+                completion(.failure(error))
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAnimalsByFilter(page: Int, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ()) {
+        
+        provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
+                                          page: page,
+                                          type: filter.type,
+                                          breed: filter.breed,
+                                          size: filter.size,
+                                          gender: filter.gender),
                          responseType: Animals.self) { result in
             
             switch result {

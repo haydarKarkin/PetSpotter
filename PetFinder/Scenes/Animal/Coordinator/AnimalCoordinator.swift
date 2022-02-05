@@ -10,6 +10,7 @@ import UIKit
 
 protocol AnimalCoordinatorType: Coordinator {
     func showAnimalDetail(animal: Animal)
+    func showAnimalFilter(animalTypes: [AnimalType])
 }
 
 class AnimalCoordinator: AnimalCoordinatorType {
@@ -33,5 +34,10 @@ class AnimalCoordinator: AnimalCoordinatorType {
             .makeAnimalDetailFactory()
             .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
         coordinate(to: coordinator)
+    }
+    
+    func showAnimalFilter(animalTypes: [AnimalType]) {
+        let viewController = animalFactory.makeAnimalFilterVC(animalTypes: animalTypes)
+        navigationController.present(viewController, animated: true, completion: nil)
     }
 }

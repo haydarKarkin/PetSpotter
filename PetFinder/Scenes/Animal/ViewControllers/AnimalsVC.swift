@@ -25,6 +25,7 @@ class AnimalsVC: ViewController<AnimalsVM> {
     var nextClosure: (() -> Void)?
     var getAnimalsClosure: (() -> Void)?
     var openDetailClosure: ((Animal) -> Void)?
+    var openFilterClosre: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,9 @@ class AnimalsVC: ViewController<AnimalsVM> {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.registerCellNib(AnimalCell.self)
+        
+        let add = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openFilter))
+        navigationItem.rightBarButtonItems = [add]
     }
     
     override func bindViewModel() {
@@ -61,8 +65,14 @@ class AnimalsVC: ViewController<AnimalsVM> {
             self.nextClosure = output.next
             self.getAnimalsClosure = output.getAnimals
             self.openDetailClosure = output.openDetail
+            self.openFilterClosre = output.openFilter
         }
         getAnimalsClosure?()
+    }
+    
+    @objc
+    func openFilter() {
+        openFilterClosre?()
     }
 }
 

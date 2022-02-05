@@ -14,6 +14,8 @@ protocol AnimalFactoryType {
     func makeAnimalService() -> AnimalServiceType
     func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: AnimalCoordinatorType) -> AnimalsVM
     func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType) -> AnimalsVC
+    func makeAnimalFilterVM(animalTypes: [AnimalType]) -> AnimalFilterVM
+    func makeAnimalFilterVC(animalTypes: [AnimalType]) -> AnimalFilterVC
 }
 
 class AnimalFactory: AnimalFactoryType {
@@ -41,6 +43,16 @@ class AnimalFactory: AnimalFactoryType {
         let service: AnimalServiceType = makeAnimalService()
         let viewController = AnimalsVC.instantiate()
         viewController.viewModel = makeAnimalsVM(animalService: service, animalCoordinator: animalCoordinator)
+        return viewController
+    }
+    
+    func makeAnimalFilterVM(animalTypes: [AnimalType]) -> AnimalFilterVM {
+        AnimalFilterVM(animalTypes: animalTypes)
+    }
+    
+    func makeAnimalFilterVC(animalTypes: [AnimalType]) -> AnimalFilterVC {
+        let viewController = AnimalFilterVC.instantiate()
+        viewController.viewModel = makeAnimalFilterVM(animalTypes: animalTypes)
         return viewController
     }
 }

@@ -33,6 +33,7 @@ extension AnimalsVM {
         var next: (() -> Void)?
         var getAnimals: (() -> Void)?
         var openDetail:((Animal) -> Void)?
+        var openFilter: (() -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -48,7 +49,11 @@ extension AnimalsVM {
             self.showAnimalDetail(with: animal)
         }
         
-        output(Output(next: next, getAnimals: getAnimals, openDetail: openDetail))
+        let openFilter: (() -> Void)? = {
+            self.openFilter()
+        }
+        
+        output(Output(next: next, getAnimals: getAnimals, openDetail: openDetail, openFilter: openFilter))
     }
 }
 
@@ -60,7 +65,8 @@ extension AnimalsVM {
         
         currentPage = page
         
-        animalService.getAnimals(page: page) { result in
+        animalService.getAnimals(page: page) { [weak self] result in
+            guard let self = self else { return }
             self.onLoadHandling?(false)
             switch result {
             case .success(let resp):
@@ -82,5 +88,17 @@ extension AnimalsVM {
     
     func showAnimalDetail(with animal: Animal) {
         animalCoordinator.showAnimalDetail(animal: animal)
+    }
+    
+    func openFilter() {
+        animalService.getAnimalTypes() { [weak self] result in
+            self?.onLoadHandling?(false)
+            switch result {
+            case .success(let resp):
+                self?.animalCoordinator.showAnimalFilter(animalTypes: resp.types)
+            case .failure(let error):
+                self?.onErrorHandling?(error)
+            }
+        }
     }
 }
