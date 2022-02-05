@@ -46,8 +46,8 @@ class AnimalsVC: ViewController<AnimalsVM> {
         collectionView.delegate = self
         collectionView.registerCellNib(AnimalCell.self)
         
-        let add = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openFilter))
-        navigationItem.rightBarButtonItems = [add]
+        let filter = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openFilter))
+        navigationItem.rightBarButtonItems = [filter]
     }
     
     override func bindViewModel() {

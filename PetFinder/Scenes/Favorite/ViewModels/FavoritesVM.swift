@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FavoritesVMType {
-    func getFavorites()
+    func getFavorites(completion: (([Favorite]) -> Void)?)
 }
 
 class FavoritesVM: ViewModelType {
@@ -25,23 +25,36 @@ class FavoritesVM: ViewModelType {
 // MARK: - VM I/O
 extension FavoritesVM {
     struct Input {
+        var favorites: (([Favorite]) -> Void)?
     }
     
     struct Output {
+        var getFavorites: (() -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
-        output(Output())
+        let getFavorites: (() -> Void)? = {
+            self.getFavorites(completion: input.favorites)
+        }
+        
+        output(Output(getFavorites: getFavorites))
     }
 }
 
 // MARK: - Logics
 extension FavoritesVM: FavoritesVMType {
     
-    func getFavorites() {
+    func getFavorites(completion: (([Favorite]) -> Void)?) {
         self.onLoadHandling?(true)
-        favoriteService.getFavorites() { [weak self] error in
-            self?.onLoadHandling?(false)
+        favoriteService.getFavorites() { [weak self] result in
+            guard let self = self else { return }
+            self.onLoadHandling?(false)
+            switch result {
+            case .success(let favorites):
+                completion?(favorites)
+            case .failure(let error):
+                self.onErrorHandling?(error)
+            }
         }
     }
 }

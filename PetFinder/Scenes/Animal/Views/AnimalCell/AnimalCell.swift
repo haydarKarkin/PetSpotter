@@ -22,4 +22,13 @@ class AnimalCell: UICollectionViewCell, Reusable {
         let imageURL = model.photos.first?.medium
         animalImageView.downloadImageFrom(link: imageURL)
     }
+    
+    func configure(with model: Favorite) {
+        nameLabel.text = model.name
+        if let imageData = model.image {
+            animalImageView.image = UIImage(data: imageData) ?? UIImage(named: "AnimalPlaceholderImage")
+        } else {
+            animalImageView.image = UIImage(named: "AnimalPlaceholderImage")
+        }
+    }
 }
