@@ -82,6 +82,8 @@
 		3DDF0E4927AEB95F005C8E14 /* AnimalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4827AEB95F005C8E14 /* AnimalFilter.swift */; };
 		3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4A27AEBAFC005C8E14 /* AnimalFilterVC.swift */; };
 		3DDF0E4D27AEBB03005C8E14 /* AnimalFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */; };
+		3DDF0E4F27AEE5C2005C8E14 /* OrganizationDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */; };
+		3DDF0E5127AEE5CB005C8E14 /* OrganizationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -183,6 +185,8 @@
 		3DDF0E4827AEB95F005C8E14 /* AnimalFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilter.swift; sourceTree = "<group>"; };
 		3DDF0E4A27AEBAFC005C8E14 /* AnimalFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterVC.swift; sourceTree = "<group>"; };
 		3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterVM.swift; sourceTree = "<group>"; };
+		3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVM.swift; sourceTree = "<group>"; };
+		3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVC.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9C49422758192800CB27AE /* OrganizationsVC.swift */,
+				3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9C49442758193300CB27AE /* OrganizationsVM.swift */,
+				3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -969,6 +975,7 @@
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
 				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
 				3D9C49542758202900CB27AE /* OnboardingAPI.swift in Sources */,
+				3DDF0E5127AEE5CB005C8E14 /* OrganizationDetailVC.swift in Sources */,
 				3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */,
 				3D92612E27A9E79F00870F33 /* AnimalDetailVC.swift in Sources */,
 				3DF8C1E527A587C5008226F3 /* FavoritesVC.swift in Sources */,
@@ -1003,6 +1010,7 @@
 				3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
+				3DDF0E4F27AEE5C2005C8E14 /* OrganizationDetailVM.swift in Sources */,
 				3DF8C20127A5C26C008226F3 /* AnimalMapVC.swift in Sources */,
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,

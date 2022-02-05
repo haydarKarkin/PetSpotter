@@ -22,6 +22,7 @@ class OrganizationsVC: ViewController<OrganizationsVM> {
     // MARK: - VM Binders
     var nextClosure: (() -> Void)?
     var getOrganizationsClosure: (() -> Void)?
+    var openDetailClosure: ((Organization) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class OrganizationsVC: ViewController<OrganizationsVM> {
         viewModel.transform(input: input){ (output) in
             self.nextClosure = output.next
             self.getOrganizationsClosure = output.getOrganizations
+            self.openDetailClosure = output.openDetail
         }
         getOrganizationsClosure?()
     }
@@ -81,6 +83,7 @@ extension OrganizationsVC: UITableViewDataSource {
 extension OrganizationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        openDetailClosure?(organizations[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -1,13 +1,13 @@
 //
-//  AnimalDetailVC.swift
+//  OrganizationDetailVC.swift
 //  PetFinder
 //
-//  Created by hkarkin on 2.02.2022.
+//  Created by hkarkin on 5.02.2022.
 //
 
 import UIKit
 
-class AnimalDetailVC: ViewController<AnimalDetailVM> {
+class OrganizationDetailVC: ViewController<OrganizationDetailVM> {
     
     //MARK: - Outlets
     
@@ -27,15 +27,15 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     override func bindViewModel() {
         super.bindViewModel()
         
-        let input = AnimalDetailVM.Input()
+        let input = OrganizationDetailVM.Input()
         
         viewModel.transform(input: input){ [weak self] (output) in
-            self?.title = output.animal.name
+            self?.title = output.organization.name
         }
     }
 }
 
 // MARK: - Storyboarded
-extension AnimalDetailVC: Storyboarded {
-    static var storyboardName = StoryboardName.animalDetail
+extension OrganizationDetailVC: Storyboarded {
+    static var storyboardName = StoryboardName.organization
 }

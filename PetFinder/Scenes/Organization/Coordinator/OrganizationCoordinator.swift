@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol OrganizationCoordinatorType: Coordinator {
+    func showOrganizationDetail(organization: Organization)
 }
 
 class OrganizationCoordinator: OrganizationCoordinatorType {
@@ -22,7 +23,12 @@ class OrganizationCoordinator: OrganizationCoordinatorType {
     }
     
     func start() {
-        let viewController = organizationFactory.makeOrganizationsVC()
+        let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
         navigationController.pushViewController(viewController, animated: false)
+    }
+    
+    func showOrganizationDetail(organization: Organization) {
+        let viewController = organizationFactory.makeOrganizationDetailVC(organization: organization)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

@@ -14,9 +14,12 @@ class OrganizationsVM: ViewModelType {
     private var totalCount: Int = 0
     
     private let organizationService: OrganizationServiceType
+    private let organizationCoordinator: OrganizationCoordinatorType
     
-    init(organizationService: OrganizationServiceType) {
+    init(organizationService: OrganizationServiceType,
+         organizationCoordinator: OrganizationCoordinatorType) {
         self.organizationService = organizationService
+        self.organizationCoordinator = organizationCoordinator
     }
 }
 
@@ -29,6 +32,7 @@ extension OrganizationsVM {
     struct Output {
         var next: (() -> Void)?
         var getOrganizations: (() -> Void)?
+        var openDetail:((Organization) -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -40,7 +44,11 @@ extension OrganizationsVM {
             self.getOrganizations(completion: input.organizations)
         }
         
-        output(Output(next: next, getOrganizations: getOrganizations))
+        let openDetail: ((Organization) -> Void)? = { organization in
+            self.showOrganizationDetail(with: organization)
+        }
+        
+        output(Output(next: next, getOrganizations: getOrganizations, openDetail: openDetail))
     }
 }
 
@@ -70,5 +78,9 @@ extension OrganizationsVM {
             let nextPage = currentPage + 1
             getOrganizations(page: nextPage, completion: completion)
         }
+    }
+    
+    func showOrganizationDetail(with organization: Organization) {
+        organizationCoordinator.showOrganizationDetail(organization: organization)
     }
 }

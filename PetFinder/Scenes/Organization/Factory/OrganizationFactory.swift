@@ -11,8 +11,10 @@ import UIKit
 protocol OrganizationFactoryType {
     func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType
     func makeOrganizationService() -> OrganizationServiceType
-    func makeOrganizationsVM(organizationService: OrganizationServiceType) -> OrganizationsVM
-    func makeOrganizationsVC() -> OrganizationsVC
+    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM
+    func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC
+    func makeOrganizationDetailVM(organization: Organization) -> OrganizationDetailVM
+    func makeOrganizationDetailVC(organization: Organization) -> OrganizationDetailVC
 }
 
 class OrganizationFactory: OrganizationFactoryType {
@@ -32,14 +34,25 @@ class OrganizationFactory: OrganizationFactoryType {
         return OrganizationService(provider: clientProvider)
     }
     
-    func makeOrganizationsVM(organizationService: OrganizationServiceType) -> OrganizationsVM {
-        OrganizationsVM(organizationService: organizationService)
+    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM {
+        OrganizationsVM(organizationService: organizationService, organizationCoordinator: organizationCoordinator)
     }
     
-    func makeOrganizationsVC() -> OrganizationsVC {
+    func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC {
         let service: OrganizationServiceType = makeOrganizationService()
         let viewController = OrganizationsVC.instantiate()
-        viewController.viewModel = makeOrganizationsVM(organizationService: service)
+        viewController.viewModel = makeOrganizationsVM(organizationService: service, organizationCoordinator: organizationCoordinator)
+        return viewController
+    }
+    
+    func makeOrganizationDetailVM(organization: Organization) -> OrganizationDetailVM {
+        let service: AnimalServiceType = sharedFactory.makeAnimalFactory().makeAnimalService()
+        return OrganizationDetailVM(organization: organization, animalService: service)
+    }
+    
+    func makeOrganizationDetailVC(organization: Organization) -> OrganizationDetailVC {
+        let viewController = OrganizationDetailVC.instantiate()
+        viewController.viewModel = makeOrganizationDetailVM(organization: organization)
         return viewController
     }
 }
