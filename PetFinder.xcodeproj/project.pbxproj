@@ -390,7 +390,6 @@
 			children = (
 				3D1147222756A50C00E303FE /* Coordinator */,
 				3D1147242756A51700E303FE /* Factory */,
-				3D1147272756A52F00E303FE /* Service */,
 				3D1147252756A51E00E303FE /* ViewControllers */,
 				3D1147282756A53900E303FE /* ViewModels */,
 				3D1147262756A52600E303FE /* Views */,
@@ -403,7 +402,6 @@
 			children = (
 				3D1147212756A4EA00E303FE /* Coordinator */,
 				3D11471E2756A4D100E303FE /* Factory */,
-				3D1147202756A4E500E303FE /* Service */,
 				3D1146E22756969A00E303FE /* ViewControllers */,
 				3D11471D2756A4CB00E303FE /* ViewModels */,
 				3D11471F2756A4D600E303FE /* Views */,
@@ -436,14 +434,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3D1147202756A4E500E303FE /* Service */ = {
+		3D1147202756A4E500E303FE /* Animal */ = {
 			isa = PBXGroup;
 			children = (
-				3DF405772763D1F0001A943C /* Model */,
 				3D1147312756A76D00E303FE /* AnimalAPI.swift */,
 				3D11472D2756A56B00E303FE /* AnimalService.swift */,
 			);
-			path = Service;
+			path = Animal;
 			sourceTree = "<group>";
 		};
 		3D1147212756A4EA00E303FE /* Coordinator */ = {
@@ -487,14 +484,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3D1147272756A52F00E303FE /* Service */ = {
+		3D1147272756A52F00E303FE /* Organization */ = {
 			isa = PBXGroup;
 			children = (
-				3DB80C66279F22F7003BE349 /* Model */,
 				3D9C493E2758190D00CB27AE /* OrganizationService.swift */,
 				3D9C49402758191900CB27AE /* OrganizationAPI.swift */,
 			);
-			path = Service;
+			path = Organization;
 			sourceTree = "<group>";
 		};
 		3D1147282756A53900E303FE /* ViewModels */ = {
@@ -560,6 +556,11 @@
 		3D92613127A9F45C00870F33 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3D1147202756A4E500E303FE /* Animal */,
+				3DF8C1D827A58590008226F3 /* Favorite */,
+				3DB80C66279F22F7003BE349 /* Model */,
+				3D9C494B27581FEA00CB27AE /* Onboarding */,
+				3D1147272756A52F00E303FE /* Organization */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -601,10 +602,8 @@
 		3D9C494627581FB600CB27AE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3D9C495B275823E200CB27AE /* Models */,
 				3D9C494927581FD900CB27AE /* Coordinator */,
 				3D9C494A27581FE300CB27AE /* Factory */,
-				3D9C494B27581FEA00CB27AE /* Service */,
 				3D9C494C27581FF200CB27AE /* ViewControllers */,
 				3D9C494D27581FFB00CB27AE /* ViewModels */,
 				3D9C494E2758200200CB27AE /* Views */,
@@ -628,13 +627,13 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		3D9C494B27581FEA00CB27AE /* Service */ = {
+		3D9C494B27581FEA00CB27AE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				3D9C49532758202900CB27AE /* OnboardingAPI.swift */,
 				3D9C49552758203300CB27AE /* OnboardingService.swift */,
 			);
-			path = Service;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		3D9C494C27581FF200CB27AE /* ViewControllers */ = {
@@ -661,17 +660,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3D9C495B275823E200CB27AE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3D9C495C275823EC00CB27AE /* Token.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		3DB80C66279F22F7003BE349 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D9C495C275823EC00CB27AE /* Token.swift */,
+				3DF8C1E927A58BC1008226F3 /* Favorite.swift */,
+				3DF405782763D1FD001A943C /* Animal.swift */,
+				3DF4057F2763E817001A943C /* Animals.swift */,
+				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
+				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
 				3DB80C6B279F257A003BE349 /* Address.swift */,
 				3DB80C71279F2617003BE349 /* Adoption.swift */,
 				3DB80C6F279F25B5003BE349 /* Hours.swift */,
@@ -690,17 +687,6 @@
 				3DB80C75279F3163003BE349 /* OrganizationCell.swift */,
 			);
 			path = OrganizationCell;
-			sourceTree = "<group>";
-		};
-		3DF405772763D1F0001A943C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3DF405782763D1FD001A943C /* Animal.swift */,
-				3DF4057F2763E817001A943C /* Animals.swift */,
-				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
-				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -725,7 +711,6 @@
 			children = (
 				3DF8C1D627A5857B008226F3 /* Coordinator */,
 				3DF8C1D727A58585008226F3 /* Factory */,
-				3DF8C1D827A58590008226F3 /* Service */,
 				3DF8C1D927A5859D008226F3 /* ViewControllers */,
 				3DF8C1DA27A585AA008226F3 /* ViewModels */,
 				3DF8C1DB27A585B8008226F3 /* Views */,
@@ -749,13 +734,12 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		3DF8C1D827A58590008226F3 /* Service */ = {
+		3DF8C1D827A58590008226F3 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				3DF8C1E827A58BB2008226F3 /* Model */,
 				3DF8C1E227A587B8008226F3 /* FavoriteService.swift */,
 			);
-			path = Service;
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		3DF8C1D927A5859D008226F3 /* ViewControllers */ = {
@@ -781,14 +765,6 @@
 				3DF8C1DC27A585D8008226F3 /* Favorite.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3DF8C1E827A58BB2008226F3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3DF8C1E927A58BC1008226F3 /* Favorite.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3DF8C1EB27A58DF7008226F3 /* FavoriteCell */ = {
