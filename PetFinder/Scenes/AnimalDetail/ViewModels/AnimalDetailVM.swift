@@ -21,13 +21,61 @@ class AnimalDetailVM: ViewModelType {
 
 // MARK: - VM I/O
 extension AnimalDetailVM {
-    struct Input {}
+    struct Input {
+        var isFavorited: ((Bool) -> Void)?
+    }
     
     struct Output {
         var animal: Animal
+        var getFavorite: (() -> Void)?
+        var saveFavorite: (() -> Void)?
+        var deleteFavorite: (() -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
-        output(Output(animal: animal))
+        let getFavorite: (() -> Void)? = {
+            self.getFavorite(completion: input.isFavorited)
+        }
+        let saveFavorite: (() -> Void)? = {
+            self.saveFavorite(completion: input.isFavorited)
+        }
+        let deleteFavorite: (() -> Void)? = {
+            self.deleteFavorite(completion: input.isFavorited)
+        }
+        output(Output(animal: animal,
+                      getFavorite: getFavorite,
+                      saveFavorite: saveFavorite,
+                      deleteFavorite: deleteFavorite))
+    }
+}
+
+// MARK: - Logics
+extension AnimalDetailVM {
+    
+    func getFavorite(completion: ((Bool) -> Void)?) {
+        favoriteService.getFavorite(animal: animal) { result in
+            switch result {
+            case .success(let favorite):
+                if favorite != nil {
+                    completion?(true)
+                } else {
+                    completion?(false)
+                }
+            case .failure:
+                completion?(false)
+            }
+        }
+    }
+    
+    func saveFavorite(completion: ((Bool) -> Void)?) {
+        favoriteService.saveFavorite(animal: animal) { result in
+            completion?(result)
+        }
+    }
+    
+    func deleteFavorite(completion: ((Bool) -> Void)?) {
+        favoriteService.deleteFavorite(animal: animal) { result in
+            completion?(!result)
+        }
     }
 }

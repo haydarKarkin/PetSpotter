@@ -13,6 +13,7 @@ class ErrorHandler {
         case missingURL
         case decodingFailed
         case noNetwork
+        case genericError
         
         var message: String {
             switch self {
@@ -26,6 +27,8 @@ class ErrorHandler {
                 return "Can't read received data."
             case .noNetwork:
                 return "Check your internet connection"
+            case .genericError:
+                return "Something wrong. Please try later."
             }
         }
     }

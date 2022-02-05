@@ -46,7 +46,10 @@ class AnimalsVC: ViewController<AnimalsVM> {
         collectionView.delegate = self
         collectionView.registerCellNib(AnimalCell.self)
         
-        let filter = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openFilter))
+        let filter = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"),
+                        style: .plain,
+                        target: self,
+                        action: #selector(openFilter))
         navigationItem.rightBarButtonItems = [filter]
     }
     

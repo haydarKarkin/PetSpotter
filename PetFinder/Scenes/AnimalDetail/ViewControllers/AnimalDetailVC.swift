@@ -12,9 +12,16 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     //MARK: - Outlets
     
     // MARK: - Properties
+    var isFavorited: Bool = false {
+        didSet {
+            configureNavigationItem(with: isFavorited)
+        }
+    }
     
     // MARK: - VM Binders
-    
+    var getFavoriteClosure: (() -> Void)?
+    var saveFavoriteClosure: (() -> Void)?
+    var deleteFavoriteClosure: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +34,46 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     override func bindViewModel() {
         super.bindViewModel()
         
-        let input = AnimalDetailVM.Input()
+        let isFavoritedClosure: ((Bool) -> Void)? = { [weak self] (result) in
+            DispatchQueue.main.async {
+                self?.isFavorited = result
+            }
+        }
+        
+        let input = AnimalDetailVM.Input(isFavorited: isFavoritedClosure)
         
         viewModel.transform(input: input){ [weak self] (output) in
             self?.title = output.animal.name
+            self?.getFavoriteClosure = output.getFavorite
+            self?.saveFavoriteClosure = output.saveFavorite
+            self?.deleteFavoriteClosure = output.deleteFavorite
+        }
+        getFavoriteClosure?()
+    }
+    
+    @objc
+    func saveFavorite() {
+        saveFavoriteClosure?()
+    }
+    
+    @objc
+    func deleteFavorite() {
+        deleteFavoriteClosure?()
+    }
+    
+    func configureNavigationItem(with isFavorited: Bool) {
+        if isFavorited {
+            let deleteFavorite = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(deleteFavorite))
+            navigationItem.rightBarButtonItems = [deleteFavorite]
+        } else {
+            let saveFavorite = UIBarButtonItem(image: UIImage(systemName: "star"),
+                                               style: .plain,
+                                               target: self,
+                                               action: #selector(saveFavorite))
+            navigationItem.rightBarButtonItems = [saveFavorite]
         }
     }
 }

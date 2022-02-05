@@ -26,6 +26,11 @@ class FavoritesVC: ViewController<FavoritesVM> {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFavoritesClosure?()
+    }
+    
     override func makeUI() {
         super.makeUI()
         title = "Favorites"
@@ -54,7 +59,6 @@ class FavoritesVC: ViewController<FavoritesVM> {
         viewModel.transform(input: input) { (output) in
             self.getFavoritesClosure = output.getFavorites
         }
-        getFavoritesClosure?()
     }
 }
 
