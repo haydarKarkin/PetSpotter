@@ -84,6 +84,8 @@
 		3DDF0E4D27AEBB03005C8E14 /* AnimalFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */; };
 		3DDF0E4F27AEE5C2005C8E14 /* OrganizationDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */; };
 		3DDF0E5127AEE5CB005C8E14 /* OrganizationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */; };
+		3DDF0E5927AF1BCC005C8E14 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5727AF1BCC005C8E14 /* Favorite+CoreDataClass.swift */; };
+		3DDF0E5A27AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5827AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -94,7 +96,6 @@
 		3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1E227A587B8008226F3 /* FavoriteService.swift */; };
 		3DF8C1E527A587C5008226F3 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1E427A587C5008226F3 /* FavoritesVC.swift */; };
 		3DF8C1E727A587D0008226F3 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1E627A587D0008226F3 /* FavoritesVM.swift */; };
-		3DF8C1EA27A58BC1008226F3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1E927A58BC1008226F3 /* Favorite.swift */; };
 		3DF8C1EE27A58E15008226F3 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */; };
 		3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */; };
 		3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF8C1F027A599E3008226F3 /* Colors.xcassets */; };
@@ -187,6 +188,8 @@
 		3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterVM.swift; sourceTree = "<group>"; };
 		3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVM.swift; sourceTree = "<group>"; };
 		3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVC.swift; sourceTree = "<group>"; };
+		3DDF0E5727AF1BCC005C8E14 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DDF0E5827AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -197,7 +200,6 @@
 		3DF8C1E227A587B8008226F3 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		3DF8C1E427A587C5008226F3 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		3DF8C1E627A587D0008226F3 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
-		3DF8C1E927A58BC1008226F3 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		3DF8C1EC27A58E15008226F3 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		3DF8C1ED27A58E15008226F3 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		3DF8C1F027A599E3008226F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -256,13 +258,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		3D1146DF2756962C00E303FE /* Models */ = {
+		3D1146DF2756962C00E303FE /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				3DDF0E5627AF1A45005C8E14 /* Models */,
 				3D1146B4275695CD00E303FE /* PetFinder.xcdatamodeld */,
 				3D1146E3275696CD00E303FE /* DataController.swift */,
 			);
-			path = Models;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		3D1146E02756963900E303FE /* Scenes */ = {
@@ -307,7 +310,7 @@
 				3D1146FE27569DD500E303FE /* Environment */,
 				3D11470B2756A21F00E303FE /* Extensions */,
 				3D1147142756A2D500E303FE /* Factory */,
-				3D1146DF2756962C00E303FE /* Models */,
+				3D1146DF2756962C00E303FE /* Database */,
 				3D1146F027569ACC00E303FE /* Networking */,
 				3D92613127A9F45C00870F33 /* Services */,
 				3D1147052756A15600E303FE /* ViewController */,
@@ -701,7 +704,6 @@
 				3DDF0E3E27AEA96A005C8E14 /* Breeds.swift */,
 				3DDF0E4627AEAB3E005C8E14 /* Colors.swift */,
 				3DDF0E4227AEAA78005C8E14 /* Contact.swift */,
-				3DF8C1E927A58BC1008226F3 /* Favorite.swift */,
 				3DB80C6F279F25B5003BE349 /* Hours.swift */,
 				3DB80C67279F230F003BE349 /* Organization.swift */,
 				3DB80C69279F2534003BE349 /* Organizations.swift */,
@@ -720,6 +722,15 @@
 				3DB80C75279F3163003BE349 /* OrganizationCell.swift */,
 			);
 			path = OrganizationCell;
+			sourceTree = "<group>";
+		};
+		3DDF0E5627AF1A45005C8E14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E5727AF1BCC005C8E14 /* Favorite+CoreDataClass.swift */,
+				3DDF0E5827AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -946,6 +957,7 @@
 				3DDF0E4127AEAA59005C8E14 /* Attributes.swift in Sources */,
 				3D1147302756A57900E303FE /* AnimalsVM.swift in Sources */,
 				3DDF0E3F27AEA96A005C8E14 /* Breeds.swift in Sources */,
+				3DDF0E5A27AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift in Sources */,
 				3D9C493B275818F300CB27AE /* OrganizationCoordinator.swift in Sources */,
 				3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */,
 				3DB80C72279F2617003BE349 /* Adoption.swift in Sources */,
@@ -953,6 +965,7 @@
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
 				3DDF0E4D27AEBB03005C8E14 /* AnimalFilterVM.swift in Sources */,
 				3D9C49392758085600CB27AE /* HomeVC.swift in Sources */,
+				3DDF0E5927AF1BCC005C8E14 /* Favorite+CoreDataClass.swift in Sources */,
 				3D9C49582758203C00CB27AE /* OnboardingVC.swift in Sources */,
 				3D1146F227569B0700E303FE /* TargetType.swift in Sources */,
 				3D1147162756A2E700E303FE /* SharedFactory.swift in Sources */,
@@ -961,7 +974,6 @@
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
 				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
-				3DF8C1EA27A58BC1008226F3 /* Favorite.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */,

@@ -12,7 +12,6 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let dataController = DataController(modelName: "PetFinder")
     private var appCoordinator: AppCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryRed")!]
         
         // load database to get persistent data
-        dataController.load()
+        DataController.sharedManager.load()
         
         // send that into our coordinator so that it can display view controllers
         let navigationController = UINavigationController()

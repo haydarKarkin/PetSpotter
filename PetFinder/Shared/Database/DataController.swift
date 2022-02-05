@@ -10,14 +10,15 @@ import CoreData
 
 class DataController {
     
+    static let sharedManager = DataController()
     let persistentContainer: NSPersistentContainer
     
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    init(modelName: String) {
-        persistentContainer = NSPersistentContainer(name: modelName)
+    init() {
+        persistentContainer = NSPersistentContainer(name: "PetFinder")
     }
     
     func configureContexts() {
