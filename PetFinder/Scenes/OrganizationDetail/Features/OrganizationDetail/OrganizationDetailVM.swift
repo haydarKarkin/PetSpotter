@@ -10,12 +10,12 @@ import Foundation
 class OrganizationDetailVM: ViewModelType {
     
     private let organization: Organization
-    private let animalService: AnimalServiceType
+    private let organizationDetailCoordinator: OrganizationDetailCoordinatorType
     
     init(organization: Organization,
-         animalService: AnimalServiceType) {
+         organizationDetailCoordinator: OrganizationDetailCoordinatorType) {
         self.organization = organization
-        self.animalService = animalService
+        self.organizationDetailCoordinator = organizationDetailCoordinator
     }
 }
 
@@ -25,9 +25,21 @@ extension OrganizationDetailVM {
     
     struct Output {
         var organization: Organization
+        var openAnimals: ((String) -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
-        output(Output(organization: organization))
+        let openAnimals: ((String) -> Void)? = { id in
+            self.showAnimals(with: id)
+        }
+        output(Output(organization: organization, openAnimals: openAnimals))
+    }
+}
+
+// MARK: - Logics
+extension OrganizationDetailVM {
+    
+    func showAnimals(with id: String) {
+        organizationDetailCoordinator.showAnimals(organizationID: id)
     }
 }

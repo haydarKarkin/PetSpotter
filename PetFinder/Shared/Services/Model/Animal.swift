@@ -29,6 +29,7 @@ struct Animal: Codable {
     let publishedAt: Date?
     let photos: [Photo]
     let tags: [String]
+    let contact: Contact?
     let videos: [Video]
     
     enum CodingKeys: String, CodingKey {
@@ -51,6 +52,7 @@ struct Animal: Codable {
         case publishedAt = "published_at"
         case photos
         case tags
+        case contact
         case videos
     }
     
@@ -72,6 +74,7 @@ struct Animal: Codable {
         self.status = try container.decodeIfPresent(String.self, forKey: .status)
         self.attributes = try container.decodeIfPresent(Attributes.self, forKey: .attributes)
         self.environment = try container.decodeIfPresent(AnimalEnvironment.self, forKey: .environment)
+        self.contact = try container.decodeIfPresent(Contact.self, forKey: .contact)
         
         let stringDate = try container.decodeIfPresent(String.self, forKey: .publishedAt)
         let formatter = DateFormatter.yyyyMMdd

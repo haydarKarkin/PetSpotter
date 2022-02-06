@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DetailDataSourceDelegate: AnyObject {
-    func animalDetailTapped(id: String)
+    func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
 }
@@ -18,7 +18,7 @@ class DetailDataSource: NSObject {
     weak var delegate: DetailDataSourceDelegate?
     
     var titles: [String] {
-        return sections.keys.sorted().reversed()
+        return sections.keys.sorted()
     }
     
     var indexes: [String] {
@@ -26,7 +26,6 @@ class DetailDataSource: NSObject {
             .map { String($0.first!) }
             .reduce(into: Set<String>(), { $0.insert($1) })
             .sorted()
-            .reversed()
     }
     
     init(animal: Animal, delegate: DetailDataSourceDelegate) {
@@ -83,8 +82,8 @@ extension DetailDataSource: UITableViewDataSource {
 }
 
 extension DetailDataSource: ButtonCellDelegate {
-    func animalDetailTapped(id: String) {
-        delegate?.animalDetailTapped(id: id)
+    func animalsTapped(id: String) {
+        delegate?.animalsTapped(id: id)
     }
     
     func organizationDetailTapped(id: String) {

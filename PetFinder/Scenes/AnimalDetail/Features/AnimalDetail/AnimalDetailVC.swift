@@ -24,7 +24,6 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     var getFavoriteClosure: (() -> Void)?
     var saveFavoriteClosure: (() -> Void)?
     var deleteFavoriteClosure: (() -> Void)?
-    var openAnimalDetailClosure: ((String) -> Void)?
     var openOrgDetailClosure: ((String) -> Void)?
     var openVideosClosure: (([Video]) -> Void)?
     
@@ -97,8 +96,7 @@ extension AnimalDetailVC: Storyboarded {
 
 // MARK: - AnimalDetailVCTableAdapterDelegate
 extension AnimalDetailVC: AnimalDetailVCTableAdapterDelegate {
-    func animalDetailTapped(id: String) {
-        openAnimalDetailClosure?(id)
+    func animalsTapped(id: String) {
     }
     
     func organizationDetailTapped(id: String) {

@@ -10,11 +10,13 @@ import UIKit
 class OrganizationDetailVC: ViewController<OrganizationDetailVM> {
     
     //MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
+    var tableAdapter: TableAdapter!
     
     // MARK: - VM Binders
-    
+    var openAnimalsClosure: ((String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,12 @@ class OrganizationDetailVC: ViewController<OrganizationDetailVM> {
         let input = OrganizationDetailVM.Input()
         
         viewModel.transform(input: input){ [weak self] (output) in
-            self?.title = output.organization.name
+            guard let self = self else { return }
+            self.title = output.organization.name
+            self.openAnimalsClosure = output.openAnimals
+            
+            self.tableAdapter = TableAdapter(tableView: self.tableView, delegate: self, organization: output.organization)
+            self.tableAdapter.reload()
         }
     }
 }
@@ -38,4 +45,17 @@ class OrganizationDetailVC: ViewController<OrganizationDetailVM> {
 // MARK: - Storyboarded
 extension OrganizationDetailVC: Storyboarded {
     static var storyboardName = StoryboardName.organizationDetail
+}
+
+// MARK: - OrganizationDetailVCTableAdapterDelegate
+extension OrganizationDetailVC: OrganizationDetailVCTableAdapterDelegate {
+    func animalsTapped(id: String) {
+        openAnimalsClosure?(id)
+    }
+    
+    func organizationDetailTapped(id: String) {
+    }
+    
+    func videosTapped(videos: [Video]) {
+    }
 }

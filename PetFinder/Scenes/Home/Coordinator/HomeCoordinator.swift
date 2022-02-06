@@ -32,7 +32,7 @@ class HomeCoordinator: HomeCoordinatorType {
         animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(systemName: "pawprint"), tag: 0)
         let animalCoordinator = sharedFactory
             .makeAnimalFactory()
-            .makeAnimalCoordinator(navigationController: animalNC)
+            .makeAnimalCoordinator(navigationController: animalNC, organizationID: nil)
         
         let animalMapNC = UINavigationController()
         animalMapNC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), tag: 1)

@@ -104,6 +104,7 @@
 		3DDF0E8D27B03B12005C8E14 /* OrganizationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */; };
 		3DDF0E8F27B04508005C8E14 /* AnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */; };
 		3DDF0E9127B04512005C8E14 /* OrganizationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */; };
+		3DDF0E9327B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9227B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -226,6 +227,7 @@
 		3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrganizationDetail.storyboard; sourceTree = "<group>"; };
 		3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetail.swift; sourceTree = "<group>"; };
 		3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetail.swift; sourceTree = "<group>"; };
+		3DDF0E9227B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrganizationDetailVC+TableAdapter.swift"; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */,
+				3DDF0E9227B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift */,
 				3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */,
 			);
 			path = OrganizationDetail;
@@ -1222,6 +1225,7 @@
 				3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */,
 				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
 				3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */,
+				3DDF0E9327B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3DDF0E4527AEAACF005C8E14 /* AnimalEnvironment.swift in Sources */,

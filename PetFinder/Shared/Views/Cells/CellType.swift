@@ -32,7 +32,7 @@ struct CellButtonItem {
     let action: CellItemAction
     
     enum CellItemAction {
-        case animalDetail(id: String)
+        case animals(organizationID: String)
         case organizationDetail(id: String)
         case video(videos: [Video])
     }

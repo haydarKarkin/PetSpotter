@@ -15,11 +15,14 @@ class AnimalsVM: ViewModelType {
     
     private let animalService: AnimalServiceType
     private let animalCoordinator: AnimalCoordinatorType
+    private let organizationID: String?
     
     init(animalService: AnimalServiceType,
-         animalCoordinator: AnimalCoordinatorType) {
+         animalCoordinator: AnimalCoordinatorType,
+         organizationID: String?) {
         self.animalService = animalService
         self.animalCoordinator = animalCoordinator
+        self.organizationID = organizationID
     }
 }
 
@@ -65,7 +68,7 @@ extension AnimalsVM {
         
         currentPage = page
         
-        animalService.getAnimals(page: page) { [weak self] result in
+        animalService.getAnimals(page: page, organizationID: organizationID) { [weak self] result in
             guard let self = self else { return }
             self.onLoadHandling?(false)
             switch result {

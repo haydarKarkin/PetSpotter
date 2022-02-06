@@ -1,5 +1,5 @@
 //
-//  AnimalDetailVC+TableAdapter.swift
+//  OrganizationDetailVC+TableAdapter.swift
 //  PetFinder
 //
 //  Created by hkarkin on 6.02.2022.
@@ -7,34 +7,34 @@
 
 import UIKit
 
-protocol AnimalDetailVCTableAdapterDelegate: AnyObject {
+protocol OrganizationDetailVCTableAdapterDelegate: AnyObject {
     func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
 }
 
-protocol AnimalDetailVCTableAdapterType: AnyObject {
+protocol OrganizationDetailVCTableAdapterType: AnyObject {
     func reload()
 }
 
-// MARK: - AnimalDetailVC.TableAdapter
-extension AnimalDetailVC {
+// MARK: - OrganizationDetailVC.TableAdapter
+extension OrganizationDetailVC {
     
-    final class TableAdapter: NSObject, AnimalDetailVCTableAdapterType {
+    final class TableAdapter: NSObject, OrganizationDetailVCTableAdapterType {
         
         // MARK: Stored
         
         weak var tableView: UITableView?
-        weak var delegate: AnimalDetailVCTableAdapterDelegate?
-        let animal: Animal
-        lazy var dataSource = DetailDataSource(animal: animal, delegate: self)
+        weak var delegate: OrganizationDetailVCTableAdapterDelegate?
+        let organization: Organization
+        lazy var dataSource = DetailDataSource(organization: organization, delegate: self)
         
         init(tableView: UITableView?,
-             delegate: AnimalDetailVCTableAdapterDelegate?,
-             animal: Animal) {
+             delegate: OrganizationDetailVCTableAdapterDelegate?,
+             organization: Organization) {
             self.tableView = tableView
             self.delegate = delegate
-            self.animal = animal
+            self.organization = organization
             super.init()
             configureView()
         }
@@ -63,7 +63,7 @@ extension AnimalDetailVC {
     }
 }
 
-extension AnimalDetailVC.TableAdapter: UITableViewDelegate {
+extension OrganizationDetailVC.TableAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
@@ -88,7 +88,7 @@ extension AnimalDetailVC.TableAdapter: UITableViewDelegate {
     }
 }
 
-extension AnimalDetailVC.TableAdapter: DetailDataSourceDelegate {
+extension OrganizationDetailVC.TableAdapter: DetailDataSourceDelegate {
     func animalsTapped(id: String) {
         delegate?.animalsTapped(id: id)
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ButtonCellDelegate: AnyObject {
-    func animalDetailTapped(id: String)
+    func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
 }
@@ -40,8 +40,8 @@ class ButtonCell: UITableViewCell, Reusable {
     @IBAction func buttonClicked(_ sender: Any) {
         guard let item = item else { return }
         switch item.action {
-        case .animalDetail(let id):
-            delegate?.animalDetailTapped(id: id)
+        case .animals(let id):
+            delegate?.animalsTapped(id: id)
         case .organizationDetail(let id):
             delegate?.organizationDetailTapped(id: id)
         case .video(let videos):

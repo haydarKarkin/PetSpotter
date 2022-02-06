@@ -17,14 +17,18 @@ class AnimalCoordinator: AnimalCoordinatorType {
     
     private let navigationController: UINavigationController
     private let animalFactory: AnimalFactoryType
+    private let organizationID: String?
     
-    init(navigationController: UINavigationController, animalFactory: AnimalFactoryType) {
+    init(navigationController: UINavigationController,
+         animalFactory: AnimalFactoryType,
+         organizationID: String? = nil) {
         self.navigationController = navigationController
         self.animalFactory = animalFactory
+        self.organizationID = organizationID
     }
     
     func start() {
-        let viewController = animalFactory.makeAnimalsVC(animalCoordinator: self)
+        let viewController = animalFactory.makeAnimalsVC(animalCoordinator: self, organizationID: organizationID)
         navigationController.pushViewController(viewController, animated: true)
     }
     

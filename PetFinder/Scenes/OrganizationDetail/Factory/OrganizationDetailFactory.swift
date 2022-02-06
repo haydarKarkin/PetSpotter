@@ -12,8 +12,8 @@ protocol OrganizationDetailFactoryType {
     var sharedFactory: SharedFactoryType { get }
     func makeOrganizationDetailCoordinator(navigationController: UINavigationController,
                                            organization: Organization) -> OrganizationDetailCoordinatorType
-    func makeOrganizationDetailVM(organization: Organization) -> OrganizationDetailVM
-    func makeOrganizationDetailVC(organization: Organization) -> OrganizationDetailVC
+    func makeOrganizationDetailVM(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVM
+    func makeOrganizationDetailVC(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVC
 }
 
 class OrganizationDetailFactory: OrganizationDetailFactoryType {
@@ -30,14 +30,15 @@ class OrganizationDetailFactory: OrganizationDetailFactoryType {
                                       organization: organization)
     }
     
-    func makeOrganizationDetailVM(organization: Organization) -> OrganizationDetailVM {
-        let service: AnimalServiceType = sharedFactory.makeAnimalFactory().makeAnimalService()
-        return OrganizationDetailVM(organization: organization, animalService: service)
+    func makeOrganizationDetailVM(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVM {
+        OrganizationDetailVM(organization: organization,
+                             organizationDetailCoordinator: coordinator)
     }
     
-    func makeOrganizationDetailVC(organization: Organization) -> OrganizationDetailVC {
+    func makeOrganizationDetailVC(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVC {
         let viewController = OrganizationDetailVC.instantiate()
-        viewController.viewModel = makeOrganizationDetailVM(organization: organization)
+        viewController.viewModel = makeOrganizationDetailVM(organization: organization,
+                                                            coordinator: coordinator)
         return viewController
     }
 }

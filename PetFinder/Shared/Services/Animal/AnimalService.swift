@@ -8,8 +8,8 @@
 import Foundation
 
 protocol AnimalServiceType {
-    func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ())
-    func getAnimalsByFilter(page: Int, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ())
+    func getAnimals(page: Int, organizationID: String?, completion: @escaping(Result<Animals, Error>) -> ())
+    func getAnimalsByFilter(page: Int, organizationID: String?, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimal(id: String, completion: @escaping(Result<AnimalDetail, Error>) -> ())
     func getAnimalTypes(completion: @escaping(Result<AnimalTypes, Error>) -> ())
@@ -23,10 +23,13 @@ class AnimalService: AnimalServiceType {
         self.provider = provider
     }
     
-    func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ()) {
+    func getAnimals(page: Int,
+                    organizationID: String?,
+                    completion: @escaping(Result<Animals, Error>) -> ()) {
         
         provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
                                           page: page,
+                                          organizationID: organizationID,
                                           type: nil,
                                           breed: nil,
                                           size: nil,
@@ -43,10 +46,14 @@ class AnimalService: AnimalServiceType {
         }
     }
     
-    func getAnimalsByFilter(page: Int, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ()) {
+    func getAnimalsByFilter(page: Int,
+                            organizationID: String?,
+                            filter: AnimalFilter,
+                            completion: @escaping(Result<Animals, Error>) -> ()) {
         
         provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
                                           page: page,
+                                          organizationID: organizationID,
                                           type: filter.type,
                                           breed: filter.breed,
                                           size: filter.size,
