@@ -28,7 +28,7 @@ class AnimalCell: UICollectionViewCell, Reusable {
         if let imageData = model.image {
             animalImageView.image = UIImage(data: imageData) ?? UIImage(named: "AnimalPlaceholderImage")
         } else {
-            animalImageView.image = UIImage(named: "AnimalPlaceholderImage")
+            animalImageView.downloadImageFrom(link: model.imageUrl?.absoluteString, contentMode: .scaleAspectFill)
         }
     }
 }

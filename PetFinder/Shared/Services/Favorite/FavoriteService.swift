@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 protocol FavoriteServiceType {
     func getFavorites(completion: @escaping(Result<[Favorite], Error>) -> ())
@@ -50,19 +51,31 @@ extension FavoriteService {
     
     func saveFavorite(animal: Animal, completion: @escaping(Bool) -> ()) {
         let managedContext = dataController.persistentContainer.viewContext
+        
+        func save() {
+            do {
+                try managedContext.save()
+                completion(true)
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+                completion(false)
+            }
+        }
                 
         let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: managedContext)!
         let favorite = NSManagedObject(entity: entity, insertInto: managedContext) as? Favorite
         
         favorite?.id = "\(animal.id)"
         favorite?.name = animal.name
-        
-        do {
-            try managedContext.save()
-            completion(true)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-            completion(false)
+        if let imageUrl = URL(string: animal.photos.first?.medium ?? "") {
+            favorite?.imageUrl = imageUrl
+            
+            downloadImage(imgUrl: imageUrl) { data, error in
+                favorite?.image = data
+                save()
+            }
+        } else {
+            save()
         }
     }
     
@@ -87,6 +100,20 @@ extension FavoriteService {
             case .failure:
                 completion(false)
             }
+        }
+    }
+    
+    private func downloadImage(imgUrl: URL, completion: @escaping (Data?, Error?) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            let request = URLRequest(url: imgUrl)
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    completion(nil, error)
+                    return
+                }
+                completion(data, nil)
+            }
+            task.resume()
         }
     }
 }
