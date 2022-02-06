@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,23 +17,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hx-JW-PNu">
+                        <rect key="frame" x="8" y="8" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="9hx-JW-PNu" secondAttribute="height" multiplier="1:1" id="twH-FK-Wwb"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-PC-W2I">
-                        <rect key="frame" x="139" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="44" y="8" width="268" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XDg-PC-W2I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7Nb-Uh-Bm6"/>
-                    <constraint firstItem="XDg-PC-W2I" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JXU-81-EmF"/>
+                    <constraint firstAttribute="trailing" secondItem="XDg-PC-W2I" secondAttribute="trailing" constant="8" id="5aU-7y-Kie"/>
+                    <constraint firstAttribute="bottom" secondItem="9hx-JW-PNu" secondAttribute="bottom" constant="8" id="8ML-xH-zj0"/>
+                    <constraint firstItem="9hx-JW-PNu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Lle-gl-TOw"/>
+                    <constraint firstItem="XDg-PC-W2I" firstAttribute="leading" secondItem="9hx-JW-PNu" secondAttribute="trailing" constant="8" id="MN7-74-zQV"/>
+                    <constraint firstItem="9hx-JW-PNu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QDf-c4-OGv"/>
+                    <constraint firstAttribute="bottom" secondItem="XDg-PC-W2I" secondAttribute="bottom" constant="8" id="gd3-6y-a4w"/>
+                    <constraint firstItem="XDg-PC-W2I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="vpr-bk-VJ9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="XDg-PC-W2I" id="nmT-Co-Cvq"/>
+                <outlet property="orgImageView" destination="9hx-JW-PNu" id="rj4-QY-Khc"/>
             </connections>
-            <point key="canvasLocation" x="132" y="65"/>
+            <point key="canvasLocation" x="131.8840579710145" y="64.955357142857139"/>
         </tableViewCell>
     </objects>
 </document>

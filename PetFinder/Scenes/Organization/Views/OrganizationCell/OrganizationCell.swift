@@ -10,6 +10,7 @@ import UIKit
 class OrganizationCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var orgImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class OrganizationCell: UITableViewCell, Reusable {
     
     func configure(with model: Organization) {
         nameLabel.text = model.name
+        orgImageView.downloadImageFrom(link: model.photos.first?.small, contentMode: .scaleAspectFill)
     }
     
 }

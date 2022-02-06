@@ -23,6 +23,6 @@ class ImageCell: UITableViewCell, Reusable {
     }
     
     func configure(with item: CellImageItem) {
-        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFit)
+        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill)
     }
 }

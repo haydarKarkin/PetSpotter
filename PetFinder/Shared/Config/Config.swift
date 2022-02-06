@@ -25,6 +25,6 @@ struct Configs {
     }
     
     struct UI {
-        static let estimatedRowHeight: CGFloat = 50.0
+        static let estimatedRowHeight: CGFloat = 60.0
     }
 }
