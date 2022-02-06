@@ -105,6 +105,10 @@
 		3DDF0E8F27B04508005C8E14 /* AnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */; };
 		3DDF0E9127B04512005C8E14 /* OrganizationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */; };
 		3DDF0E9327B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9227B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift */; };
+		3DDF0E9627B06F44005C8E14 /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9527B06F44005C8E14 /* VideosVC.swift */; };
+		3DDF0E9827B06F51005C8E14 /* VideosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9727B06F51005C8E14 /* VideosVM.swift */; };
+		3DDF0E9C27B070AE005C8E14 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */; };
+		3DDF0E9D27B070AE005C8E14 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -228,6 +232,10 @@
 		3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetail.swift; sourceTree = "<group>"; };
 		3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetail.swift; sourceTree = "<group>"; };
 		3DDF0E9227B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrganizationDetailVC+TableAdapter.swift"; sourceTree = "<group>"; };
+		3DDF0E9527B06F44005C8E14 /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
+		3DDF0E9727B06F51005C8E14 /* VideosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVM.swift; sourceTree = "<group>"; };
+		3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -610,6 +618,7 @@
 		3D92612627A9E2E100870F33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DDF0E9927B07091005C8E14 /* VideoCell */,
 				3D92612727A9E76E00870F33 /* AnimalDetail.storyboard */,
 			);
 			path = Views;
@@ -781,6 +790,7 @@
 			isa = PBXGroup;
 			children = (
 				3D92612427A9E2A500870F33 /* AnimalDetail */,
+				3DDF0E9427B06F31005C8E14 /* Videos */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -908,6 +918,24 @@
 				3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3DDF0E9427B06F31005C8E14 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E9527B06F44005C8E14 /* VideosVC.swift */,
+				3DDF0E9727B06F51005C8E14 /* VideosVM.swift */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		3DDF0E9927B07091005C8E14 /* VideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */,
+				3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */,
+			);
+			path = VideoCell;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -1110,6 +1138,7 @@
 				3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */,
 				3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */,
 				3DF8C1DD27A585D8008226F3 /* Favorite.storyboard in Resources */,
+				3DDF0E9D27B070AE005C8E14 /* VideoCell.xib in Resources */,
 				3DDF0E7D27AFFF41005C8E14 /* HeaderView.xib in Resources */,
 				3DDF0E7027AFE2FF005C8E14 /* ImageCell.xib in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
@@ -1193,6 +1222,7 @@
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
 				3DF8C1E727A587D0008226F3 /* FavoritesVM.swift in Sources */,
 				3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */,
+				3DDF0E9C27B070AE005C8E14 /* VideoCell.swift in Sources */,
 				3DDF0E8A27B03AE3005C8E14 /* OrganizationDetailFactory.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
 				3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */,
@@ -1202,6 +1232,7 @@
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
 				3DB80C6C279F257A003BE349 /* Address.swift in Sources */,
 				3DDF0E6427AFBA26005C8E14 /* TextCell.swift in Sources */,
+				3DDF0E9827B06F51005C8E14 /* VideosVM.swift in Sources */,
 				3DB80C68279F230F003BE349 /* Organization.swift in Sources */,
 				3DDF0E6B27AFE291005C8E14 /* ButtonCell.swift in Sources */,
 				3DDF0E8F27B04508005C8E14 /* AnimalDetail.swift in Sources */,
@@ -1210,6 +1241,7 @@
 				3DDF0E7927AFFF0E005C8E14 /* HeaderView.swift in Sources */,
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
 				3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */,
+				3DDF0E9627B06F44005C8E14 /* VideosVC.swift in Sources */,
 				3DF8C1FD27A5C248008226F3 /* AnimalMapCoordinator.swift in Sources */,
 				3D92611C27A9D91D00870F33 /* UICollectionView+Ext.swift in Sources */,
 				3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */,

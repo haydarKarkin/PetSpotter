@@ -10,6 +10,7 @@ import UIKit
 
 protocol AnimalDetailCoordinatorType: Coordinator {
     func showOrganizationDetail(with organization: Organization)
+    func showVideos(with videos: [Video])
 }
 
 class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
@@ -37,5 +38,10 @@ class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
             .makeOrganizationDetailFactory()
             .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
         coordinate(to: coordinator)
+    }
+    
+    func showVideos(with videos: [Video]) {
+        let viewController = animalDetailFactory.makeVideosVC(videos: videos)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

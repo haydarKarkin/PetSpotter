@@ -18,9 +18,13 @@ extension Animal {
         
         let orgItem = CellButtonItem(title: "Organization", action: .organizationDetail(id: self.organizationID ?? ""))
         let orgCellType = CellType.button(orgItem)
-        let videoItem = CellButtonItem(title: "Videos", action: .video(videos: self.videos))
-        let videoCellType = CellType.button(videoItem)
-        sections["2. Links"] = [orgCellType, videoCellType]
+        sections["2. Links"] = [orgCellType]
+                                
+        if !self.videos.isEmpty {
+            let videoItem = CellButtonItem(title: "Videos", action: .video(videos: self.videos))
+            let videoCellType = CellType.button(videoItem)
+            sections["2. Links"]?.append(videoCellType)
+        }
         
         let typeItem = CellTextItem.init(title: "Type", description: self.type ?? "N/A")
         let typeCellType = CellType.text(typeItem)

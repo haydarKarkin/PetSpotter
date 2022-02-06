@@ -110,6 +110,6 @@ extension AnimalDetailVM {
     }
     
     func showVideos(with videos: [Video]) {
-        
+        self.animalDetailCoordinator.showVideos(with: videos)
     }
 }
