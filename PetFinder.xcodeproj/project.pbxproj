@@ -97,6 +97,13 @@
 		3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7527AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift */; };
 		3DDF0E7927AFFF0E005C8E14 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7827AFFF0E005C8E14 /* HeaderView.swift */; };
 		3DDF0E7D27AFFF41005C8E14 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */; };
+		3DDF0E7F27B02F8F005C8E14 /* Animal+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7E27B02F8F005C8E14 /* Animal+DataSource.swift */; };
+		3DDF0E8127B02F9D005C8E14 /* Organization+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8027B02F9D005C8E14 /* Organization+DataSource.swift */; };
+		3DDF0E8827B03ADA005C8E14 /* OrganizationDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8727B03ADA005C8E14 /* OrganizationDetailCoordinator.swift */; };
+		3DDF0E8A27B03AE3005C8E14 /* OrganizationDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8927B03AE3005C8E14 /* OrganizationDetailFactory.swift */; };
+		3DDF0E8D27B03B12005C8E14 /* OrganizationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */; };
+		3DDF0E8F27B04508005C8E14 /* AnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */; };
+		3DDF0E9127B04512005C8E14 /* OrganizationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -212,6 +219,13 @@
 		3DDF0E7527AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalDetailVC+TableAdapter.swift"; sourceTree = "<group>"; };
 		3DDF0E7827AFFF0E005C8E14 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		3DDF0E7E27B02F8F005C8E14 /* Animal+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+DataSource.swift"; sourceTree = "<group>"; };
+		3DDF0E8027B02F9D005C8E14 /* Organization+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+DataSource.swift"; sourceTree = "<group>"; };
+		3DDF0E8727B03ADA005C8E14 /* OrganizationDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailCoordinator.swift; sourceTree = "<group>"; };
+		3DDF0E8927B03AE3005C8E14 /* OrganizationDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailFactory.swift; sourceTree = "<group>"; };
+		3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrganizationDetail.storyboard; sourceTree = "<group>"; };
+		3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetail.swift; sourceTree = "<group>"; };
+		3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetail.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -300,6 +314,7 @@
 				3D9C492F275807E300CB27AE /* Home */,
 				3D9C494627581FB600CB27AE /* Onboarding */,
 				3D1147172756A37F00E303FE /* Organization */,
+				3DDF0E8227B03A94005C8E14 /* OrganizationDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -726,6 +741,8 @@
 				3DB80C6D279F25AB003BE349 /* SocialMedia.swift */,
 				3D9C495C275823EC00CB27AE /* Token.swift */,
 				3DDF0E3C27AEA8F3005C8E14 /* Video.swift */,
+				3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */,
+				3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -777,7 +794,6 @@
 			isa = PBXGroup;
 			children = (
 				3D1147252756A51E00E303FE /* Organizations */,
-				3D1147282756A53900E303FE /* OrganizationDetail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -833,6 +849,8 @@
 			isa = PBXGroup;
 			children = (
 				3DDF0E5F27AFB82B005C8E14 /* DetailDataSource.swift */,
+				3DDF0E7E27B02F8F005C8E14 /* Animal+DataSource.swift */,
+				3DDF0E8027B02F9D005C8E14 /* Organization+DataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -844,6 +862,49 @@
 				3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		3DDF0E8227B03A94005C8E14 /* OrganizationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E8327B03A9C005C8E14 /* Coordinator */,
+				3DDF0E8427B03AA3005C8E14 /* Factory */,
+				3DDF0E8527B03AAA005C8E14 /* Features */,
+				3DDF0E8627B03AC2005C8E14 /* Views */,
+			);
+			path = OrganizationDetail;
+			sourceTree = "<group>";
+		};
+		3DDF0E8327B03A9C005C8E14 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E8727B03ADA005C8E14 /* OrganizationDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3DDF0E8427B03AA3005C8E14 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E8927B03AE3005C8E14 /* OrganizationDetailFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3DDF0E8527B03AAA005C8E14 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3D1147282756A53900E303FE /* OrganizationDetail */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3DDF0E8627B03AC2005C8E14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E8C27B03B12005C8E14 /* OrganizationDetail.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -1056,6 +1117,7 @@
 				3D92612827A9E76E00870F33 /* AnimalDetail.storyboard in Resources */,
 				3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
+				3DDF0E8D27B03B12005C8E14 /* OrganizationDetail.storyboard in Resources */,
 				3DDF0E6C27AFE291005C8E14 /* ButtonCell.xib in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
 				3DF8C1FB27A5C234008226F3 /* AnimalMap.storyboard in Resources */,
@@ -1076,6 +1138,7 @@
 				3DDF0E3F27AEA96A005C8E14 /* Breeds.swift in Sources */,
 				3DDF0E5A27AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift in Sources */,
 				3D9C493B275818F300CB27AE /* OrganizationCoordinator.swift in Sources */,
+				3DDF0E9127B04512005C8E14 /* OrganizationDetail.swift in Sources */,
 				3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */,
 				3DB80C72279F2617003BE349 /* Adoption.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
@@ -1090,6 +1153,7 @@
 				3DF405802763E817001A943C /* Animals.swift in Sources */,
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
 				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
+				3DDF0E7F27B02F8F005C8E14 /* Animal+DataSource.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
@@ -1097,6 +1161,7 @@
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,
 				3DF405832763E9CD001A943C /* Pagination.swift in Sources */,
+				3DDF0E8827B03ADA005C8E14 /* OrganizationDetailCoordinator.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
@@ -1113,6 +1178,7 @@
 				3DF8C1E127A587AA008226F3 /* FavoriteFactory.swift in Sources */,
 				3DB80C7B279F3CE9003BE349 /* AnimalTypes.swift in Sources */,
 				3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */,
+				3DDF0E8127B02F9D005C8E14 /* Organization+DataSource.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3DDF0E6027AFB82B005C8E14 /* DetailDataSource.swift in Sources */,
@@ -1124,6 +1190,7 @@
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
 				3DF8C1E727A587D0008226F3 /* FavoritesVM.swift in Sources */,
 				3DB80C7D279F3CF4003BE349 /* AnimalType.swift in Sources */,
+				3DDF0E8A27B03AE3005C8E14 /* OrganizationDetailFactory.swift in Sources */,
 				3D11470A2756A18400E303FE /* ViewModel.swift in Sources */,
 				3DB80C77279F3163003BE349 /* OrganizationCell.swift in Sources */,
 				3D9C49452758193300CB27AE /* OrganizationsVM.swift in Sources */,
@@ -1134,6 +1201,7 @@
 				3DDF0E6427AFBA26005C8E14 /* TextCell.swift in Sources */,
 				3DB80C68279F230F003BE349 /* Organization.swift in Sources */,
 				3DDF0E6B27AFE291005C8E14 /* ButtonCell.swift in Sources */,
+				3DDF0E8F27B04508005C8E14 /* AnimalDetail.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
 				3DDF0E7927AFFF0E005C8E14 /* HeaderView.swift in Sources */,

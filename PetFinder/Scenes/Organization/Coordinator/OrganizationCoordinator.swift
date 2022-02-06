@@ -24,11 +24,14 @@ class OrganizationCoordinator: OrganizationCoordinatorType {
     
     func start() {
         let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showOrganizationDetail(organization: Organization) {
-        let viewController = organizationFactory.makeOrganizationDetailVC(organization: organization)
-        navigationController.pushViewController(viewController, animated: true)
+        let coordinator = organizationFactory
+            .sharedFactory
+            .makeOrganizationDetailFactory()
+            .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+        coordinate(to: coordinator)
     }
 }

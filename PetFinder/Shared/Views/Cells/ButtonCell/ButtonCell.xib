@@ -18,17 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="295.5" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tch-bL-FPy">
-                        <rect key="frame" x="16" y="8" width="46" height="28"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tch-bL-FPy">
+                        <rect key="frame" x="16" y="8" width="263.5" height="28"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" name="PrimaryBlack"/>
                         </state>
+                        <connections>
+                            <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ovh-KT-zHt"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="tch-bL-FPy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="e6p-bJ-jzK"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tch-bL-FPy" secondAttribute="trailing" constant="16" id="pdp-Xj-ZCK"/>
+                    <constraint firstAttribute="trailing" secondItem="tch-bL-FPy" secondAttribute="trailing" constant="16" id="pdp-Xj-ZCK"/>
                     <constraint firstItem="tch-bL-FPy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qHW-Qh-fdn"/>
                     <constraint firstAttribute="bottom" secondItem="tch-bL-FPy" secondAttribute="bottom" constant="8" id="rC8-cb-d5n"/>
                 </constraints>

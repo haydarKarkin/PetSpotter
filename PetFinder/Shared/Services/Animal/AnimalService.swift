@@ -11,7 +11,7 @@ protocol AnimalServiceType {
     func getAnimals(page: Int, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimalsByFilter(page: Int, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ())
-    func getAnimal(id: String, completion: @escaping(Result<Animal, Error>) -> ())
+    func getAnimal(id: String, completion: @escaping(Result<AnimalDetail, Error>) -> ())
     func getAnimalTypes(completion: @escaping(Result<AnimalTypes, Error>) -> ())
 }
 
@@ -77,9 +77,9 @@ class AnimalService: AnimalServiceType {
         }
     }
     
-    func getAnimal(id: String, completion: @escaping(Result<Animal, Error>) -> ()) {
+    func getAnimal(id: String, completion: @escaping(Result<AnimalDetail, Error>) -> ()) {
         provider.request(target: .animal(id: id),
-                         responseType: Animal.self) { result in
+                         responseType: AnimalDetail.self) { result in
             
             switch result {
             case .success(let resp):

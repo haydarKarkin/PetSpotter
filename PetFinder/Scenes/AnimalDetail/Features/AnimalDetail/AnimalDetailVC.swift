@@ -24,6 +24,9 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     var getFavoriteClosure: (() -> Void)?
     var saveFavoriteClosure: (() -> Void)?
     var deleteFavoriteClosure: (() -> Void)?
+    var openAnimalDetailClosure: ((String) -> Void)?
+    var openOrgDetailClosure: ((String) -> Void)?
+    var openVideosClosure: (([Video]) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +50,13 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
         viewModel.transform(input: input){ [weak self] (output) in
             guard let self = self else { return }
             self.title = output.animal.name
+            
             self.getFavoriteClosure = output.getFavorite
             self.saveFavoriteClosure = output.saveFavorite
             self.deleteFavoriteClosure = output.deleteFavorite
+            self.openOrgDetailClosure = output.openOrgDetail
+            self.openVideosClosure = output.openVideos
+            
             self.tableAdapter = TableAdapter(tableView: self.tableView, delegate: self, animal: output.animal)
             self.tableAdapter.reload()
         }
@@ -68,13 +75,13 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
     
     func configureNavigationItem(with isFavorited: Bool) {
         if isFavorited {
-            let deleteFavorite = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+            let deleteFavorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"),
                                            style: .plain,
                                            target: self,
                                            action: #selector(deleteFavorite))
             navigationItem.rightBarButtonItems = [deleteFavorite]
         } else {
-            let saveFavorite = UIBarButtonItem(image: UIImage(systemName: "star"),
+            let saveFavorite = UIBarButtonItem(image: UIImage(systemName: "heart"),
                                                style: .plain,
                                                target: self,
                                                action: #selector(saveFavorite))
@@ -90,5 +97,15 @@ extension AnimalDetailVC: Storyboarded {
 
 // MARK: - AnimalDetailVCTableAdapterDelegate
 extension AnimalDetailVC: AnimalDetailVCTableAdapterDelegate {
+    func animalDetailTapped(id: String) {
+        openAnimalDetailClosure?(id)
+    }
     
+    func organizationDetailTapped(id: String) {
+        openOrgDetailClosure?(id)
+    }
+    
+    func videosTapped(videos: [Video]) {
+        openVideosClosure?(videos)
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol OrganizationServiceType {
     func getOrganizations(page: Int, completion: @escaping(Result<Organizations, Error>) -> ())
-    func getOrganization(id: String, completion: @escaping(Result<Organization, Error>) -> ())
+    func getOrganization(id: String, completion: @escaping(Result<OrganizationDetail, Error>) -> ())
 }
 
 class OrganizationService: OrganizationServiceType {
@@ -35,9 +35,9 @@ class OrganizationService: OrganizationServiceType {
         }
     }
     
-    func getOrganization(id: String, completion: @escaping(Result<Organization, Error>) -> ()) {
+    func getOrganization(id: String, completion: @escaping(Result<OrganizationDetail, Error>) -> ()) {
         provider.request(target: .organization(id: id),
-                         responseType: Organization.self) { result in
+                         responseType: OrganizationDetail.self) { result in
             
             switch result {
             case .success(let resp):

@@ -11,13 +11,17 @@ class AnimalDetailVM: ViewModelType {
     
     private let animal: Animal
     private let favoriteService: FavoriteServiceType
-    private let dataSource: DetailDataSource
+    private let animalDetailCoordinator: AnimalDetailCoordinatorType
+    private let organizationService: OrganizationServiceType
    
     init(animal: Animal,
-         favoriteService: FavoriteServiceType) {
+         favoriteService: FavoriteServiceType,
+         organizationService: OrganizationServiceType,
+         animalDetailCoordinator: AnimalDetailCoordinatorType) {
         self.animal = animal
         self.favoriteService = favoriteService
-        self.dataSource = DetailDataSource(animal: animal)
+        self.organizationService = organizationService
+        self.animalDetailCoordinator = animalDetailCoordinator
     }
 }
 
@@ -29,10 +33,11 @@ extension AnimalDetailVM {
     
     struct Output {
         var animal: Animal
-        var dataSource: DetailDataSource
         var getFavorite: (() -> Void)?
         var saveFavorite: (() -> Void)?
         var deleteFavorite: (() -> Void)?
+        var openOrgDetail: ((String) -> Void)?
+        var openVideos: (([Video]) -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -45,11 +50,18 @@ extension AnimalDetailVM {
         let deleteFavorite: (() -> Void)? = {
             self.deleteFavorite(completion: input.isFavorited)
         }
+        let openOrgDetail: ((String) -> Void)? = { id in
+            self.showOrgDetail(with: id)
+        }
+        let openVideos: (([Video]) -> Void)? = { videos in
+            self.showVideos(with: videos)
+        }
         output(Output(animal: animal,
-                      dataSource: dataSource,
                       getFavorite: getFavorite,
                       saveFavorite: saveFavorite,
-                      deleteFavorite: deleteFavorite))
+                      deleteFavorite: deleteFavorite,
+                      openOrgDetail: openOrgDetail,
+                      openVideos: openVideos))
     }
 }
 
@@ -81,5 +93,23 @@ extension AnimalDetailVM {
         favoriteService.deleteFavorite(animal: animal) { result in
             completion?(!result)
         }
+    }
+    
+    func showOrgDetail(with id: String) {
+        self.onLoadHandling?(true)
+        organizationService.getOrganization(id: id) { [weak self] result in
+            guard let self = self else { return }
+            self.onLoadHandling?(false)
+            switch result {
+            case .success(let resp):
+                self.animalDetailCoordinator.showOrganizationDetail(with: resp.organization)
+            case .failure(let error):
+                self.onErrorHandling?(error)
+            }
+        }
+    }
+    
+    func showVideos(with videos: [Video]) {
+        
     }
 }

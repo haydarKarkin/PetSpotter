@@ -8,6 +8,9 @@
 import UIKit
 
 protocol AnimalDetailVCTableAdapterDelegate: AnyObject {
+    func animalDetailTapped(id: String)
+    func organizationDetailTapped(id: String)
+    func videosTapped(videos: [Video])
 }
 
 protocol AnimalDetailVCTableAdapterType: AnyObject {
@@ -24,7 +27,7 @@ extension AnimalDetailVC {
         weak var tableView: UITableView?
         weak var delegate: AnimalDetailVCTableAdapterDelegate?
         let animal: Animal
-        let dataSource: DetailDataSource
+        lazy var dataSource = DetailDataSource(animal: animal, delegate: self)
         
         init(tableView: UITableView?,
              delegate: AnimalDetailVCTableAdapterDelegate?,
@@ -32,7 +35,6 @@ extension AnimalDetailVC {
             self.tableView = tableView
             self.delegate = delegate
             self.animal = animal
-            self.dataSource = DetailDataSource(animal: animal)
             super.init()
             configureView()
         }
@@ -84,4 +86,19 @@ extension AnimalDetailVC.TableAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
+}
+
+extension AnimalDetailVC.TableAdapter: DetailDataSourceDelegate {
+    func animalDetailTapped(id: String) {
+        delegate?.animalDetailTapped(id: id)
+    }
+    
+    func organizationDetailTapped(id: String) {
+        delegate?.organizationDetailTapped(id: id)
+    }
+    
+    func videosTapped(videos: [Video]) {
+        delegate?.videosTapped(videos: videos)
+    }
+    
 }

@@ -91,6 +91,7 @@ extension AnimalsVM {
     }
     
     func openFilter() {
+        self.onLoadHandling?(true)
         animalService.getAnimalTypes() { [weak self] result in
             self?.onLoadHandling?(false)
             switch result {

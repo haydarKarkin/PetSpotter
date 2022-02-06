@@ -37,5 +37,5 @@ class OrganizationDetailVC: ViewController<OrganizationDetailVM> {
 
 // MARK: - Storyboarded
 extension OrganizationDetailVC: Storyboarded {
-    static var storyboardName = StoryboardName.organization
+    static var storyboardName = StoryboardName.organizationDetail
 }

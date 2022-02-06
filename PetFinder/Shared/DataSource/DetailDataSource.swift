@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol DetailDataSourceDelegate: AnyObject {
+    func animalDetailTapped(id: String)
+    func organizationDetailTapped(id: String)
+    func videosTapped(videos: [Video])
+}
+
 class DetailDataSource: NSObject {
     private var sections: [String: [CellType]] = [:]
+    weak var delegate: DetailDataSourceDelegate?
     
     var titles: [String] {
         return sections.keys.sorted().reversed()
@@ -22,32 +29,14 @@ class DetailDataSource: NSObject {
             .reversed()
     }
     
-    init(animal: Animal) {
-        let imageItem = CellImageItem(photos: animal.photos)
-        let imageCellType = CellType.image(imageItem)
-        sections["Photos"] = [imageCellType]
-        
-        let orgItem = CellButtonItem(title: "Organization", action: .animalDetail(id: animal.organizationID ?? ""))
-        let orgCellType = CellType.button(orgItem)
-        let videoItem = CellButtonItem(title: "Videos", action: .video(videos: animal.videos))
-        let videoCellType = CellType.button(videoItem)
-        sections["Links"] = [orgCellType, videoCellType]
-        
-        let typeItem = CellTextItem.init(title: "Type", description: animal.type ?? "N/A")
-        let typeCellType = CellType.text(typeItem)
-        let breedItem = CellTextItem.init(title: "Breed", description: animal.breeds?.primary ?? "N/A")
-        let breedCellType = CellType.text(breedItem)
-        let ageItem = CellTextItem.init(title: "Age", description: animal.age ?? "N/A")
-        let ageCellType = CellType.text(ageItem)
-        let genderItem = CellTextItem.init(title: "Gender", description: animal.gender ?? "N/A")
-        let genderCellType = CellType.text(genderItem)
-        let descItem = CellTextItem.init(title: "Description", description: animal.animalDescription ?? "N/A")
-        let descCellType = CellType.text(descItem)
-        sections["General Info"] = [typeCellType, breedCellType, ageCellType, genderCellType, descCellType]
+    init(animal: Animal, delegate: DetailDataSourceDelegate) {
+        self.delegate = delegate
+        sections = animal.makeSections()
     }
     
-    init(organization: Organization) {
-        
+    init(organization: Organization, delegate: DetailDataSourceDelegate) {
+        self.delegate = delegate
+        sections = organization.makeSections()
     }
 }
 
@@ -71,7 +60,7 @@ extension DetailDataSource: UITableViewDataSource {
         switch cellType {
         case .button(let item):
             let cell: ButtonCell = tableView.dequeueReusableCell(indexPath: indexPath)
-            cell.configure(with: item)
+            cell.configure(with: item, delegate: self)
             return cell
         case .image(let item):
             let cell: ImageCell = tableView.dequeueReusableCell(indexPath: indexPath)
@@ -91,4 +80,19 @@ extension DetailDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return titles.firstIndex(where: { $0.hasPrefix(title) }) ?? 0
     }
+}
+
+extension DetailDataSource: ButtonCellDelegate {
+    func animalDetailTapped(id: String) {
+        delegate?.animalDetailTapped(id: id)
+    }
+    
+    func organizationDetailTapped(id: String) {
+        delegate?.organizationDetailTapped(id: id)
+    }
+    
+    func videosTapped(videos: [Video]) {
+        delegate?.videosTapped(videos: videos)
+    }
+    
 }

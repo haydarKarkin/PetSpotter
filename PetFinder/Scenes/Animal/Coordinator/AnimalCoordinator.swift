@@ -25,7 +25,7 @@ class AnimalCoordinator: AnimalCoordinatorType {
     
     func start() {
         let viewController = animalFactory.makeAnimalsVC(animalCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showAnimalDetail(animal: Animal) {

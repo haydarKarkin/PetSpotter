@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol AnimalDetailCoordinatorType: Coordinator {
+    func showOrganizationDetail(with organization: Organization)
 }
 
 class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
@@ -26,7 +27,15 @@ class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
     }
     
     func start() {
-        let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal)
-        navigationController.pushViewController(viewController, animated: false)
+        let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal, coordinator: self)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func showOrganizationDetail(with organization: Organization) {
+        let coordinator = animalDetailFactory
+            .sharedFactory
+            .makeOrganizationDetailFactory()
+            .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+        coordinate(to: coordinator)
     }
 }

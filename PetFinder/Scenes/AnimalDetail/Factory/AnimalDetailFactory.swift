@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 
 protocol AnimalDetailFactoryType {
+    var  sharedFactory: SharedFactoryType { get }
     func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType
     func makeFavoriteService() -> FavoriteServiceType
-    func makeAnimalDetailVM(animal: Animal) -> AnimalDetailVM
-    func makeAnimalDetailVC(animal: Animal) -> AnimalDetailVC
+    func makeOrganizationService() -> OrganizationServiceType
+    func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM
+    func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC
 }
 
 class AnimalDetailFactory: AnimalDetailFactoryType {
@@ -31,14 +33,23 @@ class AnimalDetailFactory: AnimalDetailFactoryType {
         return FavoriteService()
     }
     
-    func makeAnimalDetailVM(animal: Animal) -> AnimalDetailVM {
-        let service: FavoriteServiceType = makeFavoriteService()
-        return AnimalDetailVM(animal: animal, favoriteService: service)
+    func makeOrganizationService() -> OrganizationServiceType {
+        let clientProvider: ClientProvider<OrganizationAPI> = sharedFactory.makeClientProvider()
+        return OrganizationService(provider: clientProvider)
     }
     
-    func makeAnimalDetailVC(animal: Animal) -> AnimalDetailVC {
+    func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM {
+        let favoriteService: FavoriteServiceType = makeFavoriteService()
+        let organizationService: OrganizationServiceType = makeOrganizationService()
+        return AnimalDetailVM(animal: animal,
+                              favoriteService: favoriteService,
+                              organizationService: organizationService,
+                              animalDetailCoordinator: coordinator)
+    }
+    
+    func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC {
         let viewController = AnimalDetailVC.instantiate()
-        viewController.viewModel = makeAnimalDetailVM(animal: animal)
+        viewController.viewModel = makeAnimalDetailVM(animal: animal, coordinator: coordinator)
         return viewController
     }
 }
