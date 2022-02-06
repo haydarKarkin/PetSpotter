@@ -101,4 +101,8 @@ extension AnimalDetailVC.TableAdapter: DetailDataSourceDelegate {
         delegate?.videosTapped(videos: videos)
     }
     
+    func imageDownloadFinish() {
+        tableView?.beginUpdates()
+        tableView?.endUpdates()
+    }
 }

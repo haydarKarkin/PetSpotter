@@ -32,9 +32,17 @@ class FavoriteFactory: FavoriteFactoryType {
         return FavoriteService()
     }
     
+    func makeAnimalService() -> AnimalServiceType {
+        let clientProvider: ClientProvider<AnimalAPI> = sharedFactory.makeClientProvider()
+        return AnimalService(provider: clientProvider)
+    }
+    
     func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM {
-        let service: FavoriteServiceType = makeFavoriteService()
-        return FavoritesVM(favoriteService: service, favoriteCoordinator: favoriteCoordinator)
+        let favoriteService: FavoriteServiceType = makeFavoriteService()
+        let animalService: AnimalServiceType = makeAnimalService()
+        return FavoritesVM(favoriteService: favoriteService,
+                           favoriteCoordinator: favoriteCoordinator,
+                           animalService: animalService)
     }
     
     func makeFavoritesVC(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVC {

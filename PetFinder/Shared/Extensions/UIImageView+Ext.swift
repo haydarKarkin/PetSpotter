@@ -9,7 +9,9 @@ import UIKit
 
 extension UIImageView {
     
-    func downloadImageFrom(link: String?, contentMode: UIView.ContentMode = .scaleAspectFit) {
+    func downloadImageFrom(link: String?,
+                           contentMode: UIView.ContentMode = .scaleAspectFit,
+                           completion: (() -> Void)? = nil) {
         
         guard let link = link,  let imgURL = URL(string: link) else {
             self.image = UIImage.init(named: "AnimalPlaceholderImage")
@@ -27,6 +29,7 @@ extension UIImageView {
                 if error != nil {
                     self.image = UIImage.init(named: "AnimalPlaceholderImage")
                 }
+                completion?()
             }
         }.resume()
     }

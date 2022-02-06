@@ -11,6 +11,7 @@ protocol DetailDataSourceDelegate: AnyObject {
     func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
+    func imageDownloadFinish()
 }
 
 class DetailDataSource: NSObject {
@@ -63,21 +64,13 @@ extension DetailDataSource: UITableViewDataSource {
             return cell
         case .image(let item):
             let cell: ImageCell = tableView.dequeueReusableCell(indexPath: indexPath)
-            cell.configure(with: item)
+            cell.configure(with: item, delegate: self)
             return cell
         case .text(let item):
             let cell: TextCell = tableView.dequeueReusableCell(indexPath: indexPath)
             cell.configure(with: item)
             return cell
         }
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return indexes
-    }
-    
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return titles.firstIndex(where: { $0.hasPrefix(title) }) ?? 0
     }
 }
 
@@ -94,4 +87,10 @@ extension DetailDataSource: ButtonCellDelegate {
         delegate?.videosTapped(videos: videos)
     }
     
+}
+
+extension DetailDataSource: ImageCellDelegate {
+    func imageDownloadFinish() {
+        delegate?.imageDownloadFinish()
+    }
 }

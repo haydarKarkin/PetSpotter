@@ -21,6 +21,7 @@ class FavoritesVC: ViewController<FavoritesVM> {
     
     // MARK: - VM Binders
     var getFavoritesClosure: (() -> Void)?
+    var openAnimalDetailClosure: ((String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class FavoritesVC: ViewController<FavoritesVM> {
         let input = FavoritesVM.Input(favorites: favoriteClosure)
         viewModel.transform(input: input) { (output) in
             self.getFavoritesClosure = output.getFavorites
+            self.openAnimalDetailClosure = output.openAnimalDetail
         }
     }
 }
@@ -84,7 +86,7 @@ extension FavoritesVC: UICollectionViewDataSource {
 extension FavoritesVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        //openDetailClosure?(animals[indexPath.row])
+        openAnimalDetailClosure?(favorites[indexPath.row].id!)
     }
 }
 

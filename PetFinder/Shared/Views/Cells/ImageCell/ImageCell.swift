@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol ImageCellDelegate: AnyObject {
+    func imageDownloadFinish()
+}
+
 class ImageCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var mainImage: UIImageView!
+    weak var delegate: ImageCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +27,10 @@ class ImageCell: UITableViewCell, Reusable {
         // Configure the view for the selected state
     }
     
-    func configure(with item: CellImageItem) {
-        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill)
+    func configure(with item: CellImageItem, delegate: ImageCellDelegate?) {
+        self.delegate = delegate
+        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill) {
+            delegate?.imageDownloadFinish()
+        }
     }
 }

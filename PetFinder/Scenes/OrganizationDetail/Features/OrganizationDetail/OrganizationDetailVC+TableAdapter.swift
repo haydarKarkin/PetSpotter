@@ -101,4 +101,8 @@ extension OrganizationDetailVC.TableAdapter: DetailDataSourceDelegate {
         delegate?.videosTapped(videos: videos)
     }
     
+    func imageDownloadFinish() {
+        tableView?.beginUpdates()
+        tableView?.endUpdates()
+    }
 }
