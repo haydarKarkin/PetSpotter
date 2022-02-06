@@ -10,8 +10,10 @@ import UIKit
 class AnimalDetailVC: ViewController<AnimalDetailVM> {
     
     //MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
+    var tableAdapter: TableAdapter!
     var isFavorited: Bool = false {
         didSet {
             configureNavigationItem(with: isFavorited)
@@ -43,10 +45,13 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
         let input = AnimalDetailVM.Input(isFavorited: isFavoritedClosure)
         
         viewModel.transform(input: input){ [weak self] (output) in
-            self?.title = output.animal.name
-            self?.getFavoriteClosure = output.getFavorite
-            self?.saveFavoriteClosure = output.saveFavorite
-            self?.deleteFavoriteClosure = output.deleteFavorite
+            guard let self = self else { return }
+            self.title = output.animal.name
+            self.getFavoriteClosure = output.getFavorite
+            self.saveFavoriteClosure = output.saveFavorite
+            self.deleteFavoriteClosure = output.deleteFavorite
+            self.tableAdapter = TableAdapter(tableView: self.tableView, delegate: self, animal: output.animal)
+            self.tableAdapter.reload()
         }
         getFavoriteClosure?()
     }
@@ -81,4 +86,9 @@ class AnimalDetailVC: ViewController<AnimalDetailVM> {
 // MARK: - Storyboarded
 extension AnimalDetailVC: Storyboarded {
     static var storyboardName = StoryboardName.animalDetail
+}
+
+// MARK: - AnimalDetailVCTableAdapterDelegate
+extension AnimalDetailVC: AnimalDetailVCTableAdapterDelegate {
+    
 }

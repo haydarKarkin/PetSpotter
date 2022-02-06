@@ -35,6 +35,14 @@ extension UITableView {
         }
         return cell
     }
+    
+    func registerEmptyCell() {
+        register(UITableViewCell.self, forCellReuseIdentifier: "EmptyCell")
+    }
+    
+    func dequeueEmptyCell(indexPath: IndexPath) -> UITableViewCell {
+        dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath)
+    }
 }
 
 // MARK: - UITableView + EmptyView

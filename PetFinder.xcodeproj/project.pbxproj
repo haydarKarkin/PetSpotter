@@ -86,6 +86,17 @@
 		3DDF0E5127AEE5CB005C8E14 /* OrganizationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */; };
 		3DDF0E5927AF1BCC005C8E14 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5727AF1BCC005C8E14 /* Favorite+CoreDataClass.swift */; };
 		3DDF0E5A27AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5827AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift */; };
+		3DDF0E6027AFB82B005C8E14 /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E5F27AFB82B005C8E14 /* DetailDataSource.swift */; };
+		3DDF0E6427AFBA26005C8E14 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6227AFBA26005C8E14 /* TextCell.swift */; };
+		3DDF0E6527AFBA26005C8E14 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6327AFBA26005C8E14 /* TextCell.xib */; };
+		3DDF0E6B27AFE291005C8E14 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6927AFE291005C8E14 /* ButtonCell.swift */; };
+		3DDF0E6C27AFE291005C8E14 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6A27AFE291005C8E14 /* ButtonCell.xib */; };
+		3DDF0E6F27AFE2FF005C8E14 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6D27AFE2FF005C8E14 /* ImageCell.swift */; };
+		3DDF0E7027AFE2FF005C8E14 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E6E27AFE2FF005C8E14 /* ImageCell.xib */; };
+		3DDF0E7327AFE723005C8E14 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7227AFE723005C8E14 /* CellType.swift */; };
+		3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7527AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift */; };
+		3DDF0E7927AFFF0E005C8E14 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7827AFFF0E005C8E14 /* HeaderView.swift */; };
+		3DDF0E7D27AFFF41005C8E14 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -190,6 +201,17 @@
 		3DDF0E5027AEE5CB005C8E14 /* OrganizationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVC.swift; sourceTree = "<group>"; };
 		3DDF0E5727AF1BCC005C8E14 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DDF0E5827AF1BCC005C8E14 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DDF0E5F27AFB82B005C8E14 /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
+		3DDF0E6227AFBA26005C8E14 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		3DDF0E6327AFBA26005C8E14 /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		3DDF0E6927AFE291005C8E14 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		3DDF0E6A27AFE291005C8E14 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		3DDF0E6D27AFE2FF005C8E14 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		3DDF0E6E27AFE2FF005C8E14 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		3DDF0E7227AFE723005C8E14 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		3DDF0E7527AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalDetailVC+TableAdapter.swift"; sourceTree = "<group>"; };
+		3DDF0E7827AFFF0E005C8E14 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -307,14 +329,16 @@
 			children = (
 				3D1146F527569B8000E303FE /* Config */,
 				3D1146FD27569D6500E303FE /* Coordinator */,
+				3D1146DF2756962C00E303FE /* Database */,
+				3DDF0E7427AFF00D005C8E14 /* DataSource */,
 				3D1146FE27569DD500E303FE /* Environment */,
 				3D11470B2756A21F00E303FE /* Extensions */,
 				3D1147142756A2D500E303FE /* Factory */,
-				3D1146DF2756962C00E303FE /* Database */,
 				3D1146F027569ACC00E303FE /* Networking */,
 				3D92613127A9F45C00870F33 /* Services */,
 				3D1147052756A15600E303FE /* ViewController */,
 				3D1147082756A17A00E303FE /* ViewModel */,
+				3DDF0E6127AFB9FB005C8E14 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -559,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				3D92612D27A9E79F00870F33 /* AnimalDetailVC.swift */,
+				3DDF0E7527AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift */,
 				3D92612F27A9E7A700870F33 /* AnimalDetailVM.swift */,
 			);
 			path = AnimalDetail;
@@ -755,6 +780,70 @@
 				3D1147282756A53900E303FE /* OrganizationDetail */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		3DDF0E6127AFB9FB005C8E14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E7127AFE704005C8E14 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3DDF0E6627AFBA2D005C8E14 /* TextCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E6227AFBA26005C8E14 /* TextCell.swift */,
+				3DDF0E6327AFBA26005C8E14 /* TextCell.xib */,
+			);
+			path = TextCell;
+			sourceTree = "<group>";
+		};
+		3DDF0E6727AFE276005C8E14 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E6D27AFE2FF005C8E14 /* ImageCell.swift */,
+				3DDF0E6E27AFE2FF005C8E14 /* ImageCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		3DDF0E6827AFE27E005C8E14 /* ButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E6927AFE291005C8E14 /* ButtonCell.swift */,
+				3DDF0E6A27AFE291005C8E14 /* ButtonCell.xib */,
+			);
+			path = ButtonCell;
+			sourceTree = "<group>";
+		};
+		3DDF0E7127AFE704005C8E14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E7227AFE723005C8E14 /* CellType.swift */,
+				3DDF0E7727AFFC5A005C8E14 /* HeaderView */,
+				3DDF0E6827AFE27E005C8E14 /* ButtonCell */,
+				3DDF0E6727AFE276005C8E14 /* ImageCell */,
+				3DDF0E6627AFBA2D005C8E14 /* TextCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3DDF0E7427AFF00D005C8E14 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E5F27AFB82B005C8E14 /* DetailDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		3DDF0E7727AFFC5A005C8E14 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E7827AFFF0E005C8E14 /* HeaderView.swift */,
+				3DDF0E7C27AFFF41005C8E14 /* HeaderView.xib */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -957,13 +1046,17 @@
 				3D1146BB275695CF00E303FE /* LaunchScreen.storyboard in Resources */,
 				3DB80C78279F3163003BE349 /* OrganizationCell.xib in Resources */,
 				3DF8C1DD27A585D8008226F3 /* Favorite.storyboard in Resources */,
+				3DDF0E7D27AFFF41005C8E14 /* HeaderView.xib in Resources */,
+				3DDF0E7027AFE2FF005C8E14 /* ImageCell.xib in Resources */,
 				3D9C494827581FD300CB27AE /* Onboarding.storyboard in Resources */,
 				3D92612027A9D9D100870F33 /* AnimalCell.xib in Resources */,
 				3D1146B8275695CF00E303FE /* Assets.xcassets in Resources */,
+				3DDF0E6527AFBA26005C8E14 /* TextCell.xib in Resources */,
 				3DF8C1F127A599E3008226F3 /* Colors.xcassets in Resources */,
 				3D92612827A9E76E00870F33 /* AnimalDetail.storyboard in Resources */,
 				3DF8C1EF27A58E15008226F3 /* FavoriteCell.xib in Resources */,
 				3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */,
+				3DDF0E6C27AFE291005C8E14 /* ButtonCell.xib in Resources */,
 				3D11471A2756A3C300E303FE /* Organization.storyboard in Resources */,
 				3DF8C1FB27A5C234008226F3 /* AnimalMap.storyboard in Resources */,
 			);
@@ -1007,6 +1100,7 @@
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
 				3D9C495A2758204500CB27AE /* OnboardingVM.swift in Sources */,
 				3D11470F2756A24600E303FE /* String+Ext.swift in Sources */,
+				3DDF0E7327AFE723005C8E14 /* CellType.swift in Sources */,
 				3DF8C1FF27A5C255008226F3 /* AnimalMapFactory.swift in Sources */,
 				3D1146F427569B2F00E303FE /* ClientProvider.swift in Sources */,
 				3D9C49612758292200CB27AE /* UserDefaults+Ext.swift in Sources */,
@@ -1021,6 +1115,7 @@
 				3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
+				3DDF0E6027AFB82B005C8E14 /* DetailDataSource.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
 				3DB80C74279F2688003BE349 /* Photo.swift in Sources */,
 				3DDF0E3D27AEA8F3005C8E14 /* Video.swift in Sources */,
@@ -1036,14 +1131,18 @@
 				3DF8C1EE27A58E15008226F3 /* FavoriteCell.swift in Sources */,
 				3D1147132756A28600E303FE /* UIImageView+Ext.swift in Sources */,
 				3DB80C6C279F257A003BE349 /* Address.swift in Sources */,
+				3DDF0E6427AFBA26005C8E14 /* TextCell.swift in Sources */,
 				3DB80C68279F230F003BE349 /* Organization.swift in Sources */,
+				3DDF0E6B27AFE291005C8E14 /* ButtonCell.swift in Sources */,
 				3D1147072756A16B00E303FE /* ViewController.swift in Sources */,
 				3D1146F727569B8A00E303FE /* Config.swift in Sources */,
+				3DDF0E7927AFFF0E005C8E14 /* HeaderView.swift in Sources */,
 				3D9C495D275823EC00CB27AE /* Token.swift in Sources */,
 				3D9536E5275974F800730A67 /* Date+Ext.swift in Sources */,
 				3DF8C1FD27A5C248008226F3 /* AnimalMapCoordinator.swift in Sources */,
 				3D92611C27A9D91D00870F33 /* UICollectionView+Ext.swift in Sources */,
 				3DF8C1E327A587B8008226F3 /* FavoriteService.swift in Sources */,
+				3DDF0E6F27AFE2FF005C8E14 /* ImageCell.swift in Sources */,
 				3D11470027569DDF00E303FE /* Environment.swift in Sources */,
 				3D1146F927569BE300E303FE /* ErrorHandler.swift in Sources */,
 				3DDF0E4F27AEE5C2005C8E14 /* OrganizationDetailVM.swift in Sources */,
@@ -1052,6 +1151,7 @@
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3DDF0E4927AEB95F005C8E14 /* AnimalFilter.swift in Sources */,
 				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
+				3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */,
 				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
 				3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,

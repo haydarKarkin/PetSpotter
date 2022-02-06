@@ -11,11 +11,13 @@ class AnimalDetailVM: ViewModelType {
     
     private let animal: Animal
     private let favoriteService: FavoriteServiceType
+    private let dataSource: DetailDataSource
    
     init(animal: Animal,
          favoriteService: FavoriteServiceType) {
         self.animal = animal
         self.favoriteService = favoriteService
+        self.dataSource = DetailDataSource(animal: animal)
     }
 }
 
@@ -27,6 +29,7 @@ extension AnimalDetailVM {
     
     struct Output {
         var animal: Animal
+        var dataSource: DetailDataSource
         var getFavorite: (() -> Void)?
         var saveFavorite: (() -> Void)?
         var deleteFavorite: (() -> Void)?
@@ -43,6 +46,7 @@ extension AnimalDetailVM {
             self.deleteFavorite(completion: input.isFavorited)
         }
         output(Output(animal: animal,
+                      dataSource: dataSource,
                       getFavorite: getFavorite,
                       saveFavorite: saveFavorite,
                       deleteFavorite: deleteFavorite))
