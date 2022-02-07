@@ -109,6 +109,9 @@
 		3DDF0E9827B06F51005C8E14 /* VideosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9727B06F51005C8E14 /* VideosVM.swift */; };
 		3DDF0E9C27B070AE005C8E14 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */; };
 		3DDF0E9D27B070AE005C8E14 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */; };
+		3DDF0EA027B1AFE1005C8E14 /* TagCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */; };
+		3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */; };
+		3DDF0EA427B1B002005C8E14 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA327B1B002005C8E14 /* TagView.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -236,6 +239,9 @@
 		3DDF0E9727B06F51005C8E14 /* VideosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVM.swift; sourceTree = "<group>"; };
 		3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloseButton.swift; sourceTree = "<group>"; };
+		3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		3DDF0EA327B1B002005C8E14 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -814,6 +820,7 @@
 		3DDF0E6127AFB9FB005C8E14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DDF0E9E27B1AFCC005C8E14 /* TagListView */,
 				3DDF0E7127AFE704005C8E14 /* Cells */,
 			);
 			path = Views;
@@ -936,6 +943,16 @@
 				3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */,
 			);
 			path = VideoCell;
+			sourceTree = "<group>";
+		};
+		3DDF0E9E27B1AFCC005C8E14 /* TagListView */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */,
+				3DDF0EA327B1B002005C8E14 /* TagView.swift */,
+				3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */,
+			);
+			path = TagListView;
 			sourceTree = "<group>";
 		};
 		3DF4057A2763D24D001A943C /* AnimalCell */ = {
@@ -1174,6 +1191,7 @@
 				3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */,
 				3DB80C72279F2617003BE349 /* Adoption.swift in Sources */,
 				3D11472A2756A55600E303FE /* AnimalCoordinator.swift in Sources */,
+				3DDF0EA427B1B002005C8E14 /* TagView.swift in Sources */,
 				3D1147342756AE9900E303FE /* Storyboarded.swift in Sources */,
 				3DDF0E4D27AEBB03005C8E14 /* AnimalFilterVM.swift in Sources */,
 				3D9C49392758085600CB27AE /* HomeVC.swift in Sources */,
@@ -1186,6 +1204,7 @@
 				3D9C49412758191900CB27AE /* OrganizationAPI.swift in Sources */,
 				3DB80C6E279F25AB003BE349 /* SocialMedia.swift in Sources */,
 				3DDF0E7F27B02F8F005C8E14 /* Animal+DataSource.swift in Sources */,
+				3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
@@ -1212,6 +1231,7 @@
 				3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */,
 				3DDF0E8127B02F9D005C8E14 /* Organization+DataSource.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
+				3DDF0EA027B1AFE1005C8E14 /* TagCloseButton.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3DDF0E6027AFB82B005C8E14 /* DetailDataSource.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,
