@@ -72,6 +72,13 @@ extension FavoritesVC: Storyboarded {
 // MARK: - UICollectionViewDataSource
 extension FavoritesVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if favorites.isEmpty {
+            self.collectionView.setEmptyMessage(Configs.Text.userNoFavorite)
+        } else {
+            self.collectionView.restore()
+        }
+        
         return favorites.count
     }
     

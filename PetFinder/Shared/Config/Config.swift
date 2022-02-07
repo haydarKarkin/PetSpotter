@@ -12,6 +12,7 @@ struct Configs {
     struct Text {
         static let globalErrorTitle = "There is a problem!"
         static let globalErrorDesc = "Please try again later."
+        static let userNoFavorite = "You don't have any favorite animal.\n Please add animals."
     }
     
     struct Network {
