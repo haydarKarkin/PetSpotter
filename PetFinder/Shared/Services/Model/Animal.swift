@@ -86,10 +86,6 @@ struct Animal: Codable {
         self.photos = try container.decodeIfPresent([Photo].self, forKey: .photos) ?? []
         self.tags = try container.decodeIfPresent([String].self, forKey: .tags) ?? []
         self.videos = try container.decodeIfPresent([Video].self, forKey: .videos) ?? []
-        
-        if !self.videos.isEmpty {
-            print(name)
-        }
     }
     
     public func encode(to encoder: Encoder) throws {}
