@@ -13,7 +13,7 @@
         <!--AnimalsVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AnimalsVC" id="BYZ-38-t0r" customClass="AnimalsVC" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalsVC" id="BYZ-38-t0r" customClass="AnimalsVC" customModule="PetSpotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Animal FilterVC-->
         <scene sceneID="kOM-hL-4UZ">
             <objects>
-                <viewController storyboardIdentifier="AnimalFilterVC" id="u8Q-Qs-3ER" customClass="AnimalFilterVC" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalFilterVC" id="u8Q-Qs-3ER" customClass="AnimalFilterVC" customModule="PetSpotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TQm-0U-9rp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,26 +70,146 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="slK-Ev-WnD">
-                                <rect key="frame" x="8" y="68" width="398" height="712"/>
+                                <rect key="frame" x="16" y="76" width="382" height="570"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-bc-grU">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-bc-grU">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SLf-hQ-fnG">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SLf-hQ-fnG">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="U0f-t3-7fK"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vAo-ff-uSJ">
-                                        <rect key="frame" x="0.0" y="60" width="398" height="642"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vAo-ff-uSJ">
+                                        <rect key="frame" x="0.0" y="60" width="382" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0m-sy-AWn">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="I9o-5S-NrH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ley-Ps-MTy" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="oBv-Yb-aTp"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-oT-EGf">
-                                        <rect key="frame" x="0.0" y="712" width="398" height="0.0"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-oT-EGf">
+                                        <rect key="frame" x="0.0" y="130" width="382" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJe-P0-Ujc">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="nBg-gg-0NH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atA-bD-GaV" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="NXg-mI-OHl"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-TF-gAM">
+                                        <rect key="frame" x="0.0" y="200" width="382" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sR-P2-Ve4">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="vxK-6O-p3m"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SF8-4q-lLe" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="AfI-cd-aIu"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rOz-7f-sz0">
+                                        <rect key="frame" x="0.0" y="270" width="382" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdT-vL-WNG">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="K69-lm-hfu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahw-D2-eTx" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="RFf-hH-yDe"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nDd-AO-xXS">
+                                        <rect key="frame" x="0.0" y="370" width="382" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl8-LV-bhd">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="rit-Pt-h0Y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9c-UM-WG0" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ZnN-Mn-RlT"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="whh-gR-D2l">
+                                        <rect key="frame" x="0.0" y="440" width="382" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI7-Z3-DrM">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Wbg-Rj-TTh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwJ-ph-ODm" customClass="TagListView" customModule="PetSpotter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="382" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="S3b-0Q-JtF"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -110,16 +230,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5fR-De-6P1" firstAttribute="centerX" secondItem="VdR-Hk-Amb" secondAttribute="centerX" id="CHR-r3-lfp"/>
-                            <constraint firstItem="slK-Ev-WnD" firstAttribute="leading" secondItem="VdR-Hk-Amb" secondAttribute="leading" constant="8" id="E8P-CR-KxC"/>
+                            <constraint firstItem="slK-Ev-WnD" firstAttribute="leading" secondItem="VdR-Hk-Amb" secondAttribute="leading" constant="16" id="E8P-CR-KxC"/>
                             <constraint firstItem="lyz-My-Ud8" firstAttribute="top" secondItem="slK-Ev-WnD" secondAttribute="bottom" priority="999" constant="16" id="RMl-5v-8OY"/>
-                            <constraint firstItem="slK-Ev-WnD" firstAttribute="top" secondItem="5fR-De-6P1" secondAttribute="top" constant="16" id="SA1-Y8-DKz"/>
+                            <constraint firstItem="slK-Ev-WnD" firstAttribute="top" secondItem="5fR-De-6P1" secondAttribute="top" constant="24" id="SA1-Y8-DKz"/>
                             <constraint firstItem="VdR-Hk-Amb" firstAttribute="trailing" secondItem="lyz-My-Ud8" secondAttribute="trailing" constant="8" id="agI-RF-DTL"/>
                             <constraint firstItem="5fR-De-6P1" firstAttribute="top" secondItem="VdR-Hk-Amb" secondAttribute="top" constant="8" id="ajm-2F-jz2"/>
-                            <constraint firstItem="VdR-Hk-Amb" firstAttribute="trailing" secondItem="slK-Ev-WnD" secondAttribute="trailing" constant="8" id="dRd-jl-Sof"/>
+                            <constraint firstItem="VdR-Hk-Amb" firstAttribute="trailing" secondItem="slK-Ev-WnD" secondAttribute="trailing" constant="16" id="dRd-jl-Sof"/>
                             <constraint firstItem="VdR-Hk-Amb" firstAttribute="bottom" secondItem="lyz-My-Ud8" secondAttribute="bottom" constant="16" id="eOm-J4-Cfl"/>
                             <constraint firstItem="lyz-My-Ud8" firstAttribute="leading" secondItem="VdR-Hk-Amb" secondAttribute="leading" constant="8" id="rTh-ub-iKo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageListView" destination="ley-Ps-MTy" id="Dyd-9p-lw7"/>
+                        <outlet property="coatListView" destination="Ahw-D2-eTx" id="GV6-Gz-FTy"/>
+                        <outlet property="genderListView" destination="SF8-4q-lLe" id="2kz-T6-YA0"/>
+                        <outlet property="otherListView" destination="gwJ-ph-ODm" id="V5X-pD-7WV"/>
+                        <outlet property="searchTextField" destination="SLf-hQ-fnG" id="jMg-5N-Wio"/>
+                        <outlet property="sizeListView" destination="atA-bD-GaV" id="Qze-AZ-stX"/>
+                        <outlet property="statusListView" destination="j9c-UM-WG0" id="0pE-gx-5Ss"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7f-wq-SUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -111,6 +111,7 @@
 		3DDF0E9D27B070AE005C8E14 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */; };
 		3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */; };
 		3DDF0EA427B1B002005C8E14 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA327B1B002005C8E14 /* TagView.swift */; };
+		3DE9FAE327B2FF3100C03AED /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -240,6 +241,7 @@
 		3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		3DDF0EA327B1B002005C8E14 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
 				3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */,
 				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
+				3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1208,6 +1211,7 @@
 				3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,
+				3DE9FAE327B2FF3100C03AED /* UITextField+Ext.swift in Sources */,
 				3DF405832763E9CD001A943C /* Pagination.swift in Sources */,
 				3DDF0E8827B03ADA005C8E14 /* OrganizationDetailCoordinator.swift in Sources */,
 				3D1146FB27569D5200E303FE /* Coordinator.swift in Sources */,
