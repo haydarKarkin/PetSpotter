@@ -180,14 +180,6 @@ open class TagListView: UIView {
         }
     }
     
-    // MARK: - Interface Builder
-    
-    open override func prepareForInterfaceBuilder() {
-        addTag("Welcome")
-        addTag("to")
-        addTag("TagListView").isSelected = true
-    }
-    
     // MARK: - Layout
     
     open override func layoutSubviews() {
@@ -294,7 +286,7 @@ open class TagListView: UIView {
         return CGSize(width: frame.width, height: height)
     }
     
-    private func createNewTagView(_ title: String) -> TagView {
+    private func createNewTagView(_ title: String, isSelected: Bool = false) -> TagView {
         let tagView = TagView(title: title)
         
         tagView.textColor = textColor
@@ -310,27 +302,26 @@ open class TagListView: UIView {
         tagView.paddingX = paddingX
         tagView.paddingY = paddingY
         tagView.textFont = textFont
+        tagView.isSelected = isSelected
         tagView.addTarget(self, action: #selector(tagPressed(_:)), for: .touchUpInside)
-        
-        // On long press, deselect all tags except this one
-        tagView.onLongPress = { [unowned self] this in
-            self.tagViews.forEach {
-                $0.isSelected = $0 == this
-            }
-        }
         
         return tagView
     }
     
     @discardableResult
-    open func addTag(_ title: String) -> TagView {
+    open func addTag(_ title: String, isSelected: Bool = false) -> TagView {
         defer { rearrangeViews() }
-        return addTagView(createNewTagView(title))
+        return addTagView(createNewTagView(title, isSelected: isSelected))
     }
     
     @discardableResult
     open func addTags(_ titles: [String]) -> [TagView] {
-        return addTagViews(titles.map(createNewTagView))
+        return addTagViews(titles.map{createNewTagView($0)})
+    }
+    
+    @discardableResult
+    open func addTags(_ titles: [String: Bool]) -> [TagView] {
+        return addTagViews(titles.map{createNewTagView($0.key, isSelected: $0.value)})
     }
     
     @discardableResult
@@ -350,21 +341,6 @@ open class TagListView: UIView {
             tagBackgroundViews.append(UIView(frame: $0.bounds))
         }
         return tagViews
-    }
-    
-    @discardableResult
-    open func insertTag(_ title: String, at index: Int) -> TagView {
-        return insertTagView(createNewTagView(title), at: index)
-    }
-    
-    
-    @discardableResult
-    open func insertTagView(_ tagView: TagView, at index: Int) -> TagView {
-        defer { rearrangeViews() }
-        tagViews.insert(tagView, at: index)
-        tagBackgroundViews.insert(UIView(frame: tagView.bounds), at: index)
-        
-        return tagView
     }
     
     open func setTitle(_ title: String, at index: Int) {

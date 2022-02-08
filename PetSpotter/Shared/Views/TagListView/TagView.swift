@@ -120,7 +120,6 @@ open class TagView: UIButton {
     
     /// Handles Tap (TouchUpInside)
     open var onTap: ((TagView) -> Void)?
-    open var onLongPress: ((TagView) -> Void)?
     
     // MARK: - init
     
@@ -141,13 +140,6 @@ open class TagView: UIButton {
         titleLabel?.lineBreakMode = titleLineBreakMode
         
         frame.size = intrinsicContentSize
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
-        self.addGestureRecognizer(longPress)
-    }
-    
-    @objc func longPress() {
-        onLongPress?(self)
     }
     
     // MARK: - layout
@@ -166,13 +158,3 @@ open class TagView: UIButton {
         titleEdgeInsets.right = paddingX
     }
 }
-
-/// Swift < 4.2 support
-#if !(swift(>=4.2))
-private extension NSAttributedString {
-    typealias Key = NSAttributedStringKey
-}
-private extension UIControl {
-    typealias State = UIControlState
-}
-#endif
