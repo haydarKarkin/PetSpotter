@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D1146A7275695CD00E303FE"
-               BuildableName = "PetFinder.app"
+               BuildableName = "PetSpotter.app"
                BlueprintName = "PetSpotter"
                ReferencedContainer = "container:PetSpotter.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D1146A7275695CD00E303FE"
-            BuildableName = "PetFinder.app"
+            BuildableName = "PetSpotter.app"
             BlueprintName = "PetSpotter"
             ReferencedContainer = "container:PetSpotter.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D1146A7275695CD00E303FE"
-            BuildableName = "PetFinder.app"
+            BuildableName = "PetSpotter.app"
             BlueprintName = "PetSpotter"
             ReferencedContainer = "container:PetSpotter.xcodeproj">
          </BuildableReference>

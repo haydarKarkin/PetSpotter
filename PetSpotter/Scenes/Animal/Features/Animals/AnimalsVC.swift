@@ -38,8 +38,8 @@ class AnimalsVC: ViewController<AnimalsVM> {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 16
         collectionView.setCollectionViewLayout(layout, animated: true)
         
         collectionView.dataSource = self
