@@ -109,7 +109,6 @@
 		3DDF0E9827B06F51005C8E14 /* VideosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9727B06F51005C8E14 /* VideosVM.swift */; };
 		3DDF0E9C27B070AE005C8E14 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */; };
 		3DDF0E9D27B070AE005C8E14 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */; };
-		3DDF0EA027B1AFE1005C8E14 /* TagCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */; };
 		3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */; };
 		3DDF0EA427B1B002005C8E14 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA327B1B002005C8E14 /* TagView.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
@@ -239,7 +238,6 @@
 		3DDF0E9727B06F51005C8E14 /* VideosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVM.swift; sourceTree = "<group>"; };
 		3DDF0E9A27B070AE005C8E14 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		3DDF0E9B27B070AE005C8E14 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
-		3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloseButton.swift; sourceTree = "<group>"; };
 		3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		3DDF0EA327B1B002005C8E14 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
@@ -948,7 +946,6 @@
 		3DDF0E9E27B1AFCC005C8E14 /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
-				3DDF0E9F27B1AFE1005C8E14 /* TagCloseButton.swift */,
 				3DDF0EA327B1B002005C8E14 /* TagView.swift */,
 				3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */,
 			);
@@ -1231,7 +1228,6 @@
 				3D92612C27A9E79500870F33 /* AnimalDetailFactory.swift in Sources */,
 				3DDF0E8127B02F9D005C8E14 /* Organization+DataSource.swift in Sources */,
 				3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */,
-				3DDF0EA027B1AFE1005C8E14 /* TagCloseButton.swift in Sources */,
 				3DB80C70279F25B5003BE349 /* Hours.swift in Sources */,
 				3DDF0E6027AFB82B005C8E14 /* DetailDataSource.swift in Sources */,
 				3D9C49432758192800CB27AE /* OrganizationsVC.swift in Sources */,

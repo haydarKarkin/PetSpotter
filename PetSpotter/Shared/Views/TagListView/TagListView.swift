@@ -9,7 +9,6 @@ import UIKit
 
 @objc public protocol TagListViewDelegate {
     @objc optional func tagPressed(_ title: String, tagView: TagView, sender: TagListView) -> Void
-    @objc optional func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) -> Void
 }
 
 @IBDesignable
@@ -157,41 +156,6 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var shadowOpacity: Float = 0 {
         didSet {
             rearrangeViews()
-        }
-    }
-    
-    @IBInspectable open dynamic var enableRemoveButton: Bool = false {
-        didSet {
-            defer { rearrangeViews() }
-            tagViews.forEach {
-                $0.enableRemoveButton = enableRemoveButton
-            }
-        }
-    }
-    
-    @IBInspectable open dynamic var removeButtonIconSize: CGFloat = 12 {
-        didSet {
-            defer { rearrangeViews() }
-            tagViews.forEach {
-                $0.removeButtonIconSize = removeButtonIconSize
-            }
-        }
-    }
-    @IBInspectable open dynamic var removeIconLineWidth: CGFloat = 1 {
-        didSet {
-            defer { rearrangeViews() }
-            tagViews.forEach {
-                $0.removeIconLineWidth = removeIconLineWidth
-            }
-        }
-    }
-    
-    @IBInspectable open dynamic var removeIconLineColor: UIColor = UIColor.white.withAlphaComponent(0.54) {
-        didSet {
-            defer { rearrangeViews() }
-            tagViews.forEach {
-                $0.removeIconLineColor = removeIconLineColor
-            }
         }
     }
     
@@ -346,12 +310,7 @@ open class TagListView: UIView {
         tagView.paddingX = paddingX
         tagView.paddingY = paddingY
         tagView.textFont = textFont
-        tagView.removeIconLineWidth = removeIconLineWidth
-        tagView.removeButtonIconSize = removeButtonIconSize
-        tagView.enableRemoveButton = enableRemoveButton
-        tagView.removeIconLineColor = removeIconLineColor
         tagView.addTarget(self, action: #selector(tagPressed(_:)), for: .touchUpInside)
-        tagView.removeButton.addTarget(self, action: #selector(removeButtonPressed(_:)), for: .touchUpInside)
         
         // On long press, deselect all tags except this one
         tagView.onLongPress = { [unowned self] this in
@@ -412,31 +371,6 @@ open class TagListView: UIView {
         tagViews[index].titleLabel?.text = title
     }
     
-    open func removeTag(_ title: String) {
-        tagViews.reversed().filter({ $0.currentTitle == title }).forEach(removeTagView)
-    }
-    
-    open func removeTagView(_ tagView: TagView) {
-        defer { rearrangeViews() }
-        
-        tagView.removeFromSuperview()
-        if let index = tagViews.firstIndex(of: tagView) {
-            tagViews.remove(at: index)
-            tagBackgroundViews.remove(at: index)
-        }
-    }
-    
-    open func removeAllTags() {
-        defer {
-            tagViews = []
-            tagBackgroundViews = []
-            rearrangeViews()
-        }
-        
-        let views: [UIView] = tagViews + tagBackgroundViews
-        views.forEach { $0.removeFromSuperview() }
-    }
-    
     open func selectedTags() -> [TagView] {
         return tagViews.filter { $0.isSelected }
     }
@@ -446,11 +380,5 @@ open class TagListView: UIView {
     @objc func tagPressed(_ sender: TagView!) {
         sender.onTap?(sender)
         delegate?.tagPressed?(sender.currentTitle ?? "", tagView: sender, sender: self)
-    }
-    
-    @objc func removeButtonPressed(_ closeButton: TagCloseButton!) {
-        if let tagView = closeButton.tagView {
-            delegate?.tagRemoveButtonPressed?(tagView.currentTitle ?? "", tagView: tagView, sender: self)
-        }
     }
 }
