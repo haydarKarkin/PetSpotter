@@ -245,6 +245,7 @@
                         <outlet property="coatListView" destination="Ahw-D2-eTx" id="GV6-Gz-FTy"/>
                         <outlet property="genderListView" destination="SF8-4q-lLe" id="2kz-T6-YA0"/>
                         <outlet property="otherListView" destination="gwJ-ph-ODm" id="V5X-pD-7WV"/>
+                        <outlet property="searchButton" destination="lyz-My-Ud8" id="Qs7-3n-btO"/>
                         <outlet property="searchTextField" destination="SLf-hQ-fnG" id="jMg-5N-Wio"/>
                         <outlet property="sizeListView" destination="atA-bD-GaV" id="Qze-AZ-stX"/>
                         <outlet property="statusListView" destination="j9c-UM-WG0" id="0pE-gx-5Ss"/>

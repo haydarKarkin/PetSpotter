@@ -112,6 +112,7 @@
 		3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */; };
 		3DDF0EA427B1B002005C8E14 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0EA327B1B002005C8E14 /* TagView.swift */; };
 		3DE9FAE327B2FF3100C03AED /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */; };
+		3DE9FAE527B316B400C03AED /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9FAE427B316B400C03AED /* Dictionary+Ext.swift */; };
 		3DF405792763D1FD001A943C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405782763D1FD001A943C /* Animal.swift */; };
 		3DF405802763E817001A943C /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4057F2763E817001A943C /* Animals.swift */; };
 		3DF405832763E9CD001A943C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF405822763E9CD001A943C /* Pagination.swift */; };
@@ -242,6 +243,7 @@
 		3DDF0EA127B1AFF3005C8E14 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		3DDF0EA327B1B002005C8E14 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		3DE9FAE427B316B400C03AED /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		3DF405782763D1FD001A943C /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		3DF4057F2763E817001A943C /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		3DF405822763E9CD001A943C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -448,13 +450,14 @@
 			children = (
 				3D9536E4275974F800730A67 /* Date+Ext.swift */,
 				3DF405842763EF5C001A943C /* DateFormatter+Ext.swift */,
+				3DE9FAE427B316B400C03AED /* Dictionary+Ext.swift */,
 				3D11470C2756A22D00E303FE /* Reusable.swift */,
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
+				3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
 				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
-				3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */,
-				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
 				3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */,
+				3D9C49602758292200CB27AE /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1273,6 +1276,7 @@
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
 				3DDF0E4927AEB95F005C8E14 /* AnimalFilter.swift in Sources */,
+				3DE9FAE527B316B400C03AED /* Dictionary+Ext.swift in Sources */,
 				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
 				3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */,
 				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
