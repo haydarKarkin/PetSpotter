@@ -15,9 +15,12 @@ class AnimalsVC: ViewController<AnimalsVM> {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
+    var isFirstLoad: Bool = true
+    var isFilterEnabled: Bool = false
     var animals: [Animal] = [Animal]() {
         didSet {
             collectionView.reloadData()
+            isFirstLoad = false
         }
     }
     
@@ -89,6 +92,13 @@ extension AnimalsVC: Storyboarded {
 // MARK: - UICollectionViewDataSource
 extension AnimalsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if animals.isEmpty && !isFirstLoad {
+            let message = isFilterEnabled ? Configs.Text.noSearchResult : Configs.Text.globalNoResult
+            self.collectionView.setEmptyMessage(message)
+        } else {
+            self.collectionView.restore()
+        }
         return animals.count
     }
     
@@ -129,6 +139,7 @@ extension AnimalsVC: UICollectionViewDelegateFlowLayout {
 // MARK: - AnimalFilterDelegate
 extension AnimalsVC: AnimalFilterDelegate {
     func searchTapped(with filter: Filter) {
+        isFilterEnabled = filter.isFilterEnabled
         searchAnimalsClosure?(filter)
     }
 }

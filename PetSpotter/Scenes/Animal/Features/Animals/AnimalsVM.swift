@@ -74,7 +74,6 @@ extension AnimalsVM {
 extension AnimalsVM {
     
     func getAnimals(page: Int = 1,
-                    filter: Filter? = nil,
                     completion: (([Animal]) -> Void)?) {
         self.onLoadHandling?(true)
         
@@ -114,6 +113,6 @@ extension AnimalsVM {
     func searchAnimals(filter: Filter, completion: (([Animal]) -> Void)?) {
         self.filter = filter
         self.animals = []
-        getAnimals(page: 1, filter: filter, completion: completion)
+        getAnimals(page: 1, completion: completion)
     }
 }

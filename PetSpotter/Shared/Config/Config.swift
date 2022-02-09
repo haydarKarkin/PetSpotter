@@ -13,6 +13,8 @@ struct Configs {
         static let globalErrorTitle = "There is a problem!"
         static let globalErrorDesc = "Please try again later."
         static let userNoFavorite = "You don't have any favorite animal.\n Please add animals."
+        static let noSearchResult = "No results were found.\n Please try a different search."
+        static let globalNoResult = "\(globalErrorTitle) \n \(globalErrorDesc)"
     }
     
     struct Network {

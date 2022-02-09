@@ -17,12 +17,14 @@ struct Filter {
     var others: [String: Bool] = [:]
 }
 
+// MARK: - Parameters
+
 extension Filter {
     
     func makeParameters() -> [String: Any] {
         var params: [String: Any] = [:]
        
-        if let name = name {
+        if let name = name, !name.isEmpty {
             params["name"] = name
         }
         if !ages.isEmpty {
@@ -44,5 +46,19 @@ extension Filter {
             params[$0.key] = $0.value
         }
         return params
+    }
+}
+
+// MARK: - Filter Enabled
+extension Filter {
+    
+    var isFilterEnabled: Bool {
+        return name != nil ||
+        !ages.isEmpty  ||
+        !sizes.isEmpty ||
+        !genders.isEmpty ||
+        !statuses.isEmpty ||
+        !coats.isEmpty ||
+        !others.keys.isEmpty
     }
 }
