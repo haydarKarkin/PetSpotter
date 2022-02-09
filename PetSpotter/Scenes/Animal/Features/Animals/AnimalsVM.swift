@@ -12,6 +12,7 @@ class AnimalsVM: ViewModelType {
     private var currentPage: Int = 1
     private var animals: [Animal] = [Animal]()
     private var totalCount: Int = 0
+    private var filter: Filter = Filter()
     
     private let animalService: AnimalServiceType
     private let animalCoordinator: AnimalCoordinatorType
@@ -35,8 +36,9 @@ extension AnimalsVM {
     struct Output {
         var next: (() -> Void)?
         var getAnimals: (() -> Void)?
-        var openDetail:((Animal) -> Void)?
-        var openFilter: (() -> Void)?
+        var openDetail: ((Animal) -> Void)?
+        var openFilter: ((AnimalsVC) -> Void)?
+        var searchAnimals: ((Filter) -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -52,23 +54,35 @@ extension AnimalsVM {
             self.showAnimalDetail(with: animal)
         }
         
-        let openFilter: (() -> Void)? = {
-            self.openFilter()
+        let openFilter: ((AnimalsVC) -> Void)? = { delegate in
+            self.openFilter(delegate: delegate)
         }
         
-        output(Output(next: next, getAnimals: getAnimals, openDetail: openDetail, openFilter: openFilter))
+        let searchAnimals: ((Filter) -> Void)? = { filter in
+            self.searchAnimals(filter: filter, completion: input.animals)
+        }
+        
+        output(Output(next: next,
+                      getAnimals: getAnimals,
+                      openDetail: openDetail,
+                      openFilter: openFilter,
+                      searchAnimals: searchAnimals))
     }
 }
 
 // MARK: - Logics
 extension AnimalsVM {
     
-    func getAnimals(page: Int = 1, completion: (([Animal]) -> Void)?) {
+    func getAnimals(page: Int = 1,
+                    filter: Filter? = nil,
+                    completion: (([Animal]) -> Void)?) {
         self.onLoadHandling?(true)
         
         currentPage = page
         
-        animalService.getAnimals(page: page, organizationID: organizationID) { [weak self] result in
+        animalService.getAnimals(page: page,
+                                 organizationID: organizationID,
+                                 filter: filter) { [weak self] result in
             guard let self = self else { return }
             self.onLoadHandling?(false)
             switch result {
@@ -93,16 +107,13 @@ extension AnimalsVM {
         animalCoordinator.showAnimalDetail(animal: animal)
     }
     
-    func openFilter() {
-        self.onLoadHandling?(true)
-        animalService.getAnimalTypes() { [weak self] result in
-            self?.onLoadHandling?(false)
-            switch result {
-            case .success(let resp):
-                self?.animalCoordinator.showAnimalFilter(animalTypes: resp.types)
-            case .failure(let error):
-                self?.onErrorHandling?(error)
-            }
-        }
+    func openFilter(delegate: AnimalsVC) {
+        animalCoordinator.showAnimalFilter(filter: filter, delegate: delegate)
+    }
+    
+    func searchAnimals(filter: Filter, completion: (([Animal]) -> Void)?) {
+        self.filter = filter
+        self.animals = []
+        getAnimals(page: 1, filter: filter, completion: completion)
     }
 }

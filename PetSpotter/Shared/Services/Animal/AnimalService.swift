@@ -8,8 +8,7 @@
 import Foundation
 
 protocol AnimalServiceType {
-    func getAnimals(page: Int, organizationID: String?, completion: @escaping(Result<Animals, Error>) -> ())
-    func getAnimalsByFilter(page: Int, organizationID: String?, filter: AnimalFilter, completion: @escaping(Result<Animals, Error>) -> ())
+    func getAnimals(page: Int, organizationID: String?, filter: Filter?, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimalsByLocation(location: String, completion: @escaping(Result<Animals, Error>) -> ())
     func getAnimal(id: String, completion: @escaping(Result<AnimalDetail, Error>) -> ())
     func getAnimalTypes(completion: @escaping(Result<AnimalTypes, Error>) -> ())
@@ -25,39 +24,13 @@ class AnimalService: AnimalServiceType {
     
     func getAnimals(page: Int,
                     organizationID: String?,
+                    filter: Filter?,
                     completion: @escaping(Result<Animals, Error>) -> ()) {
         
         provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
                                           page: page,
                                           organizationID: organizationID,
-                                          type: nil,
-                                          breed: nil,
-                                          size: nil,
-                                          gender: nil),
-                         responseType: Animals.self) { result in
-            
-            switch result {
-            case .success(let resp):
-                completion(.success(resp))
-            case .failure(let error):
-                completion(.failure(error))
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getAnimalsByFilter(page: Int,
-                            organizationID: String?,
-                            filter: AnimalFilter,
-                            completion: @escaping(Result<Animals, Error>) -> ()) {
-        
-        provider.request(target: .animals(perPage: Configs.Network.paginationNumber,
-                                          page: page,
-                                          organizationID: organizationID,
-                                          type: filter.type,
-                                          breed: filter.breed,
-                                          size: filter.size,
-                                          gender: filter.gender),
+                                          filter: filter),
                          responseType: Animals.self) { result in
             
             switch result {

@@ -25,7 +25,8 @@ class AnimalsVC: ViewController<AnimalsVM> {
     var nextClosure: (() -> Void)?
     var getAnimalsClosure: (() -> Void)?
     var openDetailClosure: ((Animal) -> Void)?
-    var openFilterClosre: (() -> Void)?
+    var openFilterClosre: ((AnimalsVC) -> Void)?
+    var searchAnimalsClosure: ((Filter) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +70,14 @@ class AnimalsVC: ViewController<AnimalsVM> {
             self.getAnimalsClosure = output.getAnimals
             self.openDetailClosure = output.openDetail
             self.openFilterClosre = output.openFilter
+            self.searchAnimalsClosure = output.searchAnimals
         }
         getAnimalsClosure?()
     }
     
     @objc
     func openFilter() {
-        openFilterClosre?()
+        openFilterClosre?(self)
     }
 }
 
@@ -121,5 +123,12 @@ extension AnimalsVC: UICollectionViewDelegateFlowLayout {
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
         return CGSize(width: size, height: size)
+    }
+}
+
+// MARK: - AnimalFilterDelegate
+extension AnimalsVC: AnimalFilterDelegate {
+    func searchTapped(with filter: Filter) {
+        searchAnimalsClosure?(filter)
     }
 }

@@ -12,10 +12,10 @@ protocol AnimalFilterVMType {
 
 class AnimalFilterVM: ViewModelType {
     
-    private let animalTypes: [AnimalType]
+    private let filter: Filter
     
-    init(animalTypes: [AnimalType]) {
-        self.animalTypes = animalTypes
+    init(filter: Filter) {
+        self.filter = filter
     }
 }
 
@@ -25,10 +25,11 @@ extension AnimalFilterVM {
     }
     
     struct Output {
+        var filter: Filter
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
-        output(Output())
+        output(Output(filter: filter))
     }
 }
 

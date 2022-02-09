@@ -10,7 +10,7 @@ import UIKit
 
 protocol AnimalCoordinatorType: Coordinator {
     func showAnimalDetail(animal: Animal)
-    func showAnimalFilter(animalTypes: [AnimalType])
+    func showAnimalFilter(filter: Filter, delegate: AnimalFilterDelegate)
 }
 
 class AnimalCoordinator: AnimalCoordinatorType {
@@ -40,8 +40,9 @@ class AnimalCoordinator: AnimalCoordinatorType {
         coordinate(to: coordinator)
     }
     
-    func showAnimalFilter(animalTypes: [AnimalType]) {
-        let viewController = animalFactory.makeAnimalFilterVC(animalTypes: animalTypes)
+    func showAnimalFilter(filter: Filter, delegate: AnimalFilterDelegate) {
+        let viewController = animalFactory.makeAnimalFilterVC(filter: filter)
+        viewController.delegate = delegate
         navigationController.present(viewController, animated: true, completion: nil)
     }
 }

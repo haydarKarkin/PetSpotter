@@ -8,7 +8,7 @@
 import Foundation
 
 enum AnimalAPI {
-    case animals(perPage: Int, page: Int, organizationID: String?, type: String?, breed: String?, size: String?, gender: String?)
+    case animals(perPage: Int, page: Int, organizationID: String?, filter: Filter?)
     case animalsByLocation(location: String)
     case animal(id: String)
     case types
@@ -43,24 +43,16 @@ extension AnimalAPI: TargetType {
         var params: [String: Any] = [:]
         
         switch self {
-        case let .animals(perPage, page, organizationID, type, breed, size, gender):
+        case let .animals(perPage, page, organizationID, filter):
             params["limit"] = perPage
             params["page"] = page
             if let organizationID = organizationID {
                 params["organization"] = organizationID
             }
-            if let type = type {
-                params["type"] = type
+            if let filter = filter {
+                params.merge(filter.makeParameters()){ (current, _) in current }
             }
-            if let breed = breed {
-                params["breed"] = breed
-            }
-            if let size = size {
-                params["size"] = size
-            }
-            if let gender = gender {
-                params["gender"] = gender
-            }
+            print(params)
         case .animalsByLocation(let location):
             params["location"] = location
         default:

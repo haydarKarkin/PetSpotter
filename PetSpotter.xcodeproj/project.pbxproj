@@ -79,7 +79,7 @@
 		3DDF0E4327AEAA78005C8E14 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4227AEAA78005C8E14 /* Contact.swift */; };
 		3DDF0E4527AEAACF005C8E14 /* AnimalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */; };
 		3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4627AEAB3E005C8E14 /* Colors.swift */; };
-		3DDF0E4927AEB95F005C8E14 /* AnimalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4827AEB95F005C8E14 /* AnimalFilter.swift */; };
+		3DDF0E4927AEB95F005C8E14 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4827AEB95F005C8E14 /* Filter.swift */; };
 		3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4A27AEBAFC005C8E14 /* AnimalFilterVC.swift */; };
 		3DDF0E4D27AEBB03005C8E14 /* AnimalFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */; };
 		3DDF0E4F27AEE5C2005C8E14 /* OrganizationDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */; };
@@ -210,7 +210,7 @@
 		3DDF0E4227AEAA78005C8E14 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalEnvironment.swift; sourceTree = "<group>"; };
 		3DDF0E4627AEAB3E005C8E14 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		3DDF0E4827AEB95F005C8E14 /* AnimalFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilter.swift; sourceTree = "<group>"; };
+		3DDF0E4827AEB95F005C8E14 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		3DDF0E4A27AEBAFC005C8E14 /* AnimalFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterVC.swift; sourceTree = "<group>"; };
 		3DDF0E4C27AEBB03005C8E14 /* AnimalFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterVM.swift; sourceTree = "<group>"; };
 		3DDF0E4E27AEE5C2005C8E14 /* OrganizationDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailVM.swift; sourceTree = "<group>"; };
@@ -747,8 +747,8 @@
 				3DB80C6B279F257A003BE349 /* Address.swift */,
 				3DB80C71279F2617003BE349 /* Adoption.swift */,
 				3DF405782763D1FD001A943C /* Animal.swift */,
+				3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */,
 				3DDF0E4427AEAACF005C8E14 /* AnimalEnvironment.swift */,
-				3DDF0E4827AEB95F005C8E14 /* AnimalFilter.swift */,
 				3DF4057F2763E817001A943C /* Animals.swift */,
 				3DB80C7C279F3CF4003BE349 /* AnimalType.swift */,
 				3DB80C7A279F3CE9003BE349 /* AnimalTypes.swift */,
@@ -756,15 +756,15 @@
 				3DDF0E3E27AEA96A005C8E14 /* Breeds.swift */,
 				3DDF0E4627AEAB3E005C8E14 /* Colors.swift */,
 				3DDF0E4227AEAA78005C8E14 /* Contact.swift */,
+				3DDF0E4827AEB95F005C8E14 /* Filter.swift */,
 				3DB80C6F279F25B5003BE349 /* Hours.swift */,
 				3DB80C67279F230F003BE349 /* Organization.swift */,
+				3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */,
 				3DB80C69279F2534003BE349 /* Organizations.swift */,
 				3DB80C73279F2688003BE349 /* Photo.swift */,
 				3DB80C6D279F25AB003BE349 /* SocialMedia.swift */,
 				3D9C495C275823EC00CB27AE /* Token.swift */,
 				3DDF0E3C27AEA8F3005C8E14 /* Video.swift */,
-				3DDF0E8E27B04508005C8E14 /* AnimalDetail.swift */,
-				3DDF0E9027B04512005C8E14 /* OrganizationDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1275,7 +1275,7 @@
 				3DF8C20127A5C26C008226F3 /* AnimalMapVC.swift in Sources */,
 				3D9C49522758201F00CB27AE /* OnboardingFactory.swift in Sources */,
 				3D11471C2756A42F00E303FE /* AppCoordinator.swift in Sources */,
-				3DDF0E4927AEB95F005C8E14 /* AnimalFilter.swift in Sources */,
+				3DDF0E4927AEB95F005C8E14 /* Filter.swift in Sources */,
 				3DE9FAE527B316B400C03AED /* Dictionary+Ext.swift in Sources */,
 				3DF405792763D1FD001A943C /* Animal.swift in Sources */,
 				3DDF0E7627AFF7AC005C8E14 /* AnimalDetailVC+TableAdapter.swift in Sources */,

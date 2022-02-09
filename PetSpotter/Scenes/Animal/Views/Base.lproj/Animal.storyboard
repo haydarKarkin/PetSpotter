@@ -224,6 +224,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" name="PrimaryWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchDidTap:" destination="u8Q-Qs-3ER" eventType="touchUpInside" id="5DN-Iz-2uM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VdR-Hk-Amb"/>
@@ -256,6 +259,26 @@
             <point key="canvasLocation" x="1221.7391304347827" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ahw-D2-eTx">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+        <designable name="SF8-4q-lLe">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+        <designable name="atA-bD-GaV">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+        <designable name="gwJ-ph-ODm">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+        <designable name="j9c-UM-WG0">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+        <designable name="ley-Ps-MTy">
+            <size key="intrinsicContentSize" width="382" height="0.0"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="PrimaryRed">
             <color red="0.90196078431372551" green="0.082352941176470587" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

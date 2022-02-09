@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AnimalFilterDelegate: AnyObject {
+    func searchTapped(with filter: Filter)
+}
+
 class AnimalFilterVC: ViewController<AnimalFilterVM> {
     
     // MARK: - UI Elements
@@ -20,6 +24,7 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
     @IBOutlet weak var otherListView: TagListView!
     
     // MARK: - Properties
+    weak var delegate: AnimalFilterDelegate?
     var selectedAges: [String] = []
     var selectedSizes: [String] = []
     var selectedGenders: [String] = []
@@ -42,6 +47,7 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
         searchTextField.layer.borderColor = UIColor(named: "PrimaryBlack")?.cgColor
         searchTextField.setLeftPaddingPoints(16)
         searchTextField.setRightPaddingPoints(16)
+        searchTextField.placeholder = "Search Animals by Names"
         
         [ageListView, sizeListView, genderListView, coatListView, statusListView, otherListView].forEach { view in
             view!.tag = 0
@@ -57,21 +63,42 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
             view!.marginY = 5
             view!.marginX = 10
         }
-        
-        ageListView.addTags(Array(Constant.ages.values))
-        sizeListView.addTags(Array(Constant.sizes.values))
-        genderListView.addTags(Array(Constant.genders.values))
-        coatListView.addTags(Array(Constant.coats.values))
-        statusListView.addTags(Array(Constant.statuses.values))
-        otherListView.addTags(Array(Constant.others.values))
     }
     
     override func bindViewModel() {
         super.bindViewModel()
         
         let input = AnimalFilterVM.Input()
-        viewModel.transform(input: input) { _ in }
+        viewModel.transform(input: input) { [weak self] (output) in
+            guard let self = self else { return }
+            self.searchTextField.text = output.filter.name
+            self.selectedAges = output.filter.ages
+            self.selectedGenders = output.filter.genders
+            self.selectedSizes = output.filter.sizes
+            self.selectedCoats = output.filter.coats
+            self.selectedStatuses = output.filter.statuses
+            self.selectedOthers = output.filter.others
+            DispatchQueue.main.async { [weak self] in
+                self?.assignTags()
+            }
+        }
     }
+    
+    @IBAction func searchDidTap(_ sender: Any) {
+        var filter = Filter()
+        filter.name = searchTextField.text
+        filter.ages = selectedAges
+        filter.sizes = selectedSizes
+        filter.genders = selectedGenders
+        filter.coats = selectedCoats
+        filter.statuses = selectedStatuses
+        filter.others = selectedOthers
+        
+        dismiss(animated: true) { [weak self] in
+            self?.delegate?.searchTapped(with: filter)
+        }
+    }
+    
 }
 
 // MARK: - Storyboarded
@@ -161,6 +188,54 @@ extension AnimalFilterVC {
     func handleOtherTapping(_ title: String, isSelected: Bool) {
         if let key = Constant.others.key(forValue: title) {
             selectedOthers[key] = isSelected
+        }
+    }
+}
+
+// MARK: - Assign Tags
+extension AnimalFilterVC {
+    func assignTags() {
+        Constant.ages.forEach { age in
+            if selectedAges.firstIndex(of: age.key) != nil {
+                ageListView.addTag(age.value, isSelected: true)
+            } else {
+                ageListView.addTag(age.value)
+            }
+        }
+        Constant.genders.forEach { age in
+            if selectedGenders.firstIndex(of: age.key) != nil {
+                genderListView.addTag(age.value, isSelected: true)
+            } else {
+                genderListView.addTag(age.value)
+            }
+        }
+        Constant.sizes.forEach { age in
+            if selectedSizes.firstIndex(of: age.key) != nil {
+                sizeListView.addTag(age.value, isSelected: true)
+            } else {
+                sizeListView.addTag(age.value)
+            }
+        }
+        Constant.coats.forEach { age in
+            if selectedCoats.firstIndex(of: age.key) != nil {
+                coatListView.addTag(age.value, isSelected: true)
+            } else {
+                coatListView.addTag(age.value)
+            }
+        }
+        Constant.statuses.forEach { age in
+            if selectedStatuses.firstIndex(of: age.key) != nil {
+                statusListView.addTag(age.value, isSelected: true)
+            } else {
+                statusListView.addTag(age.value)
+            }
+        }
+        Constant.others.forEach { age in
+            if let value = selectedOthers[age.key] {
+                otherListView.addTag(age.value, isSelected: value)
+            } else {
+                otherListView.addTag(age.value)
+            }
         }
     }
 }
