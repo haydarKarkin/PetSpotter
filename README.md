@@ -9,6 +9,7 @@
 - <a href="#app-features">Application Features</a>
 - <a href="#requirements">Requirements</a>
 - <a href="#tech">Tech</a>
+- <a href="#considerations">Considerations</a>
 - <a href="#license">License</a>
 
 ## About
@@ -41,6 +42,7 @@ Some animals require adoption to avoid dumping or overloading at the shelter. Pe
 - Language: Swift 5
 - Minimum iOS Version: 14
 - Device Orientation: Portrait Mode
+- Dependency: No 3rd party dependency
 
 ## Tech
 
@@ -48,6 +50,10 @@ Some animals require adoption to avoid dumping or overloading at the shelter. Pe
 This project is designed by MVVM-C architecture pattern where:
 
 ![](https://github.com/haydarKarkin/PetSpotter/blob/main/images/mvvm-c.jpg)
+
+Using MVVM-C pattern gives us some benefits like code reuse, ease of testing, bindings make UI updates easier to handle, ease of maintainability.
+
+And splitting off protocols (DataSource and Delegate) into separate objects we can re-use those objects in other view controllers, or use different objects in the same view controller to get different behavior at runtime.
 
 - View is represented by `UIViewController` designed in Storyboard
 - Model represents state and domain objects
@@ -57,12 +63,23 @@ This project is designed by MVVM-C architecture pattern where:
 
 `View` <- `ViewController` <- bindings -> (`ViewModel` -> `Model`) <- trigers -> `Coordinator`
 
-### Project Structure
-
 ### Networking
 
 ### Persisten Data
 
+## Considerations
+
+Following are few considerations while writing code
+
+- Code is following `MVVM-C` Architecture. 
+- Every layer is interfaced via `dependency management` and lays foundation for high level DI-Framework
+- Code is following `iOS Swift Style Guidelines` and have same styling throughtout the code. 
+- Project is structured to `scale` as big as it can be 
+- `Folder structure` is highligting the architecture   
+- Layers are interfaced together via `Protocols`
+- Dependency resolution is being done via Factory. 
+- Control environments via `XCConfig` files for each scheme like `Debug` or `Release`.
+- `UserDefaults` stores credentials with an object.
 
 ## License
 ```
