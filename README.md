@@ -1,7 +1,7 @@
  [![Generic badge](https://img.shields.io/badge/Language-Swift-red.svg)](https://developer.apple.com/swift/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Pet Spotter
-![](https://github.com/haydarKarkin/PetSpotter/blob/main/images/mockup.jpg)
+![Preview](images/mockup.jpg)
 
 ## Table of Contents
 - <a href="#about">About</a>
@@ -14,8 +14,6 @@
 
 ## Introduction
 Some animals require adoption to avoid dumping or overloading at the shelter. Pet Spotter helps pets to meet with their adopters.
-
-
 
 ## Features
 ### Animals Scene
@@ -39,6 +37,18 @@ Some animals require adoption to avoid dumping or overloading at the shelter. Pe
 - Review organization bios to learn more about the organization’s detail such as work days, contact info and more.
 - Browse pets that are registred in the organization. 
 
+## Screens
+### Light Mode
+| Animals | Filter | Animal Detail | Favorites | Orgaizations |  Organization Detail
+| --- | --- | --- | --- | --- | --- |
+| ![Preview](/images/screenshots/light/animals.png) | ![Preview](/images/screenshots/light/filter.png) | ![Preview](/images/screenshots/light/animal-detail.png) | ![Preview](/images/screenshots/light/favorites.png) | ![Preview](images/screenshots/light/organizations.png) | ![Preview](images/screenshots/light/organization-detail.png) |
+
+### Dark Mode
+| Animals | Filter | Animal Detail | Favorites | Orgaizations |  Organization Detail
+| --- | --- | --- | --- | --- | --- |
+| ![Preview](/images/screenshots/dark/animals.png) | ![Preview](/images/screenshots/dark/filter.png) | ![Preview](/images/screenshots/dark/animal-detail.png) | ![Preview](/images/screenshots/dark/favorites.png) | ![Preview](images/screenshots/dark/organizations.png) | ![Preview](images/screenshots/dark/organization-detail.png) |
+
+
 ## Requirements
 
 - Xcode: Version 13.2.1
@@ -52,7 +62,7 @@ Some animals require adoption to avoid dumping or overloading at the shelter. Pe
 ### Architecture
 This project is designed by MVVM-C architecture pattern where:
 
-![](https://github.com/haydarKarkin/PetSpotter/blob/main/images/mvvm-c.jpg)
+![Preview](/images/mvvm-c.jpg)
 
 Using MVVM-C pattern gives us some benefits like code reuse, ease of testing, bindings make UI updates easier to handle, ease of maintainability.
 

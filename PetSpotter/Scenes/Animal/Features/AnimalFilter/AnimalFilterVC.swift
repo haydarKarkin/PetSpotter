@@ -53,6 +53,8 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
             view!.tag = 0
             view!.delegate = self
             view!.textFont = .systemFont(ofSize: 15)
+            view!.textColor = UIColor(named: "PrimaryWhite")!
+            view!.selectedTextColor = UIColor(named: "PrimaryWhite")!
             view!.minWidth = 57
             view!.alignment = .left
             view!.tagBackgroundColor = UIColor(named: "PrimaryBlack")!
