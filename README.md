@@ -12,34 +12,37 @@
 - <a href="#considerations">Considerations</a>
 - <a href="#license">License</a>
 
-## About
-Some animals require adoption to avoid dumping or overloading at the shelter. Pet finder apps are required to speed up pet meeting with adopters.
-
 ## Introduction
+Some animals require adoption to avoid dumping or overloading at the shelter. Pet Spotter helps pets to meet with their adopters.
 
-## Application Features
+
+
+## Features
 ### Animals Scene
-
+- Browse pets such as dogs, cats, puppies, kittens, rabbits & more.
 
 ### Filter Scene
-
+- Filter pet results by name, age, size, gender, care & behavior, coat length, or status.
 
 ### Animal Detail Scene
-
+- Review pet bios to learn more about the pet’s details.
+- Save your favorite pets for tracking them.
+- Browse the organization from detail scene for the selected pet.
 
 ### Favorites Scene
-
+- Browse your favorite pets that you saved before. Review their bios.
 
 ### Orgaizations Scene
-
+- Browse organizations, select one of them, review their bios.
 
 ### Organization Detail Scene
-
+- Review organization bios to learn more about the organization’s detail such as work days, contact info and more.
+- Browse pets that are registred in the organization. 
 
 ## Requirements
 
-- Xcode: Version 13.0
-- Language: Swift 5
+- Xcode: Version 13.2.1
+- Language: Swift 5.5
 - Minimum iOS Version: 14
 - Device Orientation: Portrait Mode
 - Dependency: No 3rd party dependency
@@ -64,15 +67,45 @@ And splitting off protocols (DataSource and Delegate) into separate objects we c
 `View` <- `ViewController` <- bindings -> (`ViewModel` -> `Model`) <- trigers -> `Coordinator`
 
 ### Networking
+The Petfinder REST API at https://www.petfinder.com/developers/ is used. Obtain a client ID and client secret to use the REST API. 
 
-### Persisten Data
+There are two layer for creating network requests. API enums are used for creating request and the provider is for sending requests that are creaded by APIs. 
+
+- `/oauth2/token`
+```
+GET https://api.petfinder.com/v2/oauth2/token
+```
+> This API call returns a token that is used for authentication to make a request for other APIs. Token is saved into `UserDefaults`, it is called for network requests that need authentication.
+
+- `/animals`
+```
+GET https://api.petfinder.com/v2/animals
+```
+> This API call returns a list of animals in the Petfinder database that fit the criteria given in the query parameters, and is used to return a list of adoptable pets based on the search queries provided by the user.
+
+- `/animals/{id}`
+```
+GET https://api.petfinder.com/v2/animals/{id}
+```
+>This API call returns details for a specific animal with the given ID in the path, and is used in the application to display information on a single pet that the user selects from the list of adoptable pets.
+
+- `/organizations`
+```
+GET https://api.petfinder.com/v2/organizations
+```
+> This API call returns a list of organizations in the Petfinder database that fit the criteria given in the query parameters.
+
+
+### Persistent Data
+Core Data used for local persistence. Save favorite animals using Core Data. A service layer (FavoriteService) uses the context from DataController that is a provider for CRUD operations on persistent data.
+
 
 ## Considerations
 
 Following are few considerations while writing code
 
 - Code is following `MVVM-C` Architecture. 
-- Every layer is interfaced via `dependency management` and lays foundation for high level DI-Framework
+- Every layer is interfaced via `dependency management` and lays foundation for high level DI structure.
 - Code is following `iOS Swift Style Guidelines` and have same styling throughtout the code. 
 - Project is structured to `scale` as big as it can be 
 - `Folder structure` is highligting the architecture   
