@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ImageCellDelegate: AnyObject {
-    func imageDownloadFinish()
+    func imageDownloadFinish(with error: Error?)
 }
 
 class ImageCell: UITableViewCell, Reusable {
@@ -29,8 +29,8 @@ class ImageCell: UITableViewCell, Reusable {
     
     func configure(with item: CellImageItem, delegate: ImageCellDelegate?) {
         self.delegate = delegate
-        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill) {
-            delegate?.imageDownloadFinish()
+        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill) { error in
+            delegate?.imageDownloadFinish(with: error)
         }
     }
 }

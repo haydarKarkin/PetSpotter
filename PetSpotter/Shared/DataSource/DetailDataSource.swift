@@ -11,7 +11,7 @@ protocol DetailDataSourceDelegate: AnyObject {
     func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
-    func imageDownloadFinish()
+    func imageDownloadFinish(with error: Error?)
 }
 
 class DetailDataSource: NSObject {
@@ -90,7 +90,7 @@ extension DetailDataSource: ButtonCellDelegate {
 }
 
 extension DetailDataSource: ImageCellDelegate {
-    func imageDownloadFinish() {
-        delegate?.imageDownloadFinish()
+    func imageDownloadFinish(with error: Error?) {
+        delegate?.imageDownloadFinish(with: error)
     }
 }

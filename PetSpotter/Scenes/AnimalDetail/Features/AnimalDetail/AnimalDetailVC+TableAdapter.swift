@@ -11,6 +11,7 @@ protocol AnimalDetailVCTableAdapterDelegate: AnyObject {
     func animalsTapped(id: String)
     func organizationDetailTapped(id: String)
     func videosTapped(videos: [Video])
+    func imageDownloadFinish(with error: Error?)
 }
 
 protocol AnimalDetailVCTableAdapterType: AnyObject {
@@ -101,8 +102,9 @@ extension AnimalDetailVC.TableAdapter: DetailDataSourceDelegate {
         delegate?.videosTapped(videos: videos)
     }
     
-    func imageDownloadFinish() {
+    func imageDownloadFinish(with error: Error?) {
         tableView?.beginUpdates()
         tableView?.endUpdates()
+        delegate?.imageDownloadFinish(with: error)
     }
 }

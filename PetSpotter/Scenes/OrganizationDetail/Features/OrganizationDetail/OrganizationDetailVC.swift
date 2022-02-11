@@ -58,4 +58,8 @@ extension OrganizationDetailVC: OrganizationDetailVCTableAdapterDelegate {
     
     func videosTapped(videos: [Video]) {
     }
+    
+    func imageDownloadFinish(with error: Error?) {
+        viewModel.onErrorHandling?(error)
+    }
 }

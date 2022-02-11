@@ -106,4 +106,8 @@ extension AnimalDetailVC: AnimalDetailVCTableAdapterDelegate {
     func videosTapped(videos: [Video]) {
         openVideosClosure?(videos)
     }
+    
+    func imageDownloadFinish(with error: Error?) {
+        viewModel.onErrorHandling?(error)
+    }
 }
