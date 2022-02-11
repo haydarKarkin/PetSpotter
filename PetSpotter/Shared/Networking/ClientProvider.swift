@@ -13,12 +13,17 @@ enum StubType {
 }
 
 final class ClientProvider<T: TargetType> {
-    private let urlSession = URLSession.shared
+    private let urlSession: URLSession
     private let cache = NSCache<NSString, NSData>()
     private let shouldStub: StubType
     
     init(shouldStub: StubType = .never) {
         self.shouldStub = shouldStub
+        
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 30.0
+        sessionConfig.timeoutIntervalForResource = 60.0
+        self.urlSession = URLSession(configuration: sessionConfig)
     }
     
     func request<U>(target: T, responseType: U.Type, completion: @escaping (Result<U, Error>) -> Void) where U: Decodable {
@@ -37,7 +42,8 @@ final class ClientProvider<T: TargetType> {
                     completion(.failure(ErrorHandler.ErrorType.decodingFailed))
                 }
             case .failure(let error):
-                completion(.failure(error))
+                let convertedError = ErrorHandler.ErrorType.convertError(error)
+                completion(.failure(convertedError))
             }
         }
     }

@@ -13,6 +13,7 @@ class ErrorHandler {
         case missingURL
         case decodingFailed
         case noNetwork
+        case timeOut
         case genericError
         
         var message: String {
@@ -26,18 +27,23 @@ class ErrorHandler {
             case .decodingFailed:
                 return "Can't read received data."
             case .noNetwork:
-                return "Check your internet connection"
+                return "Check your internet connection."
+            case .timeOut:
+                return "Network timeout occurred."
             case .genericError:
                 return "Something wrong. Please try later."
             }
         }
-    }
-    
-    class func showAlert(source: UIViewController, failure: ErrorType, body: String? = "An error has occurred") {
-        let alertVC = UIAlertController(title: failure.message, message: body, preferredStyle: .alert)
         
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        source.present(alertVC, animated: true, completion: nil)
+        static func convertError(_ error: Error?) -> Self {
+            switch error?._code {
+            case NSURLErrorTimedOut:
+                return .timeOut
+            case NSURLErrorNotConnectedToInternet, NSURLErrorNetworkConnectionLost:
+                return .noNetwork
+            default:
+                return .genericError
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ extension UIImageView {
     
     func downloadImageFrom(link: String?,
                            contentMode: UIView.ContentMode = .scaleAspectFit,
-                           completion: (() -> Void)? = nil) {
+                           completion: ((Error?) -> Void)? = nil) {
         
         guard let link = link,  let imgURL = URL(string: link) else {
             self.image = UIImage.init(named: "AnimalPlaceholderImage")
@@ -24,12 +24,14 @@ extension UIImageView {
                 
                 if let data = data {
                     self.image = UIImage(data: data)
+                    completion?(nil)
                 }
                 
                 if error != nil {
                     self.image = UIImage.init(named: "AnimalPlaceholderImage")
+                    let convertedError = ErrorHandler.ErrorType.convertError(error)
+                    completion?(convertedError)
                 }
-                completion?()
             }
         }.resume()
     }
