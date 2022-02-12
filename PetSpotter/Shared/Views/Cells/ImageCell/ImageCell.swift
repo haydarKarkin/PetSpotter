@@ -14,7 +14,9 @@ protocol ImageCellDelegate: AnyObject {
 class ImageCell: UITableViewCell, Reusable {
     
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     weak var delegate: ImageCellDelegate?
+    var isImageFetched = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +31,11 @@ class ImageCell: UITableViewCell, Reusable {
     
     func configure(with item: CellImageItem, delegate: ImageCellDelegate?) {
         self.delegate = delegate
-        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill) { error in
+        if isImageFetched { return }
+        indicator.startAnimating()
+        mainImage.downloadImageFrom(link: item.photos.first?.medium, contentMode: .scaleAspectFill) { [weak self] error in
+            self?.indicator.stopAnimating()
+            self?.isImageFetched = true
             delegate?.imageDownloadFinish(with: error)
         }
     }

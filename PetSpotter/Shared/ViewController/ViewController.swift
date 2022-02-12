@@ -49,7 +49,9 @@ class ViewController<T: ViewModelType>: UIViewController {
         
         viewModel.onErrorHandling = { [weak self] (error) in
             guard let error = error as? ErrorHandler.ErrorType else {
-                self?.showAlert(message: error?.localizedDescription ?? Configs.Text.globalErrorDesc)
+                if let error = error {
+                    self?.showAlert(message: error.localizedDescription)
+                }
                 return
             }
             self?.showAlert(message: error.message)

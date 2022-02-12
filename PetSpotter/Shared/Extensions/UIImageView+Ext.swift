@@ -15,6 +15,7 @@ extension UIImageView {
         
         guard let link = link,  let imgURL = URL(string: link) else {
             self.image = UIImage.init(named: "AnimalPlaceholderImage")
+            completion?(ErrorHandler.ErrorType.missingImage)
             return
         }
         

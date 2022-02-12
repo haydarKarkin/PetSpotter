@@ -15,6 +15,7 @@ class ErrorHandler {
         case noNetwork
         case timeOut
         case genericError
+        case missingImage
         
         var message: String {
             switch self {
@@ -30,6 +31,8 @@ class ErrorHandler {
                 return "Check your internet connection."
             case .timeOut:
                 return "Network timeout occurred."
+            case .missingImage:
+                return "Pet has no image."
             case .genericError:
                 return "Something wrong. Please try later."
             }
