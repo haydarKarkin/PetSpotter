@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol OnboardingCoordinatorType: Coordinator {
-    func showHome()
+    func showHome(route: HomeCoordinator.HomeRoute)
 }
 
 class OnboardingCoordinator: OnboardingCoordinatorType {
@@ -31,7 +31,7 @@ class OnboardingCoordinator: OnboardingCoordinatorType {
         navigationController.pushViewController(viewController, animated: false)
     }
     
-    func showHome() {
-        delegate?.showHome()
+    func showHome(route: HomeCoordinator.HomeRoute) {
+        delegate?.showHome(route: route)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AppCoordinatorType: Coordinator {
-    func showHome()
+    func showHome(route: HomeCoordinator.HomeRoute)
     func showOnboarding()
 }
 
@@ -16,14 +16,6 @@ class AppCoordinator: AppCoordinatorType {
     
     private let sharedFactory: SharedFactoryType
     private let navigationController: UINavigationController
-    
-    lazy var homeCoordinator = sharedFactory
-        .makeHomeFactory()
-        .makeHomeCoordinator(navigationController: navigationController)
-    
-    lazy var onboardingCoordinator = sharedFactory
-        .makeOnboardingFactory()
-        .makeOnboardingCoordinator(navigationController: navigationController, delegate: self)
     
     init(navigationController: UINavigationController, sharedFactory: SharedFactoryType) {
         self.navigationController = navigationController
@@ -35,10 +27,16 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     func showOnboarding() {
+        let onboardingCoordinator = sharedFactory
+            .makeOnboardingFactory()
+            .makeOnboardingCoordinator(navigationController: navigationController, delegate: self)
         coordinate(to: onboardingCoordinator)
     }
     
-    func showHome() {
+    func showHome(route: HomeCoordinator.HomeRoute = .animals) {
+        let homeCoordinator = sharedFactory
+            .makeHomeFactory()
+            .makeHomeCoordinator(navigationController: navigationController, route: route)
         coordinate(to: homeCoordinator)
     }
 }

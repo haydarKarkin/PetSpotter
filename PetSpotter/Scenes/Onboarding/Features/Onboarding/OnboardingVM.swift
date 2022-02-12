@@ -44,11 +44,11 @@ extension OnboardingVM: OnboardingVMType {
         onboardingService.getCredentials() { [weak self] error in
             self?.onLoadHandling?(false)
             
-            guard let error = error else {
-                self?.onboardingCoordinator.showHome()
+            guard error != nil else {
+                self?.onboardingCoordinator.showHome(route: .animals)
                 return
             }
-            self?.onErrorHandling?(error)
+            self?.onboardingCoordinator.showHome(route: .favorites)
         }
     }
 }
