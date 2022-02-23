@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */; };
 		3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AB275695CD00E303FE /* AppDelegate.swift */; };
 		3D1146B0275695CD00E303FE /* AnimalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AF275695CD00E303FE /* AnimalsVC.swift */; };
 		3D1146B3275695CD00E303FE /* Animal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1146B1275695CD00E303FE /* Animal.storyboard */; };
@@ -134,6 +135,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		3D1146A8275695CD00E303FE /* PetSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1146AB275695CD00E303FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1146AF275695CD00E303FE /* AnimalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVC.swift; sourceTree = "<group>"; };
@@ -341,9 +343,9 @@
 			isa = PBXGroup;
 			children = (
 				3D1146B7275695CF00E303FE /* Assets.xcassets */,
+				3DF8C1F027A599E3008226F3 /* Colors.xcassets */,
 				3D1146BC275695CF00E303FE /* Info.plist */,
 				3D1146B9275695CF00E303FE /* LaunchScreen.storyboard */,
-				3DF8C1F027A599E3008226F3 /* Colors.xcassets */,
 			);
 			path = SupportingItems;
 			sourceTree = "<group>";
@@ -454,6 +456,7 @@
 				3D11470C2756A22D00E303FE /* Reusable.swift */,
 				3D11470E2756A24600E303FE /* String+Ext.swift */,
 				3D92611B27A9D91D00870F33 /* UICollectionView+Ext.swift */,
+				1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */,
 				3D1147122756A28600E303FE /* UIImageView+Ext.swift */,
 				3D1147102756A26900E303FE /* UITableView+Ext.swift */,
 				3DE9FAE227B2FF3100C03AED /* UITextField+Ext.swift */,
@@ -1211,6 +1214,7 @@
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
+				1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */,
 				3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,

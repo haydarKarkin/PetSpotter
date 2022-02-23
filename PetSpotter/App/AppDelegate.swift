@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // add styling for navigation bars
-        UINavigationBar.appearance().barTintColor = UIColor(named: "PrimaryWhite")
-        UINavigationBar.appearance().tintColor = UIColor(named: "PrimaryRed")
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "PrimaryRed")!]
+        UINavigationBar.appearance().barTintColor = .primaryWhite
+        UINavigationBar.appearance().tintColor = .primaryRed
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.primaryRed]
         
         // load database to get persistent data
         DataController.sharedManager.load()
