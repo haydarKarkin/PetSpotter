@@ -20,6 +20,15 @@ class HomeVC: UITabBarController {
         self.tabBar.layer.shadowRadius = 10
         self.tabBar.layer.shadowOpacity = 1
         self.tabBar.layer.masksToBounds = false
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .primaryWhite
+            
+            self.tabBar.standardAppearance = appearance
+            self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance
+        }
     }
     
     var coordinator: HomeCoordinator?
