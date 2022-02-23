@@ -31,8 +31,6 @@ class HomeCoordinator: HomeCoordinatorType {
         let homeVC = homeFactory.makeHomeVC()
         homeVC.coordinator = self
         
-        UITabBar.appearance().tintColor = .primaryRed
-        
         let animalNC = UINavigationController()
         animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(systemName: "pawprint"), tag: 0)
         let animalCoordinator = sharedFactory
