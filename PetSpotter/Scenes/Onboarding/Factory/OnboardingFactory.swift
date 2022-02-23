@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 protocol OnboardingFactoryType {
+    var sharedFactory: SharedFactoryType { get }
+    var serviceFactory: ServiceFactoryType { get }
     func makeOnboardingCoordinator(navigationController: UINavigationController, delegate: AppCoordinatorType) -> OnboardingCoordinatorType
     func makeOnboardingVM(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVM
     func makeOnboardingVC(onboardingCoordinator: OnboardingCoordinatorType) -> OnboardingVC
@@ -23,6 +25,9 @@ class OnboardingFactory: OnboardingFactoryType {
         self.sharedFactory = sharedFactory
         self.serviceFactory = sharedFactory.makeServiceFactory()
     }
+}
+
+extension OnboardingFactory {
     
     func makeOnboardingCoordinator(navigationController: UINavigationController, delegate: AppCoordinatorType) -> OnboardingCoordinatorType {
         OnboardingCoordinator(navigationController: navigationController, onboardingFactory: self, delegate: delegate)
