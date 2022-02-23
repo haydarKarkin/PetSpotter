@@ -10,6 +10,7 @@ import UIKit
 
 protocol AnimalFactoryType {
     var sharedFactory: SharedFactoryType { get }
+    var serviceFactory: ServiceFactoryType { get }
     func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> AnimalCoordinatorType
     func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: AnimalCoordinatorType, organizationID: String?) -> AnimalsVM
     func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType, organizationID: String?) -> AnimalsVC
@@ -26,6 +27,9 @@ class AnimalFactory: AnimalFactoryType {
         self.sharedFactory = sharedFactory
         self.serviceFactory = sharedFactory.makeServiceFactory()
     }
+}
+
+extension AnimalFactory {
     
     func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> AnimalCoordinatorType {
         AnimalCoordinator(navigationController: navigationController, animalFactory: self, organizationID: organizationID)

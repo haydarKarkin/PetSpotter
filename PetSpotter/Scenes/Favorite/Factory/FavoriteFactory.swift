@@ -10,6 +10,7 @@ import UIKit
 
 protocol FavoriteFactoryType {
     var sharedFactory: SharedFactoryType { get }
+    var serviceFactory: ServiceFactoryType { get }
     func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType
     func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM
     func makeFavoritesVC(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVC 
@@ -24,6 +25,9 @@ class FavoriteFactory: FavoriteFactoryType {
         self.sharedFactory = sharedFactory
         self.serviceFactory = sharedFactory.makeServiceFactory()
     }
+}
+
+extension FavoriteFactory {
     
     func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType {
         FavoriteCoordinator(navigationController: navigationController, favoriteFactory: self)
