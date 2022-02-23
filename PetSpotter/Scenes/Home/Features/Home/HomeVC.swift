@@ -12,8 +12,8 @@ class HomeVC: UITabBarController {
     override func viewDidLoad() {
         self.tabBar.layer.masksToBounds = true
         self.tabBar.barStyle = .black
-        self.tabBar.barTintColor = .white
-        self.tabBar.tintColor = UIColor.orange
+        self.tabBar.barTintColor = .primaryWhite
+        self.tabBar.tintColor = .primaryRed
         
         self.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
         self.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
