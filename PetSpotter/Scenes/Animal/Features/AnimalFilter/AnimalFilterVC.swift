@@ -44,7 +44,7 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
         
         searchTextField.layer.cornerRadius = 15.0
         searchTextField.layer.borderWidth = 1.5
-        searchTextField.layer.borderColor = UIColor(named: "PrimaryBlack")?.cgColor
+        searchTextField.layer.borderColor = UIColor.primaryBlack.cgColor
         searchTextField.setLeftPaddingPoints(16)
         searchTextField.setRightPaddingPoints(16)
         searchTextField.placeholder = "Search Animals by Names"
@@ -53,12 +53,12 @@ class AnimalFilterVC: ViewController<AnimalFilterVM> {
             view!.tag = 0
             view!.delegate = self
             view!.textFont = .systemFont(ofSize: 15)
-            view!.textColor = UIColor(named: "PrimaryWhite")!
-            view!.selectedTextColor = UIColor(named: "PrimaryWhite")!
+            view!.textColor = .primaryWhite
+            view!.selectedTextColor = .primaryWhite
             view!.minWidth = 57
             view!.alignment = .left
-            view!.tagBackgroundColor = UIColor(named: "PrimaryBlack")!
-            view!.tagSelectedBackgroundColor = UIColor(named: "PrimaryRed")
+            view!.tagBackgroundColor = .primaryBlack
+            view!.tagSelectedBackgroundColor = .primaryRed
             view!.cornerRadius = 12
             view!.paddingY = 6
             view!.paddingX = 12

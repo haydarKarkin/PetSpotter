@@ -15,7 +15,7 @@ class AnimalCell: UICollectionViewCell, Reusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        layer.borderColor = UIColor(named: "PrimaryRed")?.withAlphaComponent(0.5).cgColor
+        layer.borderColor = UIColor.primaryRed.withAlphaComponent(0.5).cgColor
         layer.borderWidth = 2
         layer.cornerRadius = 8
         animalImageView.contentMode = .scaleAspectFit

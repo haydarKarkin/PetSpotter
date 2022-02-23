@@ -66,7 +66,7 @@ extension ViewController {
     func showActivityIndicator(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
         let activityIndicator = UIActivityIndicatorView.init(style: .large)
-        activityIndicator.color = UIColor(named: "PrimaryRed")
+        activityIndicator.color = .primaryRed
         activityIndicator.startAnimating()
         activityIndicator.center = spinnerView.center
         
