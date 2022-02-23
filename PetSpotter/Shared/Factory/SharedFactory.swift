@@ -32,7 +32,6 @@ class SharedFactory: SharedFactoryType {
         return ClientProvider<T>(shouldStub: shouldStub)
     }
     
-    
     func makeServiceFactory() -> ServiceFactoryType {
         return ServiceFactory(sharedFactory: self)
     }
