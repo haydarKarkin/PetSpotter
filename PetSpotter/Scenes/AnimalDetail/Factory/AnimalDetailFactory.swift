@@ -11,8 +11,6 @@ import UIKit
 protocol AnimalDetailFactoryType {
     var  sharedFactory: SharedFactoryType { get }
     func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType
-    func makeFavoriteService() -> FavoriteServiceType
-    func makeOrganizationService() -> OrganizationServiceType
     func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM
     func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC
     func makeVideosVM(videos: [Video]) -> VideosVM
@@ -22,27 +20,21 @@ protocol AnimalDetailFactoryType {
 class AnimalDetailFactory: AnimalDetailFactoryType {
     
     let sharedFactory: SharedFactoryType
+    let serviceFactory: ServiceFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
+        self.serviceFactory = sharedFactory.makeServiceFactory()
     }
     
     func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType {
         AnimalDetailCoordinator(navigationController: navigationController, animalDetailFactory: self, animal: animal)
     }
-    
-    func makeFavoriteService() -> FavoriteServiceType {
-        return FavoriteService()
-    }
-    
-    func makeOrganizationService() -> OrganizationServiceType {
-        let clientProvider: ClientProvider<OrganizationAPI> = sharedFactory.makeClientProvider()
-        return OrganizationService(provider: clientProvider)
-    }
+
     
     func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM {
-        let favoriteService: FavoriteServiceType = makeFavoriteService()
-        let organizationService: OrganizationServiceType = makeOrganizationService()
+        let favoriteService: FavoriteServiceType = serviceFactory.makeFavoriteService()
+        let organizationService: OrganizationServiceType = serviceFactory.makeOrganizationService()
         return AnimalDetailVM(animal: animal,
                               favoriteService: favoriteService,
                               organizationService: organizationService,
