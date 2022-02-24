@@ -10,7 +10,6 @@ import UIKit
 
 protocol OrganizationFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    var serviceFactory: ServiceFactoryType { get }
     func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType
     func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM
     func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC
@@ -19,11 +18,9 @@ protocol OrganizationFactoryType {
 class OrganizationFactory: OrganizationFactoryType {
     
     let sharedFactory: SharedFactoryType
-    let serviceFactory: ServiceFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
-        self.serviceFactory = sharedFactory.makeServiceFactory()
     }
 }
 
@@ -38,9 +35,11 @@ extension OrganizationFactory {
     }
     
     func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC {
-        let service: OrganizationServiceType = serviceFactory.makeOrganizationService()
+        let organizationService = sharedFactory
+            .makeServiceFactory()
+            .makeOrganizationService()
         let viewController = OrganizationsVC.instantiate()
-        viewController.viewModel = makeOrganizationsVM(organizationService: service, organizationCoordinator: organizationCoordinator)
+        viewController.viewModel = makeOrganizationsVM(organizationService: organizationService, organizationCoordinator: organizationCoordinator)
         return viewController
     }
 }

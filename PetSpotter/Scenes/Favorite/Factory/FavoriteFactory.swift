@@ -10,7 +10,6 @@ import UIKit
 
 protocol FavoriteFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    var serviceFactory: ServiceFactoryType { get }
     func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType
     func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM
     func makeFavoritesVC(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVC 
@@ -19,11 +18,9 @@ protocol FavoriteFactoryType {
 class FavoriteFactory: FavoriteFactoryType {
     
     let sharedFactory: SharedFactoryType
-    let serviceFactory: ServiceFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
-        self.serviceFactory = sharedFactory.makeServiceFactory()
     }
 }
 
@@ -34,8 +31,12 @@ extension FavoriteFactory {
     }
     
     func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM {
-        let favoriteService: FavoriteServiceType = serviceFactory.makeFavoriteService()
-        let animalService: AnimalServiceType = serviceFactory.makeAnimalService()
+        let favoriteService = sharedFactory
+            .makeServiceFactory()
+            .makeFavoriteService()
+        let animalService = sharedFactory
+            .makeServiceFactory()
+            .makeAnimalService()
         return FavoritesVM(favoriteService: favoriteService,
                            favoriteCoordinator: favoriteCoordinator,
                            animalService: animalService)

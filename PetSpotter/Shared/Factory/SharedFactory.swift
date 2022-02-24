@@ -8,7 +8,6 @@
 import UIKit
 
 protocol SharedFactoryType {
-    func makeClientProvider<T: TargetType>(shouldStub: StubType) -> ClientProvider<T>
     func makeServiceFactory() -> ServiceFactoryType
     func makeHomeFactory() -> HomeFactoryType
     func makeAnimalFactory() -> AnimalFactoryType
@@ -20,20 +19,10 @@ protocol SharedFactoryType {
     func makeOrganizationDetailFactory() -> OrganizationDetailFactoryType
 }
 
-extension SharedFactoryType {
-    func makeClientProvider<T: TargetType>(shouldStub: StubType = .never) -> ClientProvider<T> {
-        return makeClientProvider(shouldStub: shouldStub)
-    }
-}
-
 class SharedFactory: SharedFactoryType {
     
-    func makeClientProvider<T: TargetType>(shouldStub: StubType) -> ClientProvider<T> {
-        return ClientProvider<T>(shouldStub: shouldStub)
-    }
-    
     func makeServiceFactory() -> ServiceFactoryType {
-        return ServiceFactory(sharedFactory: self)
+        return ServiceFactory()
     }
     
     func makeHomeFactory() -> HomeFactoryType {

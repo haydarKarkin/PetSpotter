@@ -10,7 +10,6 @@ import UIKit
 
 protocol AnimalDetailFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    var serviceFactory: ServiceFactoryType { get }
     func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType
     func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM
     func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC
@@ -21,11 +20,9 @@ protocol AnimalDetailFactoryType {
 class AnimalDetailFactory: AnimalDetailFactoryType {
     
     let sharedFactory: SharedFactoryType
-    let serviceFactory: ServiceFactoryType
     
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
-        self.serviceFactory = sharedFactory.makeServiceFactory()
     }
 }
 
@@ -37,8 +34,12 @@ extension AnimalDetailFactory {
     
     
     func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM {
-        let favoriteService: FavoriteServiceType = serviceFactory.makeFavoriteService()
-        let organizationService: OrganizationServiceType = serviceFactory.makeOrganizationService()
+        let favoriteService = sharedFactory
+            .makeServiceFactory()
+            .makeFavoriteService()
+        let organizationService = sharedFactory
+            .makeServiceFactory()
+            .makeOrganizationService()
         return AnimalDetailVM(animal: animal,
                               favoriteService: favoriteService,
                               organizationService: organizationService,
