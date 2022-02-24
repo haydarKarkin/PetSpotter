@@ -11,7 +11,6 @@ import UIKit
 protocol AnimalMapFactoryType {
     var sharedFactory: SharedFactoryType { get }
     func makeAnimalMapCoordinator(navigationController: UINavigationController) -> AnimalMapCoordinatorType
-    func makeAnimalService() -> AnimalServiceType
     func makeAnimalMapVM(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVM
     func makeAnimalMapVC(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVC
 }
@@ -23,18 +22,19 @@ class AnimalMapFactory: AnimalMapFactoryType {
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
     }
+}
+
+extension AnimalMapFactory {
     
     func makeAnimalMapCoordinator(navigationController: UINavigationController) -> AnimalMapCoordinatorType {
         AnimalMapCoordinator(navigationController: navigationController, animalMapFactory: self)
     }
     
-    func makeAnimalService() -> AnimalServiceType {
-        sharedFactory.makeAnimalFactory().makeAnimalService()
-    }
-    
     func makeAnimalMapVM(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVM {
-        let service: AnimalServiceType = makeAnimalService()
-        return AnimalMapVM(animalService: service, animalMapCoordinator: animalMapCoordinator)
+        let animalService = sharedFactory
+            .makeServiceFactory()
+            .makeAnimalService()
+        return AnimalMapVM(animalService: animalService, animalMapCoordinator: animalMapCoordinator)
     }
     
     func makeAnimalMapVC(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVC {

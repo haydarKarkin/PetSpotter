@@ -11,7 +11,6 @@ import UIKit
 protocol OrganizationFactoryType {
     var sharedFactory: SharedFactoryType { get }
     func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType
-    func makeOrganizationService() -> OrganizationServiceType
     func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM
     func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC
 }
@@ -23,14 +22,12 @@ class OrganizationFactory: OrganizationFactoryType {
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
     }
+}
+
+extension OrganizationFactory {
     
     func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType {
         OrganizationCoordinator(navigationController: navigationController, organizationFactory: self)
-    }
-    
-    func makeOrganizationService() -> OrganizationServiceType {
-        let clientProvider: ClientProvider<OrganizationAPI> = sharedFactory.makeClientProvider()
-        return OrganizationService(provider: clientProvider)
     }
     
     func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM {
@@ -38,9 +35,11 @@ class OrganizationFactory: OrganizationFactoryType {
     }
     
     func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC {
-        let service: OrganizationServiceType = makeOrganizationService()
+        let organizationService = sharedFactory
+            .makeServiceFactory()
+            .makeOrganizationService()
         let viewController = OrganizationsVC.instantiate()
-        viewController.viewModel = makeOrganizationsVM(organizationService: service, organizationCoordinator: organizationCoordinator)
+        viewController.viewModel = makeOrganizationsVM(organizationService: organizationService, organizationCoordinator: organizationCoordinator)
         return viewController
     }
 }

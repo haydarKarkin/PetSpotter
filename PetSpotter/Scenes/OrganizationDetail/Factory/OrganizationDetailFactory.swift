@@ -23,6 +23,9 @@ class OrganizationDetailFactory: OrganizationDetailFactoryType {
     init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
     }
+}
+
+extension OrganizationDetailFactory {
     
     func makeOrganizationDetailCoordinator(navigationController: UINavigationController, organization: Organization) -> OrganizationDetailCoordinatorType {
         OrganizationDetailCoordinator(navigationController: navigationController,
