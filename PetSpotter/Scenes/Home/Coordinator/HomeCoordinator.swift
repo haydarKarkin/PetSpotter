@@ -7,29 +7,26 @@
 
 import UIKit
 
-protocol HomeCoordinatorType: Coordinator {
+enum HomeRoute: Int, Route {
+    case animals
+    case favorites
+    case organizations
 }
+
+typealias HomeCoordinatorType = Coordinator<HomeRoute>
 
 class HomeCoordinator: HomeCoordinatorType {
     
-    private let navigationController: UINavigationController
-    private let homeFactory: HomeFactoryType
     private let sharedFactory: SharedFactoryType
-    private let route: HomeRoute
+    private let homeVC: HomeVC
     
     init(navigationController: UINavigationController,
-         homeFactory: HomeFactoryType,
          sharedFactory: SharedFactoryType,
          route: HomeRoute = .animals) {
-        self.navigationController = navigationController
-        self.homeFactory = homeFactory
         self.sharedFactory = sharedFactory
-        self.route = route
-    }
-    
-    func start() {
-        let homeVC = homeFactory.makeHomeVC()
-        homeVC.coordinator = self
+        self.homeVC = sharedFactory
+            .makeHomeFactory()
+            .makeHomeVC()
         
         let animalNC = UINavigationController()
         animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(systemName: "pawprint"), tag: 0)
@@ -49,24 +46,23 @@ class HomeCoordinator: HomeCoordinatorType {
             .makeOrganizationFactory()
             .makeOrganizationCoordinator(navigationController: organizationNC)
         
-        homeVC.viewControllers = [animalNC, favoriteNC, organizationNC]
-        homeVC.modalPresentationStyle = .fullScreen
-        homeVC.selectedIndex = route.rawValue
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.navigationController.present(homeVC, animated: true, completion: nil)
-        }
-        coordinate(to: animalCoordinator)
-        coordinate(to: organizationCoordinator)
-        coordinate(to: favoriteCoordinator)
-    }
-}
-
-extension HomeCoordinator {
+        homeVC.viewControllers = [
+            animalCoordinator.navigationController,
+            favoriteCoordinator.navigationController,
+            organizationCoordinator.navigationController
+        ]
     
-    enum HomeRoute: Int {
-        case animals
-        case favorites
-        case organizations
+        super.init(navigationController: navigationController, initialRoute: route)
+    }
+    
+    override func navigate(route: HomeRoute) {
+        guard let homeVC = navigationController.topViewController as? HomeVC else {
+            self.homeVC.coordinator = self
+            self.homeVC.modalPresentationStyle = .fullScreen
+            self.homeVC.selectedIndex = route.rawValue
+            self.navigationController.present(self.homeVC, animated: true, completion: nil)
+            return
+        }
+        homeVC.selectedIndex = route.rawValue
     }
 }

@@ -5,44 +5,39 @@
 //  Created by hkarkin on 30.11.2021.
 //
 
-import Foundation
 import UIKit
 
-protocol AnimalCoordinatorType: Coordinator {
-    func showAnimalDetail(animal: Animal)
-    func showAnimalFilter(filter: Filter, delegate: AnimalFilterDelegate)
+enum AnimalRoute: Route {
+    case animals(String?)
+    case animalDetail(Animal)
+    case animalFilter(Filter, AnimalFilterDelegate)
 }
+
+typealias AnimalCoordinatorType = Coordinator<AnimalRoute>
 
 class AnimalCoordinator: AnimalCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let animalFactory: AnimalFactoryType
-    private let organizationID: String?
     
-    init(navigationController: UINavigationController,
-         animalFactory: AnimalFactoryType,
-         organizationID: String? = nil) {
-        self.navigationController = navigationController
+    init(navigationController: UINavigationController, animalFactory: AnimalFactoryType, organizationID: String?) {
         self.animalFactory = animalFactory
-        self.organizationID = organizationID
+        super.init(navigationController: navigationController, initialRoute: .animals(organizationID))
     }
     
-    func start() {
-        let viewController = animalFactory.makeAnimalsVC(animalCoordinator: self, organizationID: organizationID)
-        navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func showAnimalDetail(animal: Animal) {
-        let coordinator = animalFactory
-            .sharedFactory
-            .makeAnimalDetailFactory()
-            .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
-        coordinate(to: coordinator)
-    }
-    
-    func showAnimalFilter(filter: Filter, delegate: AnimalFilterDelegate) {
-        let viewController = animalFactory.makeAnimalFilterVC(filter: filter)
-        viewController.delegate = delegate
-        navigationController.present(viewController, animated: true, completion: nil)
+    override func navigate(route: AnimalRoute) {
+        switch route {
+        case .animals(let organizationID):
+            let viewController = animalFactory.makeAnimalsVC(animalCoordinator: self, organizationID: organizationID)
+            navigationController.pushViewController(viewController, animated: true)
+        case .animalDetail(let animal):
+            let _ = animalFactory
+                .sharedFactory
+                .makeAnimalDetailFactory()
+                .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+        case .animalFilter(let filter, let delegate):
+            let viewController = animalFactory.makeAnimalFilterVC(filter: filter)
+            viewController.delegate = delegate
+            navigationController.present(viewController, animated: true, completion: nil)
+        }
     }
 }

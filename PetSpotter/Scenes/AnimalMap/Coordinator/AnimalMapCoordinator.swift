@@ -8,31 +8,33 @@
 import Foundation
 import UIKit
 
-protocol AnimalMapCoordinatorType: Coordinator {
-    func showAnimalDetail(animal: Animal)
+enum AnimalMapRoute: Route {
+    case animalMap
+    case animalDetail(Animal)
 }
+
+typealias AnimalMapCoordinatorType = Coordinator<AnimalMapRoute>
 
 class AnimalMapCoordinator: AnimalMapCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let animalMapFactory: AnimalMapFactoryType
     
     init(navigationController: UINavigationController,
          animalMapFactory: AnimalMapFactoryType) {
-        self.navigationController = navigationController
         self.animalMapFactory = animalMapFactory
+        super.init(navigationController: navigationController, initialRoute: .animalMap)
     }
     
-    func start() {
-        let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
-    }
-    
-    func showAnimalDetail(animal: Animal) {
-        let coordinator = animalMapFactory
-            .sharedFactory
-            .makeAnimalDetailFactory()
-            .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
-        coordinate(to: coordinator)
+    override func navigate(route: AnimalMapRoute) {
+        switch route {
+        case .animalMap:
+            let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)
+            navigationController.pushViewController(viewController, animated: false)
+        case .animalDetail(let animal):
+            let _ = animalMapFactory
+                .sharedFactory
+                .makeAnimalDetailFactory()
+                .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+        }
     }
 }

@@ -5,33 +5,34 @@
 //  Created by hkarkin on 1.12.2021.
 //
 
-import Foundation
 import UIKit
 
-protocol OrganizationCoordinatorType: Coordinator {
-    func showOrganizationDetail(organization: Organization)
+enum OrganizationRoute: Route {
+    case organizations
+    case organizationDetail(Organization)
 }
+
+typealias OrganizationCoordinatorType = Coordinator<OrganizationRoute>
 
 class OrganizationCoordinator: OrganizationCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let organizationFactory: OrganizationFactoryType
     
     init(navigationController: UINavigationController, organizationFactory: OrganizationFactoryType) {
-        self.navigationController = navigationController
         self.organizationFactory = organizationFactory
+        super.init(navigationController: navigationController, initialRoute: .organizations)
     }
     
-    func start() {
-        let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
-        navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func showOrganizationDetail(organization: Organization) {
-        let coordinator = organizationFactory
-            .sharedFactory
-            .makeOrganizationDetailFactory()
-            .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
-        coordinate(to: coordinator)
+    override func navigate(route: OrganizationRoute) {
+        switch route {
+        case .organizations:
+            let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
+            navigationController.pushViewController(viewController, animated: true)
+        case .organizationDetail(let organization):
+            let _ = organizationFactory
+                .sharedFactory
+                .makeOrganizationDetailFactory()
+                .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+        }
     }
 }

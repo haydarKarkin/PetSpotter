@@ -8,30 +8,33 @@
 import Foundation
 import UIKit
 
-protocol OnboardingCoordinatorType: Coordinator {
-    func showHome(route: HomeCoordinator.HomeRoute)
+enum OnboardingRoute: Route {
+    case onboarding
+    case home(HomeRoute)
 }
+
+typealias OnboardingCoordinatorType = Coordinator<OnboardingRoute>
 
 class OnboardingCoordinator: OnboardingCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let onboardingFactory: OnboardingFactoryType
-    private weak var delegate: AppCoordinatorType?
+    private weak var appCoordinator: AppCoordinatorType?
     
     init(navigationController: UINavigationController,
          onboardingFactory: OnboardingFactoryType,
-         delegate: AppCoordinatorType) {
-        self.navigationController = navigationController
+         appCoordinator: AppCoordinatorType) {
         self.onboardingFactory = onboardingFactory
-        self.delegate = delegate
+        self.appCoordinator = appCoordinator
+        super.init(navigationController: navigationController, initialRoute: .onboarding)
     }
     
-    func start() {
-        let viewController = onboardingFactory.makeOnboardingVC(onboardingCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
-    }
-    
-    func showHome(route: HomeCoordinator.HomeRoute) {
-        delegate?.showHome(route: route)
+    override func navigate(route: OnboardingRoute) {
+        switch route {
+        case .onboarding:
+            let viewController = onboardingFactory.makeOnboardingVC(onboardingCoordinator: self)
+            navigationController.pushViewController(viewController, animated: false)
+        case .home(let homeRoute):
+            appCoordinator?.navigate(route: .home(homeRoute))
+        }
     }
 }

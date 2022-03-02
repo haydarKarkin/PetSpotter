@@ -8,40 +8,38 @@
 import Foundation
 import UIKit
 
-protocol AnimalDetailCoordinatorType: Coordinator {
-    func showOrganizationDetail(with organization: Organization)
-    func showVideos(with videos: [Video])
+enum AnimalDetailRoute: Route {
+    case animalDetail(Animal)
+    case organizationDetail(Organization)
+    case videos([Video])
 }
+
+typealias AnimalDetailCoordinatorType = Coordinator<AnimalDetailRoute>
 
 class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let animalDetailFactory: AnimalDetailFactoryType
-    private let animal: Animal
     
     init(navigationController: UINavigationController,
          animalDetailFactory: AnimalDetailFactoryType,
          animal: Animal) {
-        self.navigationController = navigationController
         self.animalDetailFactory = animalDetailFactory
-        self.animal = animal
+        super.init(navigationController: navigationController, initialRoute: .animalDetail(animal))
     }
     
-    func start() {
-        let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal, coordinator: self)
-        navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func showOrganizationDetail(with organization: Organization) {
-        let coordinator = animalDetailFactory
-            .sharedFactory
-            .makeOrganizationDetailFactory()
-            .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
-        coordinate(to: coordinator)
-    }
-    
-    func showVideos(with videos: [Video]) {
-        let viewController = animalDetailFactory.makeVideosVC(videos: videos)
-        navigationController.pushViewController(viewController, animated: true)
+    override func navigate(route: AnimalDetailRoute) {
+        switch route {
+        case .animalDetail(let animal):
+            let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal, coordinator: self)
+            navigationController.pushViewController(viewController, animated: true)
+        case .organizationDetail(let organization):
+            let _ = animalDetailFactory
+                .sharedFactory
+                .makeOrganizationDetailFactory()
+                .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+        case .videos(let videos):
+            let viewController = animalDetailFactory.makeVideosVC(videos: videos)
+            navigationController.pushViewController(viewController, animated: true)
+        }
     }
 }

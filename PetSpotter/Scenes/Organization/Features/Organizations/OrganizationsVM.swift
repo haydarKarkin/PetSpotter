@@ -81,6 +81,6 @@ extension OrganizationsVM {
     }
     
     func showOrganizationDetail(with organization: Organization) {
-        organizationCoordinator.showOrganizationDetail(organization: organization)
+        organizationCoordinator.navigate(route: .organizationDetail(organization))
     }
 }

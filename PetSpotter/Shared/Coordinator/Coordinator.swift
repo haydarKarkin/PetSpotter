@@ -5,15 +5,23 @@
 //  Created by hkarkin on 30.11.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol Coordinator: AnyObject {
-    func start()
-    func coordinate(to coordinator: Coordinator)
-}
+protocol Route { }
 
-extension Coordinator {
-    func coordinate(to coordinator: Coordinator) {
-        coordinator.start()
+class Coordinator<RouteType: Route> {
+    
+    let navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController, initialRoute: RouteType?) {
+        self.navigationController = navigationController
+        
+        if let initialRoute = initialRoute {
+            navigate(route: initialRoute)
+        }
+    }
+    
+    func navigate(route: RouteType) {
+        fatalError("Please override the \(#function) method.")
     }
 }

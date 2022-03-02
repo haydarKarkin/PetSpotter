@@ -103,11 +103,11 @@ extension AnimalsVM {
     }
     
     func showAnimalDetail(with animal: Animal) {
-        animalCoordinator.showAnimalDetail(animal: animal)
+        animalCoordinator.navigate(route: .animalDetail(animal))
     }
     
     func openFilter(delegate: AnimalsVC) {
-        animalCoordinator.showAnimalFilter(filter: filter, delegate: delegate)
+        animalCoordinator.navigate(route: .animalFilter(filter, delegate))
     }
     
     func searchAnimals(filter: Filter, completion: (([Animal]) -> Void)?) {

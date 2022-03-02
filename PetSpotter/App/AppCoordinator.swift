@@ -7,36 +7,32 @@
 
 import UIKit
 
-protocol AppCoordinatorType: Coordinator {
-    func showHome(route: HomeCoordinator.HomeRoute)
-    func showOnboarding()
+enum AppRoute: Route {
+    case onboarding
+    case home(HomeRoute)
 }
+
+typealias AppCoordinatorType = Coordinator<AppRoute>
 
 class AppCoordinator: AppCoordinatorType {
     
     private let sharedFactory: SharedFactoryType
-    private let navigationController: UINavigationController
     
-    init(navigationController: UINavigationController, sharedFactory: SharedFactoryType) {
-        self.navigationController = navigationController
+    init(sharedFactory: SharedFactoryType) {
         self.sharedFactory = sharedFactory
+        super.init(navigationController: UINavigationController(), initialRoute: .onboarding)
     }
     
-    func start() {
-        showOnboarding()
-    }
-    
-    func showOnboarding() {
-        let onboardingCoordinator = sharedFactory
-            .makeOnboardingFactory()
-            .makeOnboardingCoordinator(navigationController: navigationController, delegate: self)
-        coordinate(to: onboardingCoordinator)
-    }
-    
-    func showHome(route: HomeCoordinator.HomeRoute = .animals) {
-        let homeCoordinator = sharedFactory
-            .makeHomeFactory()
-            .makeHomeCoordinator(navigationController: navigationController, route: route)
-        coordinate(to: homeCoordinator)
+    override func navigate(route: AppRoute) {
+        switch route {
+        case .onboarding:
+            let _ = sharedFactory
+                .makeOnboardingFactory()
+                .makeOnboardingCoordinator(navigationController: navigationController, appCoordinator: self)
+        case .home(let homeRoute):
+            let _ = sharedFactory
+                .makeHomeFactory()
+                .makeHomeCoordinator(navigationController: navigationController, route: homeRoute)
+        }
     }
 }

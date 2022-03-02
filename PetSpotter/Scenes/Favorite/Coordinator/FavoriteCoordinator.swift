@@ -8,31 +8,33 @@
 import Foundation
 import UIKit
 
-protocol FavoriteCoordinatorType: Coordinator {
-    func showAnimalDetail(animal: Animal)
+enum FavoriteRoute: Route {
+    case favorite
+    case animalDetail(Animal)
 }
+
+typealias FavoriteCoordinatorType = Coordinator<FavoriteRoute>
 
 class FavoriteCoordinator: FavoriteCoordinatorType {
     
-    private let navigationController: UINavigationController
     private let favoriteFactory: FavoriteFactoryType
     
     init(navigationController: UINavigationController,
          favoriteFactory: FavoriteFactoryType) {
-        self.navigationController = navigationController
         self.favoriteFactory = favoriteFactory
+        super.init(navigationController: navigationController, initialRoute: .favorite)
     }
     
-    func start() {
-        let viewController = favoriteFactory.makeFavoritesVC(favoriteCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
-    }
-    
-    func showAnimalDetail(animal: Animal) {
-        let coordinator = favoriteFactory
-            .sharedFactory
-            .makeAnimalDetailFactory()
-            .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
-        coordinate(to: coordinator)
+    override func navigate(route: FavoriteRoute) {
+        switch route {
+        case .favorite:
+            let viewController = favoriteFactory.makeFavoritesVC(favoriteCoordinator: self)
+            navigationController.pushViewController(viewController, animated: false)
+        case .animalDetail(let animal):
+            let _ = favoriteFactory
+                .sharedFactory
+                .makeAnimalDetailFactory()
+                .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+        }
     }
 }
