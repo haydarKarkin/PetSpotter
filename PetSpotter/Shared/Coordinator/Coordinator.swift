@@ -17,11 +17,11 @@ class Coordinator<RouteType: Route> {
         self.navigationController = navigationController
         
         if let initialRoute = initialRoute {
-            navigate(route: initialRoute)
+            navigate(to: initialRoute)
         }
     }
     
-    func navigate(route: RouteType) {
+    func navigate(to route: RouteType) {
         fatalError("Please override the \(#function) method.")
     }
 }

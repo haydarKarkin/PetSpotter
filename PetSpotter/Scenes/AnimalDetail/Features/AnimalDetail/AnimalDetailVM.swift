@@ -102,7 +102,7 @@ extension AnimalDetailVM {
             self.onLoadHandling?(false)
             switch result {
             case .success(let resp):
-                self.animalDetailCoordinator.navigate(route: .organizationDetail(resp.organization))
+                self.animalDetailCoordinator.navigate(to: .organizationDetail(resp.organization))
             case .failure(let error):
                 self.onErrorHandling?(error)
             }
@@ -110,6 +110,6 @@ extension AnimalDetailVM {
     }
     
     func showVideos(with videos: [Video]) {
-        self.animalDetailCoordinator.navigate(route: .videos(videos))
+        self.animalDetailCoordinator.navigate(to: .videos(videos))
     }
 }

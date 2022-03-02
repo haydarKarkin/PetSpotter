@@ -23,7 +23,7 @@ class AppCoordinator: AppCoordinatorType {
         super.init(navigationController: UINavigationController(), initialRoute: .onboarding)
     }
     
-    override func navigate(route: AppRoute) {
+    override func navigate(to route: AppRoute) {
         switch route {
         case .onboarding:
             let _ = sharedFactory

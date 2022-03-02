@@ -27,7 +27,7 @@ class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: .animalDetail(animal))
     }
     
-    override func navigate(route: AnimalDetailRoute) {
+    override func navigate(to route: AnimalDetailRoute) {
         switch route {
         case .animalDetail(let animal):
             let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal, coordinator: self)

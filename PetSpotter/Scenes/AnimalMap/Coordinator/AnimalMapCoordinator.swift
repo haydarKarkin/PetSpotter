@@ -25,7 +25,7 @@ class AnimalMapCoordinator: AnimalMapCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: .animalMap)
     }
     
-    override func navigate(route: AnimalMapRoute) {
+    override func navigate(to route: AnimalMapRoute) {
         switch route {
         case .animalMap:
             let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)

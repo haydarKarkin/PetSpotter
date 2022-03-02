@@ -55,7 +55,7 @@ class HomeCoordinator: HomeCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: route)
     }
     
-    override func navigate(route: HomeRoute) {
+    override func navigate(to route: HomeRoute) {
         guard let homeVC = navigationController.topViewController as? HomeVC else {
             self.homeVC.coordinator = self
             self.homeVC.modalPresentationStyle = .fullScreen

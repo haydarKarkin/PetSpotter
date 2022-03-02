@@ -45,10 +45,10 @@ extension OnboardingVM: OnboardingVMType {
             self?.onLoadHandling?(false)
             
             guard error != nil else {
-                self?.onboardingCoordinator.navigate(route: .home(.animals))
+                self?.onboardingCoordinator.navigate(to: .home(.animals))
                 return
             }
-            self?.onboardingCoordinator.navigate(route: .home(.favorites))
+            self?.onboardingCoordinator.navigate(to: .home(.favorites))
         }
     }
 }

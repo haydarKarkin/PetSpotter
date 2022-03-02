@@ -25,7 +25,7 @@ class OrganizationDetailCoordinator: OrganizationDetailCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: .organizationDetail(organization))
     }
     
-    override func navigate(route: OrganizationDetailRoute) {
+    override func navigate(to route: OrganizationDetailRoute) {
         switch route {
         case .organizationDetail(let organization):
             let viewController = organizationDetailFactory.makeOrganizationDetailVC(organization: organization, coordinator: self)

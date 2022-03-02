@@ -28,13 +28,13 @@ class OnboardingCoordinator: OnboardingCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: .onboarding)
     }
     
-    override func navigate(route: OnboardingRoute) {
+    override func navigate(to route: OnboardingRoute) {
         switch route {
         case .onboarding:
             let viewController = onboardingFactory.makeOnboardingVC(onboardingCoordinator: self)
             navigationController.pushViewController(viewController, animated: false)
         case .home(let homeRoute):
-            appCoordinator?.navigate(route: .home(homeRoute))
+            appCoordinator?.navigate(to: .home(homeRoute))
         }
     }
 }

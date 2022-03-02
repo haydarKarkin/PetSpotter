@@ -40,6 +40,6 @@ extension OrganizationDetailVM {
 extension OrganizationDetailVM {
     
     func showAnimals(with id: String) {
-        organizationDetailCoordinator.navigate(route: .animals(id))
+        organizationDetailCoordinator.navigate(to: .animals(id))
     }
 }

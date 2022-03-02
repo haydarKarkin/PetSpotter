@@ -72,7 +72,7 @@ extension FavoritesVM: FavoritesVMType {
             self.onLoadHandling?(false)
             switch result {
             case .success(let resp):
-                self.favoriteCoordinator.navigate(route: .animalDetail(resp.animal))
+                self.favoriteCoordinator.navigate(to: .animalDetail(resp.animal))
             case .failure(let error):
                 self.onErrorHandling?(error)
             }

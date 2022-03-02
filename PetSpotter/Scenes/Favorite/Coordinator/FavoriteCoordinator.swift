@@ -25,7 +25,7 @@ class FavoriteCoordinator: FavoriteCoordinatorType {
         super.init(navigationController: navigationController, initialRoute: .favorite)
     }
     
-    override func navigate(route: FavoriteRoute) {
+    override func navigate(to route: FavoriteRoute) {
         switch route {
         case .favorite:
             let viewController = favoriteFactory.makeFavoritesVC(favoriteCoordinator: self)
