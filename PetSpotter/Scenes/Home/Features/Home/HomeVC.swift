@@ -29,6 +29,8 @@ class HomeVC: UITabBarController {
             self.tabBar.standardAppearance = appearance
             self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance
         }
+        
+        Logger.verbose("Home scene is loaded")
     }
     
     var coordinator: HomeCoordinator?
