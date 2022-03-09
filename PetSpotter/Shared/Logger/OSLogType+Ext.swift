@@ -13,8 +13,8 @@ extension OSLogType: LogTypeProtocol {
     var logTypeIndicator: LogTypeIndicator {
         switch self {
         case .debug: return .debug
-        case .error: return .error
-        case .fault: return .warning
+        case .error: return .warning
+        case .fault: return .error
         case .info: return .info
         case .default: return .verbose
         default: return .verbose
@@ -24,8 +24,8 @@ extension OSLogType: LogTypeProtocol {
     var logTypeName: LogTypeName {
         switch self {
         case .debug: return .debug
-        case .error: return .error
-        case .fault: return .warning
+        case .error: return .warning
+        case .fault: return .error
         case .info: return .info
         case .default: return .verbose
         default: return .verbose
