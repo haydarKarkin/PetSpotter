@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-extension LogLevel {
+internal extension LogLevel {
     
     var osLogType: OSLogType {
         switch self {

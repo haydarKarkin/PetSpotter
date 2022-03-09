@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // configure logger
+        configureLogger()
+        
         // add styling for navigation bars
         UINavigationBar.appearance().barTintColor = .primaryWhite
         UINavigationBar.appearance().tintColor = .primaryRed
@@ -63,5 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    // MARK: - Configure Logger
+    
+    func configureLogger() {
+        let configuration = LoggerConfiguration(minimumLogLevel: .verbose)
+        Logger.configure(with: configuration)
     }
 }

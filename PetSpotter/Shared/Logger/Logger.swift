@@ -10,12 +10,20 @@ import os
 
 public final class Logger {
     private static let log = OSLog(subsystem: Bundle.main.bundleIdentifier ?? "", category: "LOG")
-    private static var minimumLogLevel: LogLevel = .verbose
+    private static var configuration: LoggerConfiguration = .default
     private init() {}
 }
 
+// MARK: - Configure
+public extension Logger {
+    
+    static func configure(with configuration: LoggerConfiguration) {
+        Logger.configuration = configuration
+    }
+}
+
 // MARK: - Levels
-extension Logger {
+public extension Logger {
     
     /// Logs a string at the `verbose` level.
     ///
@@ -23,7 +31,7 @@ extension Logger {
     ///
     /// - Parameters:
     ///   - message: A string.
-    public static func verbose(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    static func verbose(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
         log(message, level: .verbose, file: file, function: function, line: line)
     }
     
@@ -33,7 +41,7 @@ extension Logger {
     ///
     /// - Parameters:
     ///   - message: A string.
-    public static func debug(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    static func debug(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
         log(message, level: .debug, file: file, function: function, line: line)
     }
     
@@ -43,7 +51,7 @@ extension Logger {
     ///
     /// - Parameters:
     ///   - message: A string.
-    public static func info(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    static func info(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
         log(message, level: .info, file: file, function: function, line: line)
     }
     
@@ -53,7 +61,7 @@ extension Logger {
     ///
     /// - Parameters:
     ///   - message: A string.
-    public static func warning(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    static func warning(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
         log(message, level: .warning, file: file, function: function, line: line)
     }
     
@@ -63,7 +71,7 @@ extension Logger {
     ///
     /// - Parameters:
     ///   - message: A string.
-    public static func error(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    static func error(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
         log(message, level: .error, file: file, function: function, line: line)
     }
 }
@@ -72,8 +80,9 @@ extension Logger {
 private extension Logger {
     
      static func log(_ message: String, level: LogLevel, file: StaticString, function: StaticString, line: UInt) {
-        let message = getMessage(message, level: level, file: file, function: function, line: line)
-        os_log("%@", log: log, type: level.osLogType, message)
+         guard level >= configuration.minimumLogLevel else { return }
+         let message = getMessage(message, level: level, file: file, function: function, line: line)
+         os_log("%@", log: log, type: level.osLogType, message)
     }
     
     static func getMessage(_ message: String, level: LogLevel, file: StaticString, function: StaticString, line: UInt) -> String {

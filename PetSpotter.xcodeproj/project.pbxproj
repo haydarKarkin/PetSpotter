@@ -10,6 +10,7 @@
 		17093B2827D6634300D9DC6B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2727D6634300D9DC6B /* Logger.swift */; };
 		17093B2A27D6809E00D9DC6B /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2927D6809E00D9DC6B /* LogLevel.swift */; };
 		17093B2C27D7484B00D9DC6B /* LogLevel+OSLogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */; };
+		172CBBC227D9356C0052C42F /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */; };
 		1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */; };
 		1795719E27C6CAA0000A19A0 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795719D27C6CAA0000A19A0 /* ServiceFactory.swift */; };
 		3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AB275695CD00E303FE /* AppDelegate.swift */; };
@@ -142,6 +143,7 @@
 		17093B2727D6634300D9DC6B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		17093B2927D6809E00D9DC6B /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogLevel+OSLogType.swift"; sourceTree = "<group>"; };
+		172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		1795719D27C6CAA0000A19A0 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		3D1146A8275695CD00E303FE /* PetSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				17093B2727D6634300D9DC6B /* Logger.swift */,
+				172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */,
 				17093B2927D6809E00D9DC6B /* LogLevel.swift */,
 				17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */,
 			);
@@ -1233,6 +1236,7 @@
 				3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
+				172CBBC227D9356C0052C42F /* LoggerConfiguration.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */,
 				3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */,
