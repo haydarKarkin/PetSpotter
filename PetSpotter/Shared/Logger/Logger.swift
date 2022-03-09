@@ -10,11 +10,22 @@ import os
 
 public final class Logger {
     private static let log = OSLog(subsystem: Bundle.main.bundleIdentifier ?? "", category: "LOG")
+    private static var minimumLogLevel: LogLevel = .verbose
     private init() {}
 }
 
 // MARK: - Levels
 extension Logger {
+    
+    /// Logs a string at the `verbose` level.
+    ///
+    /// - Warning: Level of `verbose` is persisted.
+    ///
+    /// - Parameters:
+    ///   - message: A string.
+    public static func verbose(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        log(message, level: .verbose, file: file, function: function, line: line)
+    }
     
     /// Logs a string at the `debug` level.
     ///
@@ -23,17 +34,7 @@ extension Logger {
     /// - Parameters:
     ///   - message: A string.
     public static func debug(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        log(message, type: .debug, file: file, function: function, line: line)
-    }
-    
-    /// Logs a string at the `error` level.
-    ///
-    /// - Warning: Level of `error` is persisted.
-    ///
-    /// - Parameters:
-    ///   - message: A string.
-    public static func error(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        log(message, type: .fault, file: file, function: function, line: line)
+        log(message, level: .debug, file: file, function: function, line: line)
     }
     
     /// Logs a string at the `info` level.
@@ -43,17 +44,7 @@ extension Logger {
     /// - Parameters:
     ///   - message: A string.
     public static func info(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        log(message, type: .info, file: file, function: function, line: line)
-    }
-    
-    /// Logs a string at the `verbose` level.
-    ///
-    /// - Warning: Level of `verbose` is persisted.
-    ///
-    /// - Parameters:
-    ///   - message: A string.
-    public static func verbose(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        log(message, type: .default, file: file, function: function, line: line)
+        log(message, level: .info, file: file, function: function, line: line)
     }
     
     /// Logs a string at the `warning` level.
@@ -63,19 +54,29 @@ extension Logger {
     /// - Parameters:
     ///   - message: A string.
     public static func warning(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        log(message, type: .error, file: file, function: function, line: line)
+        log(message, level: .warning, file: file, function: function, line: line)
+    }
+    
+    /// Logs a string at the `error` level.
+    ///
+    /// - Warning: Level of `error` is persisted.
+    ///
+    /// - Parameters:
+    ///   - message: A string.
+    public static func error(_ message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        log(message, level: .error, file: file, function: function, line: line)
     }
 }
 
 // MARK: - Logic
 private extension Logger {
     
-     static func log(_ message: String, type: OSLogType, file: StaticString, function: StaticString, line: UInt) {
-        let message = getMessage(message, type: type, file: file, function: function, line: line)
-        os_log("%@", log: log, type: type, message)
+     static func log(_ message: String, level: LogLevel, file: StaticString, function: StaticString, line: UInt) {
+        let message = getMessage(message, level: level, file: file, function: function, line: line)
+        os_log("%@", log: log, type: level.osLogType, message)
     }
     
-    static func getMessage(_ message: String, type: LogTypeProtocol, file: StaticString, function: StaticString, line: UInt) -> String {
-        return "\n\(type.logTypeIndicator.rawValue) [\(type.logTypeName.rawValue)] [\(URL(fileURLWithPath: String(describing: file)).lastPathComponent)] [\(function)] [\(line)] [\(message)]"
+    static func getMessage(_ message: String, level: LogLevel, file: StaticString, function: StaticString, line: UInt) -> String {
+        return "\n\(level.indicator) [\(level.name)] [\(URL(fileURLWithPath: String(describing: file)).lastPathComponent)] [\(function)] [\(line)] [\(message)]"
     }
 }
