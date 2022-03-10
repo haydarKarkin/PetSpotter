@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Configure Logger
     
     func configureLogger() {
-        let configuration = LoggerConfiguration(minimumLogLevel: .verbose)
+        let configuration = LoggerConfiguration(minimumLogLevel: Environment.minLogLevel)
         Logger.configure(with: configuration)
     }
 }

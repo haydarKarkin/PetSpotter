@@ -20,6 +20,7 @@ public enum Environment {
             static let envName = "ENV_TYPE"
             static let apiKey = "API_KEY"
             static let secret = "SECRET"
+            static let minLogLevel = "MIN_LOG_LEVEL"
         }
     }
     
@@ -64,5 +65,13 @@ public enum Environment {
             fatalError("Secret not set in plist for this environment")
         }
         return secretString
+    }()
+    
+    static let minLogLevel: LogLevel = {
+        guard let minLogLevelString = Environment.infoDictionary[Keys.Plist.minLogLevel] as? String,
+              let minLogLevelValue = Int(minLogLevelString) else {
+                  fatalError("Minimum log level not set in plist for this environment")
+              }
+        return LogLevel(rawValue: minLogLevelValue) ?? .info
     }()
 }
