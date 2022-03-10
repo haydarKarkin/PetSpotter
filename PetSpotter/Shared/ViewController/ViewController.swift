@@ -14,6 +14,9 @@ class ViewController<T: ViewModelType>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Logger.info("\(type(of: self)): Loaded")
+        
         makeUI()
         bindViewModel()
     }
@@ -29,7 +32,7 @@ class ViewController<T: ViewModelType>: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super .viewWillDisappear(animated)
+        super.viewWillDisappear(animated)
     }
     
     func makeUI() {
@@ -59,6 +62,10 @@ class ViewController<T: ViewModelType>: UIViewController {
     }
     
     func updateUI() {}
+    
+    deinit {
+        Logger.info("\(type(of: self)): Deinited")
+    }
 }
 
 extension ViewController {
