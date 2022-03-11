@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17093B2827D6634300D9DC6B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2727D6634300D9DC6B /* Logger.swift */; };
+		17093B2A27D6809E00D9DC6B /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2927D6809E00D9DC6B /* LogLevel.swift */; };
+		17093B2C27D7484B00D9DC6B /* LogLevel+OSLogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */; };
+		172CBBC227D9356C0052C42F /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */; };
 		1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */; };
 		1795719E27C6CAA0000A19A0 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795719D27C6CAA0000A19A0 /* ServiceFactory.swift */; };
 		3D1146AC275695CD00E303FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1146AB275695CD00E303FE /* AppDelegate.swift */; };
@@ -136,6 +140,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17093B2727D6634300D9DC6B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		17093B2927D6809E00D9DC6B /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogLevel+OSLogType.swift"; sourceTree = "<group>"; };
+		172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		1795719B27C69DC3000A19A0 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		1795719D27C6CAA0000A19A0 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		3D1146A8275695CD00E303FE /* PetSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +287,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17093B2627D6632700D9DC6B /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				17093B2727D6634300D9DC6B /* Logger.swift */,
+				172CBBC127D9356C0052C42F /* LoggerConfiguration.swift */,
+				17093B2927D6809E00D9DC6B /* LogLevel.swift */,
+				17093B2B27D7484B00D9DC6B /* LogLevel+OSLogType.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		3D11469F275695CD00E303FE = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +390,7 @@
 				3D1146FE27569DD500E303FE /* Environment */,
 				3D11470B2756A21F00E303FE /* Extensions */,
 				3D1147142756A2D500E303FE /* Factory */,
+				17093B2627D6632700D9DC6B /* Logger */,
 				3D1146F027569ACC00E303FE /* Networking */,
 				3D92613127A9F45C00870F33 /* Services */,
 				3D1147052756A15600E303FE /* ViewController */,
@@ -1216,9 +1236,11 @@
 				3DDF0EA227B1AFF3005C8E14 /* TagListView.swift in Sources */,
 				3D11472E2756A56B00E303FE /* AnimalService.swift in Sources */,
 				3DDF0E4727AEAB3F005C8E14 /* Colors.swift in Sources */,
+				172CBBC227D9356C0052C42F /* LoggerConfiguration.swift in Sources */,
 				3D1146E4275696CD00E303FE /* DataController.swift in Sources */,
 				1795719C27C69DC3000A19A0 /* UIColor+Ext.swift in Sources */,
 				3DDF0E4B27AEBAFC005C8E14 /* AnimalFilterVC.swift in Sources */,
+				17093B2A27D6809E00D9DC6B /* LogLevel.swift in Sources */,
 				3D9C49352758083F00CB27AE /* HomeCoordinator.swift in Sources */,
 				3DF405852763EF5C001A943C /* DateFormatter+Ext.swift in Sources */,
 				3DE9FAE327B2FF3100C03AED /* UITextField+Ext.swift in Sources */,
@@ -1248,6 +1270,7 @@
 				3DB80C74279F2688003BE349 /* Photo.swift in Sources */,
 				3DDF0E3D27AEA8F3005C8E14 /* Video.swift in Sources */,
 				3D11472C2756A56100E303FE /* AnimalFactory.swift in Sources */,
+				17093B2827D6634300D9DC6B /* Logger.swift in Sources */,
 				3D11470D2756A22D00E303FE /* Reusable.swift in Sources */,
 				3D9C493D275818FE00CB27AE /* OrganizationFactory.swift in Sources */,
 				3DF8C1E727A587D0008226F3 /* FavoritesVM.swift in Sources */,
@@ -1290,6 +1313,7 @@
 				3DB80C6A279F2534003BE349 /* Organizations.swift in Sources */,
 				3DF8C20327A5C276008226F3 /* AnimalMapVM.swift in Sources */,
 				3DDF0E9327B0474E005C8E14 /* OrganizationDetailVC+TableAdapter.swift in Sources */,
+				17093B2C27D7484B00D9DC6B /* LogLevel+OSLogType.swift in Sources */,
 				3D9C49372758084B00CB27AE /* HomeFactory.swift in Sources */,
 				3D1147112756A26A00E303FE /* UITableView+Ext.swift in Sources */,
 				3DDF0E4527AEAACF005C8E14 /* AnimalEnvironment.swift in Sources */,
@@ -1373,7 +1397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1428,7 +1452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -10,5 +10,7 @@
 	<string>$(ROOT_URL)</string>
 	<key>SECRET</key>
 	<string>$(SECRET)</string>
+	<key>MIN_LOG_LEVEL</key>
+	<string>$(MIN_LOG_LEVEL)</string>
 </dict>
 </plist>

@@ -94,7 +94,14 @@ extension AnimalMapVC: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
+        let authorizationStatus: CLAuthorizationStatus = {
+            if #available(iOS 14, *) {
+                return manager.authorizationStatus
+            }
+            return CLLocationManager.authorizationStatus()
+        }()
+        
+        switch authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
             manager.startUpdatingLocation()
             break
@@ -103,6 +110,3 @@ extension AnimalMapVC: CLLocationManagerDelegate {
         }
     }
 }
-
-
-

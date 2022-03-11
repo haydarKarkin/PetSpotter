@@ -12,3 +12,4 @@ ROOT_URL = https:/$()/api.petfinder.com
 ENV_TYPE = RELEASE
 API_KEY = 6T0fOJvGW3PnXXr5fSu1oa5ePtX6hp3PRFMjohvo205Co7ehG2
 SECRET = T7AJElZNRosxn1f5ziQFZhJJkWKuh7vyIhhoAyba
+MIN_LOG_LEVEL = 3 // info
