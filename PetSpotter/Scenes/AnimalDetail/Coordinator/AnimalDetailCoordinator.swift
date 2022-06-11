@@ -14,29 +14,35 @@ enum AnimalDetailRoute: Route {
     case videos([Video])
 }
 
-typealias AnimalDetailCoordinatorType = Coordinator<AnimalDetailRoute>
-
-class AnimalDetailCoordinator: AnimalDetailCoordinatorType {
+class AnimalDetailCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let animalDetailFactory: AnimalDetailFactoryType
+    private let animal: Animal
     
     init(navigationController: UINavigationController,
          animalDetailFactory: AnimalDetailFactoryType,
          animal: Animal) {
+        self.navigationController = navigationController
         self.animalDetailFactory = animalDetailFactory
-        super.init(navigationController: navigationController, initialRoute: .animalDetail(animal))
+        self.animal = animal
     }
     
-    override func navigate(to route: AnimalDetailRoute) {
+    func start() {
+        navigate(to: .animalDetail(animal))
+    }
+    
+    func navigate(to route: AnimalDetailRoute) {
         switch route {
         case .animalDetail(let animal):
             let viewController = animalDetailFactory.makeAnimalDetailVC(animal: animal, coordinator: self)
             navigationController.pushViewController(viewController, animated: true)
         case .organizationDetail(let organization):
-            let _ = animalDetailFactory
+            animalDetailFactory
                 .sharedFactory
                 .makeOrganizationDetailFactory()
                 .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+                .start()
         case .videos(let videos):
             let viewController = animalDetailFactory.makeVideosVC(videos: videos)
             navigationController.pushViewController(viewController, animated: true)

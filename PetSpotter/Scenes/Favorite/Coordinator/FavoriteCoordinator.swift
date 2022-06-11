@@ -13,28 +13,32 @@ enum FavoriteRoute: Route {
     case animalDetail(Animal)
 }
 
-typealias FavoriteCoordinatorType = Coordinator<FavoriteRoute>
-
-class FavoriteCoordinator: FavoriteCoordinatorType {
+class FavoriteCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let favoriteFactory: FavoriteFactoryType
     
     init(navigationController: UINavigationController,
          favoriteFactory: FavoriteFactoryType) {
+        self.navigationController = navigationController
         self.favoriteFactory = favoriteFactory
-        super.init(navigationController: navigationController, initialRoute: .favorite)
     }
     
-    override func navigate(to route: FavoriteRoute) {
+    func start() {
+        navigate(to: .favorite)
+    }
+    
+    func navigate(to route: FavoriteRoute) {
         switch route {
         case .favorite:
             let viewController = favoriteFactory.makeFavoritesVC(favoriteCoordinator: self)
             navigationController.pushViewController(viewController, animated: false)
         case .animalDetail(let animal):
-            let _ = favoriteFactory
+            favoriteFactory
                 .sharedFactory
                 .makeAnimalDetailFactory()
                 .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+                .start()
         }
     }
 }

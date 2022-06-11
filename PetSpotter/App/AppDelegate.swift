@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // send that into our coordinator so that it can display view controllers
         // tell the coordinator to take over control
         appCoordinator = AppCoordinator(sharedFactory: SharedFactory())
+        appCoordinator.start()
         
         // create a basic UIWindow and activate it
         window = UIWindow(frame: UIScreen.main.bounds)

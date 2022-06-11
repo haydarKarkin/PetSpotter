@@ -15,11 +15,11 @@ class AnimalsVM: ViewModelType {
     private var filter: Filter = Filter()
     
     private let animalService: AnimalServiceType
-    private let animalCoordinator: AnimalCoordinatorType
+    private let animalCoordinator: any Coordinator<AnimalRoute>
     private let organizationID: String?
     
     init(animalService: AnimalServiceType,
-         animalCoordinator: AnimalCoordinatorType,
+         animalCoordinator: any Coordinator<AnimalRoute>,
          organizationID: String?) {
         self.animalService = animalService
         self.animalCoordinator = animalCoordinator

@@ -12,27 +12,32 @@ enum AppRoute: Route {
     case home(HomeRoute)
 }
 
-typealias AppCoordinatorType = Coordinator<AppRoute>
-
-class AppCoordinator: AppCoordinatorType {
+class AppCoordinator: Coordinator {
     
+    let navigationController: UINavigationController
     private let sharedFactory: SharedFactoryType
     
     init(sharedFactory: SharedFactoryType) {
+        self.navigationController = UINavigationController()
         self.sharedFactory = sharedFactory
-        super.init(navigationController: UINavigationController(), initialRoute: .onboarding)
     }
     
-    override func navigate(to route: AppRoute) {
+    func start() {
+        navigate(to: .onboarding)
+    }
+    
+    func navigate(to route: AppRoute) {
         switch route {
         case .onboarding:
-            let _ = sharedFactory
+            sharedFactory
                 .makeOnboardingFactory()
                 .makeOnboardingCoordinator(navigationController: navigationController, appCoordinator: self)
+                .start()
         case .home(let homeRoute):
-            let _ = sharedFactory
+            sharedFactory
                 .makeHomeFactory()
                 .makeHomeCoordinator(navigationController: navigationController, route: homeRoute)
+                .start()
         }
     }
 }

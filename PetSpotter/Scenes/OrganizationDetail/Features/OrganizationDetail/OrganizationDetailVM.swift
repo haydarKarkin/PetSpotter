@@ -10,10 +10,10 @@ import Foundation
 class OrganizationDetailVM: ViewModelType {
     
     private let organization: Organization
-    private let organizationDetailCoordinator: OrganizationDetailCoordinatorType
+    private let organizationDetailCoordinator: any Coordinator<OrganizationDetailRoute>
     
     init(organization: Organization,
-         organizationDetailCoordinator: OrganizationDetailCoordinatorType) {
+         organizationDetailCoordinator: any Coordinator<OrganizationDetailRoute>) {
         self.organization = organization
         self.organizationDetailCoordinator = organizationDetailCoordinator
     }

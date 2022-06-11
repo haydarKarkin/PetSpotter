@@ -13,28 +13,32 @@ enum AnimalMapRoute: Route {
     case animalDetail(Animal)
 }
 
-typealias AnimalMapCoordinatorType = Coordinator<AnimalMapRoute>
-
-class AnimalMapCoordinator: AnimalMapCoordinatorType {
+class AnimalMapCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let animalMapFactory: AnimalMapFactoryType
     
     init(navigationController: UINavigationController,
          animalMapFactory: AnimalMapFactoryType) {
+        self.navigationController = navigationController
         self.animalMapFactory = animalMapFactory
-        super.init(navigationController: navigationController, initialRoute: .animalMap)
     }
     
-    override func navigate(to route: AnimalMapRoute) {
+    func start() {
+        navigate(to: .animalMap)
+    }
+    
+    func navigate(to route: AnimalMapRoute) {
         switch route {
         case .animalMap:
             let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)
             navigationController.pushViewController(viewController, animated: false)
         case .animalDetail(let animal):
-            let _ = animalMapFactory
+            animalMapFactory
                 .sharedFactory
                 .makeAnimalDetailFactory()
                 .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+                .start()
         }
     }
 }

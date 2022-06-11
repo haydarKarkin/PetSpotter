@@ -13,28 +13,31 @@ enum OnboardingRoute: Route {
     case home(HomeRoute)
 }
 
-typealias OnboardingCoordinatorType = Coordinator<OnboardingRoute>
-
-class OnboardingCoordinator: OnboardingCoordinatorType {
+class OnboardingCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let onboardingFactory: OnboardingFactoryType
-    private weak var appCoordinator: AppCoordinatorType?
+    private let appCoordinator: any Coordinator<AppRoute>
     
     init(navigationController: UINavigationController,
          onboardingFactory: OnboardingFactoryType,
-         appCoordinator: AppCoordinatorType) {
+         appCoordinator: any Coordinator<AppRoute>) {
+        self.navigationController = navigationController
         self.onboardingFactory = onboardingFactory
         self.appCoordinator = appCoordinator
-        super.init(navigationController: navigationController, initialRoute: .onboarding)
     }
     
-    override func navigate(to route: OnboardingRoute) {
+    func start() {
+        navigate(to: .onboarding)
+    }
+    
+    func navigate(to route: OnboardingRoute) {
         switch route {
         case .onboarding:
             let viewController = onboardingFactory.makeOnboardingVC(onboardingCoordinator: self)
             navigationController.pushViewController(viewController, animated: false)
         case .home(let homeRoute):
-            appCoordinator?.navigate(to: .home(homeRoute))
+            appCoordinator.navigate(to: .home(homeRoute))
         }
     }
 }

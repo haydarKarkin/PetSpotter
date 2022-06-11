@@ -12,29 +12,35 @@ enum OrganizationDetailRoute: Route {
     case animals(String)
 }
 
-typealias OrganizationDetailCoordinatorType = Coordinator<OrganizationDetailRoute>
-
-class OrganizationDetailCoordinator: OrganizationDetailCoordinatorType {
+class OrganizationDetailCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let organizationDetailFactory: OrganizationDetailFactoryType
+    private let organization: Organization
     
     init(navigationController: UINavigationController,
          organizationDetailFactory: OrganizationDetailFactoryType,
          organization: Organization) {
+        self.navigationController = navigationController
         self.organizationDetailFactory = organizationDetailFactory
-        super.init(navigationController: navigationController, initialRoute: .organizationDetail(organization))
+        self.organization = organization
     }
     
-    override func navigate(to route: OrganizationDetailRoute) {
+    func start() {
+        navigate(to: .organizationDetail(organization))
+    }
+    
+    func navigate(to route: OrganizationDetailRoute) {
         switch route {
         case .organizationDetail(let organization):
             let viewController = organizationDetailFactory.makeOrganizationDetailVC(organization: organization, coordinator: self)
             navigationController.pushViewController(viewController, animated: true)
         case .animals(let organizationID):
-            let _ = organizationDetailFactory
+            organizationDetailFactory
                 .sharedFactory
                 .makeAnimalFactory()
                 .makeAnimalCoordinator(navigationController: navigationController, organizationID: organizationID)
+                .start()
         }
     }
 }

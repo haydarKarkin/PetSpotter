@@ -10,9 +10,9 @@ import UIKit
 
 protocol AnimalFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> AnimalCoordinatorType
-    func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: AnimalCoordinatorType, organizationID: String?) -> AnimalsVM
-    func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType, organizationID: String?) -> AnimalsVC
+    func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> any Coordinator<AnimalRoute>
+    func makeAnimalsVM(animalService: AnimalServiceType, animalCoordinator: any Coordinator<AnimalRoute>, organizationID: String?) -> AnimalsVM
+    func makeAnimalsVC(animalCoordinator: any Coordinator<AnimalRoute>, organizationID: String?) -> AnimalsVC
     func makeAnimalFilterVM(filter: Filter) -> AnimalFilterVM
     func makeAnimalFilterVC(filter: Filter) -> AnimalFilterVC
 }
@@ -28,17 +28,17 @@ class AnimalFactory: AnimalFactoryType {
 
 extension AnimalFactory {
     
-    func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> AnimalCoordinatorType {
+    func makeAnimalCoordinator(navigationController: UINavigationController, organizationID: String?) -> any Coordinator<AnimalRoute> {
         AnimalCoordinator(navigationController: navigationController, animalFactory: self, organizationID: organizationID)
     }
     
     func makeAnimalsVM(animalService: AnimalServiceType,
-                       animalCoordinator: AnimalCoordinatorType,
+                       animalCoordinator: any Coordinator<AnimalRoute>,
                        organizationID: String?) -> AnimalsVM {
         AnimalsVM(animalService: animalService, animalCoordinator: animalCoordinator, organizationID: organizationID)
     }
     
-    func makeAnimalsVC(animalCoordinator: AnimalCoordinatorType,
+    func makeAnimalsVC(animalCoordinator: any Coordinator<AnimalRoute>,
                        organizationID: String?) -> AnimalsVC {
         let animalService = sharedFactory
             .makeServiceFactory()

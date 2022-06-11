@@ -14,10 +14,10 @@ class OrganizationsVM: ViewModelType {
     private var totalCount: Int = 0
     
     private let organizationService: OrganizationServiceType
-    private let organizationCoordinator: OrganizationCoordinatorType
+    private let organizationCoordinator: any Coordinator<OrganizationRoute>
     
     init(organizationService: OrganizationServiceType,
-         organizationCoordinator: OrganizationCoordinatorType) {
+         organizationCoordinator: any Coordinator<OrganizationRoute>) {
         self.organizationService = organizationService
         self.organizationCoordinator = organizationCoordinator
     }

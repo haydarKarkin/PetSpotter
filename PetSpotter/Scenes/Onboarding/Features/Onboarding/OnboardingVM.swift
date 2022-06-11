@@ -14,9 +14,9 @@ protocol OnboardingVMType {
 class OnboardingVM: ViewModelType {
     
     private let onboardingService: OnboardingServiceType
-    private let onboardingCoordinator: OnboardingCoordinatorType
+    private let onboardingCoordinator: any Coordinator<OnboardingRoute>
     
-    init(onboardingService: OnboardingServiceType, onboardingCoordinator: OnboardingCoordinatorType) {
+    init(onboardingService: OnboardingServiceType, onboardingCoordinator: any Coordinator<OnboardingRoute>) {
         self.onboardingService = onboardingService
         self.onboardingCoordinator = onboardingCoordinator
     }

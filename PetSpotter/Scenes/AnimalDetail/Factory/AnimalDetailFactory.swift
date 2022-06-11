@@ -10,9 +10,9 @@ import UIKit
 
 protocol AnimalDetailFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType
-    func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM
-    func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC
+    func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> any Coordinator<AnimalDetailRoute>
+    func makeAnimalDetailVM(animal: Animal, coordinator: any Coordinator<AnimalDetailRoute>) -> AnimalDetailVM
+    func makeAnimalDetailVC(animal: Animal, coordinator: any Coordinator<AnimalDetailRoute>) -> AnimalDetailVC
     func makeVideosVM(videos: [Video]) -> VideosVM
     func makeVideosVC(videos: [Video]) -> VideosVC 
 }
@@ -28,12 +28,12 @@ class AnimalDetailFactory: AnimalDetailFactoryType {
 
 extension AnimalDetailFactory {
     
-    func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> AnimalDetailCoordinatorType {
+    func makeAnimalDetailCoordinator(navigationController: UINavigationController, animal: Animal) -> any Coordinator<AnimalDetailRoute> {
         AnimalDetailCoordinator(navigationController: navigationController, animalDetailFactory: self, animal: animal)
     }
     
     
-    func makeAnimalDetailVM(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVM {
+    func makeAnimalDetailVM(animal: Animal, coordinator: any Coordinator<AnimalDetailRoute>) -> AnimalDetailVM {
         let favoriteService = sharedFactory
             .makeServiceFactory()
             .makeFavoriteService()
@@ -46,7 +46,7 @@ extension AnimalDetailFactory {
                               animalDetailCoordinator: coordinator)
     }
     
-    func makeAnimalDetailVC(animal: Animal, coordinator: AnimalDetailCoordinatorType) -> AnimalDetailVC {
+    func makeAnimalDetailVC(animal: Animal, coordinator: any Coordinator<AnimalDetailRoute>) -> AnimalDetailVC {
         let viewController = AnimalDetailVC.instantiate()
         viewController.viewModel = makeAnimalDetailVM(animal: animal, coordinator: coordinator)
         return viewController

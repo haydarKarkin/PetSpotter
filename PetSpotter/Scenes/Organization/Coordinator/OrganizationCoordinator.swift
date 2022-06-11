@@ -12,27 +12,31 @@ enum OrganizationRoute: Route {
     case organizationDetail(Organization)
 }
 
-typealias OrganizationCoordinatorType = Coordinator<OrganizationRoute>
-
-class OrganizationCoordinator: OrganizationCoordinatorType {
+class OrganizationCoordinator: Coordinator {
     
+    private let navigationController: UINavigationController
     private let organizationFactory: OrganizationFactoryType
     
     init(navigationController: UINavigationController, organizationFactory: OrganizationFactoryType) {
+        self.navigationController = navigationController
         self.organizationFactory = organizationFactory
-        super.init(navigationController: navigationController, initialRoute: .organizations)
     }
     
-    override func navigate(to route: OrganizationRoute) {
+    func start() {
+        navigate(to: .organizations)
+    }
+    
+    func navigate(to route: OrganizationRoute) {
         switch route {
         case .organizations:
             let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
             navigationController.pushViewController(viewController, animated: true)
         case .organizationDetail(let organization):
-            let _ = organizationFactory
+            organizationFactory
                 .sharedFactory
                 .makeOrganizationDetailFactory()
                 .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+                .start()
         }
     }
 }

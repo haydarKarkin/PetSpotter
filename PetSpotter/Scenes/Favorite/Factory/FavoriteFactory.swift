@@ -10,9 +10,9 @@ import UIKit
 
 protocol FavoriteFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType
-    func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM
-    func makeFavoritesVC(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVC 
+    func makeFavoriteCoordinator(navigationController: UINavigationController) -> any Coordinator<FavoriteRoute>
+    func makeFavoritesVM(favoriteCoordinator: any Coordinator<FavoriteRoute>) -> FavoritesVM
+    func makeFavoritesVC(favoriteCoordinator: any Coordinator<FavoriteRoute>) -> FavoritesVC
 }
 
 class FavoriteFactory: FavoriteFactoryType {
@@ -26,11 +26,11 @@ class FavoriteFactory: FavoriteFactoryType {
 
 extension FavoriteFactory {
     
-    func makeFavoriteCoordinator(navigationController: UINavigationController) -> FavoriteCoordinatorType {
+    func makeFavoriteCoordinator(navigationController: UINavigationController) -> any Coordinator<FavoriteRoute> {
         FavoriteCoordinator(navigationController: navigationController, favoriteFactory: self)
     }
     
-    func makeFavoritesVM(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVM {
+    func makeFavoritesVM(favoriteCoordinator: any Coordinator<FavoriteRoute>) -> FavoritesVM {
         let favoriteService = sharedFactory
             .makeServiceFactory()
             .makeFavoriteService()
@@ -42,7 +42,7 @@ extension FavoriteFactory {
                            animalService: animalService)
     }
     
-    func makeFavoritesVC(favoriteCoordinator: FavoriteCoordinatorType) -> FavoritesVC {
+    func makeFavoritesVC(favoriteCoordinator: any Coordinator<FavoriteRoute>) -> FavoritesVC {
         let viewController = FavoritesVC.instantiate()
         viewController.viewModel = makeFavoritesVM(favoriteCoordinator: favoriteCoordinator)
         return viewController

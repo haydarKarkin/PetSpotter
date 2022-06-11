@@ -11,13 +11,13 @@ class AnimalDetailVM: ViewModelType {
     
     private let animal: Animal
     private let favoriteService: FavoriteServiceType
-    private let animalDetailCoordinator: AnimalDetailCoordinatorType
+    private let animalDetailCoordinator: any Coordinator<AnimalDetailRoute>
     private let organizationService: OrganizationServiceType
    
     init(animal: Animal,
          favoriteService: FavoriteServiceType,
          organizationService: OrganizationServiceType,
-         animalDetailCoordinator: AnimalDetailCoordinatorType) {
+         animalDetailCoordinator: any Coordinator<AnimalDetailRoute>) {
         self.animal = animal
         self.favoriteService = favoriteService
         self.organizationService = organizationService
