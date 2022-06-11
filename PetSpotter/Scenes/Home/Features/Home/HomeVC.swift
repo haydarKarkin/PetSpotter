@@ -10,6 +10,10 @@ import UIKit
 class HomeVC: UITabBarController {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Logger.info("\(type(of: self)): Loaded")
+        
         self.tabBar.layer.masksToBounds = true
         self.tabBar.barStyle = .black
         self.tabBar.barTintColor = .primaryWhite
@@ -32,5 +36,9 @@ class HomeVC: UITabBarController {
     }
     
     var coordinator: HomeCoordinator?
+    
+    deinit {
+        Logger.info("\(type(of: self)): Deinited")
+    }
     
 }
