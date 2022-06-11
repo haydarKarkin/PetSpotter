@@ -51,9 +51,9 @@ Some animals require adoption to avoid dumping or overloading at the shelter. Pe
 
 ## Requirements
 
-- Xcode: Version 13.2.1
-- Language: Swift 5.5
-- Minimum iOS Version: 14
+- Xcode: Version 14.0 Beta
+- Language: Swift 5.7
+- Minimum iOS Version: 13
 - Device Orientation: Portrait Mode
 - Dependency: No 3rd party dependency
 
