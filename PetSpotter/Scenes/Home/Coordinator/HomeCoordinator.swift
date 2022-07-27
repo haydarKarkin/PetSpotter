@@ -7,66 +7,69 @@
 
 import UIKit
 
-protocol HomeCoordinatorType: Coordinator {
+enum HomeRoute: Int, Route {
+    case animals
+    case favorites
+    case organizations
 }
 
-class HomeCoordinator: HomeCoordinatorType {
+class HomeCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
-    private let homeFactory: HomeFactoryType
     private let sharedFactory: SharedFactoryType
+    private let homeVC: HomeVC
     private let route: HomeRoute
     
     init(navigationController: UINavigationController,
-         homeFactory: HomeFactoryType,
          sharedFactory: SharedFactoryType,
          route: HomeRoute = .animals) {
         self.navigationController = navigationController
-        self.homeFactory = homeFactory
         self.sharedFactory = sharedFactory
+        self.homeVC = sharedFactory
+            .makeHomeFactory()
+            .makeHomeVC()
         self.route = route
-    }
-    
-    func start() {
-        let homeVC = homeFactory.makeHomeVC()
-        homeVC.coordinator = self
         
         let animalNC = UINavigationController()
         animalNC.tabBarItem = UITabBarItem(title: "Animals", image: UIImage(systemName: "pawprint"), tag: 0)
-        let animalCoordinator = sharedFactory
+        sharedFactory
             .makeAnimalFactory()
             .makeAnimalCoordinator(navigationController: animalNC, organizationID: nil)
+            .start()
         
         let favoriteNC = UINavigationController()
         favoriteNC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
-        let favoriteCoordinator = sharedFactory
+        sharedFactory
             .makeFavoriteFactory()
             .makeFavoriteCoordinator(navigationController: favoriteNC)
+            .start()
         
         let organizationNC = UINavigationController()
         organizationNC.tabBarItem = UITabBarItem(title: "Organizations", image: UIImage(systemName: "house"), tag: 2)
-        let organizationCoordinator = sharedFactory
+        sharedFactory
             .makeOrganizationFactory()
             .makeOrganizationCoordinator(navigationController: organizationNC)
+            .start()
         
-        homeVC.viewControllers = [animalNC, favoriteNC, organizationNC]
-        homeVC.modalPresentationStyle = .fullScreen
-        homeVC.selectedIndex = route.rawValue
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.navigationController.present(homeVC, animated: true, completion: nil)
-        }
-        coordinate(to: animalCoordinator)
-        coordinate(to: organizationCoordinator)
-        coordinate(to: favoriteCoordinator)
+        homeVC.viewControllers = [
+            animalNC,
+            favoriteNC,
+            organizationNC
+        ]
     }
-}
-
-extension HomeCoordinator {
     
-    enum HomeRoute: Int {
-        case animals
-        case favorites
-        case organizations
+    func start() {
+        navigate(to: route)
+    }
+    
+    func navigate(to route: HomeRoute) {
+        guard let homeVC = navigationController.topViewController as? HomeVC else {
+            self.homeVC.coordinator = self
+            self.homeVC.modalPresentationStyle = .fullScreen
+            self.homeVC.selectedIndex = route.rawValue
+            self.navigationController.present(self.homeVC, animated: true, completion: nil)
+            return
+        }
+        homeVC.selectedIndex = route.rawValue
     }
 }

@@ -15,11 +15,11 @@ class AnimalsVM: ViewModelType {
     private var filter: Filter = Filter()
     
     private let animalService: AnimalServiceType
-    private let animalCoordinator: AnimalCoordinatorType
+    private let animalCoordinator: any Coordinator<AnimalRoute>
     private let organizationID: String?
     
     init(animalService: AnimalServiceType,
-         animalCoordinator: AnimalCoordinatorType,
+         animalCoordinator: any Coordinator<AnimalRoute>,
          organizationID: String?) {
         self.animalService = animalService
         self.animalCoordinator = animalCoordinator
@@ -103,11 +103,11 @@ extension AnimalsVM {
     }
     
     func showAnimalDetail(with animal: Animal) {
-        animalCoordinator.showAnimalDetail(animal: animal)
+        animalCoordinator.navigate(to: .animalDetail(animal))
     }
     
     func openFilter(delegate: AnimalsVC) {
-        animalCoordinator.showAnimalFilter(filter: filter, delegate: delegate)
+        animalCoordinator.navigate(to: .animalFilter(filter, delegate))
     }
     
     func searchAnimals(filter: Filter, completion: (([Animal]) -> Void)?) {

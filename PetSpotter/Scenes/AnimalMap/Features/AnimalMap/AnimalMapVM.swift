@@ -11,10 +11,10 @@ import CoreLocation
 class AnimalMapVM: ViewModelType {
     
     private let animalService: AnimalServiceType
-    private let animalMapCoordinator: AnimalMapCoordinatorType
+    private let animalMapCoordinator: any Coordinator<AnimalMapRoute>
     
     init(animalService: AnimalServiceType,
-         animalMapCoordinator: AnimalMapCoordinatorType) {
+         animalMapCoordinator: any Coordinator<AnimalMapRoute>) {
         self.animalService = animalService
         self.animalMapCoordinator = animalMapCoordinator
     }

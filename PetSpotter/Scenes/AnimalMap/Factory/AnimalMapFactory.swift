@@ -10,9 +10,9 @@ import UIKit
 
 protocol AnimalMapFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    func makeAnimalMapCoordinator(navigationController: UINavigationController) -> AnimalMapCoordinatorType
-    func makeAnimalMapVM(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVM
-    func makeAnimalMapVC(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVC
+    func makeAnimalMapCoordinator(navigationController: UINavigationController) -> any Coordinator<AnimalMapRoute>
+    func makeAnimalMapVM(animalMapCoordinator: any Coordinator<AnimalMapRoute>) -> AnimalMapVM
+    func makeAnimalMapVC(animalMapCoordinator: any Coordinator<AnimalMapRoute>) -> AnimalMapVC
 }
 
 class AnimalMapFactory: AnimalMapFactoryType {
@@ -26,18 +26,18 @@ class AnimalMapFactory: AnimalMapFactoryType {
 
 extension AnimalMapFactory {
     
-    func makeAnimalMapCoordinator(navigationController: UINavigationController) -> AnimalMapCoordinatorType {
+    func makeAnimalMapCoordinator(navigationController: UINavigationController) -> any Coordinator<AnimalMapRoute> {
         AnimalMapCoordinator(navigationController: navigationController, animalMapFactory: self)
     }
     
-    func makeAnimalMapVM(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVM {
+    func makeAnimalMapVM(animalMapCoordinator: any Coordinator<AnimalMapRoute>) -> AnimalMapVM {
         let animalService = sharedFactory
             .makeServiceFactory()
             .makeAnimalService()
         return AnimalMapVM(animalService: animalService, animalMapCoordinator: animalMapCoordinator)
     }
     
-    func makeAnimalMapVC(animalMapCoordinator: AnimalMapCoordinatorType) -> AnimalMapVC {
+    func makeAnimalMapVC(animalMapCoordinator: any Coordinator<AnimalMapRoute>) -> AnimalMapVC {
         let viewController = AnimalMapVC.instantiate()
         viewController.viewModel = makeAnimalMapVM(animalMapCoordinator: animalMapCoordinator)
         return viewController

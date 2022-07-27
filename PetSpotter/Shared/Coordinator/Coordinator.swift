@@ -5,15 +5,12 @@
 //  Created by hkarkin on 30.11.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol Coordinator: AnyObject {
+protocol Route { }
+
+protocol Coordinator<RouteType> {
+    associatedtype RouteType: Route
     func start()
-    func coordinate(to coordinator: Coordinator)
-}
-
-extension Coordinator {
-    func coordinate(to coordinator: Coordinator) {
-        coordinator.start()
-    }
+    func navigate(to route: RouteType)
 }

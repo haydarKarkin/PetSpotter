@@ -11,13 +11,13 @@ class AnimalDetailVM: ViewModelType {
     
     private let animal: Animal
     private let favoriteService: FavoriteServiceType
-    private let animalDetailCoordinator: AnimalDetailCoordinatorType
+    private let animalDetailCoordinator: any Coordinator<AnimalDetailRoute>
     private let organizationService: OrganizationServiceType
    
     init(animal: Animal,
          favoriteService: FavoriteServiceType,
          organizationService: OrganizationServiceType,
-         animalDetailCoordinator: AnimalDetailCoordinatorType) {
+         animalDetailCoordinator: any Coordinator<AnimalDetailRoute>) {
         self.animal = animal
         self.favoriteService = favoriteService
         self.organizationService = organizationService
@@ -102,7 +102,7 @@ extension AnimalDetailVM {
             self.onLoadHandling?(false)
             switch result {
             case .success(let resp):
-                self.animalDetailCoordinator.showOrganizationDetail(with: resp.organization)
+                self.animalDetailCoordinator.navigate(to: .organizationDetail(resp.organization))
             case .failure(let error):
                 self.onErrorHandling?(error)
             }
@@ -110,6 +110,6 @@ extension AnimalDetailVM {
     }
     
     func showVideos(with videos: [Video]) {
-        self.animalDetailCoordinator.showVideos(with: videos)
+        self.animalDetailCoordinator.navigate(to: .videos(videos))
     }
 }

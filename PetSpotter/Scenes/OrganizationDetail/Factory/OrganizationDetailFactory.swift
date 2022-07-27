@@ -11,9 +11,9 @@ import UIKit
 protocol OrganizationDetailFactoryType {
     var sharedFactory: SharedFactoryType { get }
     func makeOrganizationDetailCoordinator(navigationController: UINavigationController,
-                                           organization: Organization) -> OrganizationDetailCoordinatorType
-    func makeOrganizationDetailVM(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVM
-    func makeOrganizationDetailVC(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVC
+                                           organization: Organization) -> any Coordinator<OrganizationDetailRoute>
+    func makeOrganizationDetailVM(organization: Organization, coordinator: any Coordinator<OrganizationDetailRoute>) -> OrganizationDetailVM
+    func makeOrganizationDetailVC(organization: Organization, coordinator: any Coordinator<OrganizationDetailRoute>) -> OrganizationDetailVC
 }
 
 class OrganizationDetailFactory: OrganizationDetailFactoryType {
@@ -27,18 +27,18 @@ class OrganizationDetailFactory: OrganizationDetailFactoryType {
 
 extension OrganizationDetailFactory {
     
-    func makeOrganizationDetailCoordinator(navigationController: UINavigationController, organization: Organization) -> OrganizationDetailCoordinatorType {
+    func makeOrganizationDetailCoordinator(navigationController: UINavigationController, organization: Organization) -> any Coordinator<OrganizationDetailRoute> {
         OrganizationDetailCoordinator(navigationController: navigationController,
                                       organizationDetailFactory: self,
                                       organization: organization)
     }
     
-    func makeOrganizationDetailVM(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVM {
+    func makeOrganizationDetailVM(organization: Organization, coordinator: any Coordinator<OrganizationDetailRoute>) -> OrganizationDetailVM {
         OrganizationDetailVM(organization: organization,
                              organizationDetailCoordinator: coordinator)
     }
     
-    func makeOrganizationDetailVC(organization: Organization, coordinator: OrganizationDetailCoordinatorType) -> OrganizationDetailVC {
+    func makeOrganizationDetailVC(organization: Organization, coordinator: any Coordinator<OrganizationDetailRoute>) -> OrganizationDetailVC {
         let viewController = OrganizationDetailVC.instantiate()
         viewController.viewModel = makeOrganizationDetailVM(organization: organization,
                                                             coordinator: coordinator)

@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomeFactoryType {
-    func makeHomeCoordinator(navigationController: UINavigationController,
-                             route: HomeCoordinator.HomeRoute) -> HomeCoordinatorType
+    func makeHomeCoordinator(navigationController: UINavigationController, route: HomeRoute) -> any Coordinator<HomeRoute>
     func makeHomeVC() -> HomeVC
 }
 
@@ -22,10 +21,8 @@ class HomeFactory: HomeFactoryType {
         self.sharedFactory = sharedFactory
     }
     
-    func makeHomeCoordinator(navigationController: UINavigationController,
-                             route: HomeCoordinator.HomeRoute) -> HomeCoordinatorType {
+    func makeHomeCoordinator(navigationController: UINavigationController, route: HomeRoute) -> any Coordinator<HomeRoute> {
         HomeCoordinator(navigationController: navigationController,
-                        homeFactory: self,
                         sharedFactory: sharedFactory,
                         route: route)
     }

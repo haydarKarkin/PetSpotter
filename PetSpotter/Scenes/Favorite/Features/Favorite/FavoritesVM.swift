@@ -14,11 +14,11 @@ protocol FavoritesVMType {
 class FavoritesVM: ViewModelType {
     
     private let favoriteService: FavoriteServiceType
-    private let favoriteCoordinator: FavoriteCoordinatorType
+    private let favoriteCoordinator: any Coordinator<FavoriteRoute>
     private let animalService: AnimalServiceType
     
     init(favoriteService: FavoriteServiceType,
-         favoriteCoordinator: FavoriteCoordinatorType,
+         favoriteCoordinator: any Coordinator<FavoriteRoute>,
          animalService: AnimalServiceType) {
         self.favoriteService = favoriteService
         self.favoriteCoordinator = favoriteCoordinator
@@ -72,7 +72,7 @@ extension FavoritesVM: FavoritesVMType {
             self.onLoadHandling?(false)
             switch result {
             case .success(let resp):
-                self.favoriteCoordinator.showAnimalDetail(animal: resp.animal)
+                self.favoriteCoordinator.navigate(to: .animalDetail(resp.animal))
             case .failure(let error):
                 self.onErrorHandling?(error)
             }

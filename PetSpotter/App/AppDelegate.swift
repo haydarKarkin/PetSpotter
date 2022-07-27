@@ -28,15 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataController.sharedManager.load()
         
         // send that into our coordinator so that it can display view controllers
-        let navigationController = UINavigationController()
-        appCoordinator = AppCoordinator(navigationController: navigationController,
-                                        sharedFactory: SharedFactory())
         // tell the coordinator to take over control
+        appCoordinator = AppCoordinator(sharedFactory: SharedFactory())
         appCoordinator.start()
         
         // create a basic UIWindow and activate it
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = navigationController
+        window!.rootViewController = appCoordinator.navigationController
         window!.makeKeyAndVisible()
         
         return true

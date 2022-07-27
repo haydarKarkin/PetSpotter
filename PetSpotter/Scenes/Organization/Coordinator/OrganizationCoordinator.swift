@@ -5,14 +5,14 @@
 //  Created by hkarkin on 1.12.2021.
 //
 
-import Foundation
 import UIKit
 
-protocol OrganizationCoordinatorType: Coordinator {
-    func showOrganizationDetail(organization: Organization)
+enum OrganizationRoute: Route {
+    case organizations
+    case organizationDetail(Organization)
 }
 
-class OrganizationCoordinator: OrganizationCoordinatorType {
+class OrganizationCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private let organizationFactory: OrganizationFactoryType
@@ -23,15 +23,20 @@ class OrganizationCoordinator: OrganizationCoordinatorType {
     }
     
     func start() {
-        let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
-        navigationController.pushViewController(viewController, animated: true)
+        navigate(to: .organizations)
     }
     
-    func showOrganizationDetail(organization: Organization) {
-        let coordinator = organizationFactory
-            .sharedFactory
-            .makeOrganizationDetailFactory()
-            .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
-        coordinate(to: coordinator)
+    func navigate(to route: OrganizationRoute) {
+        switch route {
+        case .organizations:
+            let viewController = organizationFactory.makeOrganizationsVC(organizationCoordinator: self)
+            navigationController.pushViewController(viewController, animated: true)
+        case .organizationDetail(let organization):
+            organizationFactory
+                .sharedFactory
+                .makeOrganizationDetailFactory()
+                .makeOrganizationDetailCoordinator(navigationController: navigationController, organization: organization)
+                .start()
+        }
     }
 }

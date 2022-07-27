@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-protocol AnimalMapCoordinatorType: Coordinator {
-    func showAnimalDetail(animal: Animal)
+enum AnimalMapRoute: Route {
+    case animalMap
+    case animalDetail(Animal)
 }
 
-class AnimalMapCoordinator: AnimalMapCoordinatorType {
+class AnimalMapCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private let animalMapFactory: AnimalMapFactoryType
@@ -24,15 +25,20 @@ class AnimalMapCoordinator: AnimalMapCoordinatorType {
     }
     
     func start() {
-        let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
+        navigate(to: .animalMap)
     }
     
-    func showAnimalDetail(animal: Animal) {
-        let coordinator = animalMapFactory
-            .sharedFactory
-            .makeAnimalDetailFactory()
-            .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
-        coordinate(to: coordinator)
+    func navigate(to route: AnimalMapRoute) {
+        switch route {
+        case .animalMap:
+            let viewController = animalMapFactory.makeAnimalMapVC(animalMapCoordinator: self)
+            navigationController.pushViewController(viewController, animated: false)
+        case .animalDetail(let animal):
+            animalMapFactory
+                .sharedFactory
+                .makeAnimalDetailFactory()
+                .makeAnimalDetailCoordinator(navigationController: navigationController, animal: animal)
+                .start()
+        }
     }
 }

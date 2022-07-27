@@ -10,9 +10,9 @@ import UIKit
 
 protocol OrganizationFactoryType {
     var sharedFactory: SharedFactoryType { get }
-    func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType
-    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM
-    func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC
+    func makeOrganizationCoordinator(navigationController: UINavigationController) -> any Coordinator<OrganizationRoute>
+    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: any Coordinator<OrganizationRoute>) -> OrganizationsVM
+    func makeOrganizationsVC(organizationCoordinator: any Coordinator<OrganizationRoute>) -> OrganizationsVC
 }
 
 class OrganizationFactory: OrganizationFactoryType {
@@ -26,15 +26,15 @@ class OrganizationFactory: OrganizationFactoryType {
 
 extension OrganizationFactory {
     
-    func makeOrganizationCoordinator(navigationController: UINavigationController) -> OrganizationCoordinatorType {
+    func makeOrganizationCoordinator(navigationController: UINavigationController) -> any Coordinator<OrganizationRoute> {
         OrganizationCoordinator(navigationController: navigationController, organizationFactory: self)
     }
     
-    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVM {
+    func makeOrganizationsVM(organizationService: OrganizationServiceType, organizationCoordinator: any Coordinator<OrganizationRoute>) -> OrganizationsVM {
         OrganizationsVM(organizationService: organizationService, organizationCoordinator: organizationCoordinator)
     }
     
-    func makeOrganizationsVC(organizationCoordinator: OrganizationCoordinatorType) -> OrganizationsVC {
+    func makeOrganizationsVC(organizationCoordinator: any Coordinator<OrganizationRoute>) -> OrganizationsVC {
         let organizationService = sharedFactory
             .makeServiceFactory()
             .makeOrganizationService()

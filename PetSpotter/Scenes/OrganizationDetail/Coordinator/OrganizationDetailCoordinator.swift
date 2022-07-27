@@ -5,14 +5,14 @@
 //  Created by hkarkin on 6.02.2022.
 //
 
-import Foundation
 import UIKit
 
-protocol OrganizationDetailCoordinatorType: Coordinator {
-    func showAnimals(organizationID: String)
+enum OrganizationDetailRoute: Route {
+    case organizationDetail(Organization)
+    case animals(String)
 }
 
-class OrganizationDetailCoordinator: OrganizationDetailCoordinatorType {
+class OrganizationDetailCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private let organizationDetailFactory: OrganizationDetailFactoryType
@@ -27,15 +27,20 @@ class OrganizationDetailCoordinator: OrganizationDetailCoordinatorType {
     }
     
     func start() {
-        let viewController = organizationDetailFactory.makeOrganizationDetailVC(organization: organization, coordinator: self)
-        navigationController.pushViewController(viewController, animated: true)
+        navigate(to: .organizationDetail(organization))
     }
     
-    func showAnimals(organizationID: String) {
-        let coordinator = organizationDetailFactory
-            .sharedFactory
-            .makeAnimalFactory()
-            .makeAnimalCoordinator(navigationController: navigationController, organizationID: organizationID)
-        coordinate(to: coordinator)
+    func navigate(to route: OrganizationDetailRoute) {
+        switch route {
+        case .organizationDetail(let organization):
+            let viewController = organizationDetailFactory.makeOrganizationDetailVC(organization: organization, coordinator: self)
+            navigationController.pushViewController(viewController, animated: true)
+        case .animals(let organizationID):
+            organizationDetailFactory
+                .sharedFactory
+                .makeAnimalFactory()
+                .makeAnimalCoordinator(navigationController: navigationController, organizationID: organizationID)
+                .start()
+        }
     }
 }

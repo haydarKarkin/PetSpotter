@@ -14,9 +14,9 @@ protocol OnboardingVMType {
 class OnboardingVM: ViewModelType {
     
     private let onboardingService: OnboardingServiceType
-    private let onboardingCoordinator: OnboardingCoordinatorType
+    private let onboardingCoordinator: any Coordinator<OnboardingRoute>
     
-    init(onboardingService: OnboardingServiceType, onboardingCoordinator: OnboardingCoordinatorType) {
+    init(onboardingService: OnboardingServiceType, onboardingCoordinator: any Coordinator<OnboardingRoute>) {
         self.onboardingService = onboardingService
         self.onboardingCoordinator = onboardingCoordinator
     }
@@ -45,10 +45,10 @@ extension OnboardingVM: OnboardingVMType {
             self?.onLoadHandling?(false)
             
             guard error != nil else {
-                self?.onboardingCoordinator.showHome(route: .animals)
+                self?.onboardingCoordinator.navigate(to: .home(.animals))
                 return
             }
-            self?.onboardingCoordinator.showHome(route: .favorites)
+            self?.onboardingCoordinator.navigate(to: .home(.favorites))
         }
     }
 }
